@@ -1,8 +1,0 @@
-package co.ceiba.parking.model;
-
-public class Vehiculo {
-	
-	private String cilindraje;
-	private String tipo;
-
-}

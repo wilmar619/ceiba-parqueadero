@@ -3,17 +3,13 @@
 <fullyQualifiedTypeName name="co.ceiba.parking.modelo.Vehiculo"/>
 <fullyQualifiedTypeName name="javax.annotation.Generated"/>
 <fullyQualifiedTypeName name="org.springframework.beans.factory.annotation.Autowired"/>
-<fullyQualifiedTypeName name="co.ceiba.parking.modelo.service.InterfaceVehiculoImplem"/>
 <fullyQualifiedTypeName name="org.springframework.stereotype.Repository"/>
 <fullyQualifiedTypeName name="org.springframework.data.rest.core.mapping.CrudMethodsSupportedHttpMethods"/>
 <fullyQualifiedTypeName name="org.springframework.stereotype.Controller"/>
 <fullyQualifiedTypeName name="org.springframework.web.bind.annotation.GetMapping"/>
-<fullyQualifiedTypeName name="co.ceiba.parking.model.Vehiculo"/>
 <fullyQualifiedTypeName name="java.sql.Date"/>
 <fullyQualifiedTypeName name="co.ceiba.parking.modelo.service.InterfaceParking"/>
 <fullyQualifiedTypeName name="java.util.Scanner"/>
-<fullyQualifiedTypeName name="co.ceiba.parking.modelo.service.InterfaceParkingImplem"/>
-<fullyQualifiedTypeName name="co.ceiba.parking.model.Parking"/>
 <fullyQualifiedTypeName name="java.lang.Integer"/>
 <fullyQualifiedTypeName name="co.ceiba.parking.modelo.servicio.prueba.InterfaceVehiculoImplem"/>
 <fullyQualifiedTypeName name="org.springframework.context.annotation.Bean"/>
@@ -22,4 +18,9 @@
 <fullyQualifiedTypeName name="co.ceiba.parking.modelo.servicio.Parking"/>
 <fullyQualifiedTypeName name="co.ceiba.parking.modelo.servicio.prueba.InterfaceParkingImplem"/>
 <fullyQualifiedTypeName name="java.lang.String"/>
+<fullyQualifiedTypeName name="co.ceiba.parking.model.Parking"/>
+<fullyQualifiedTypeName name="co.ceiba.parking.modelo.service.InterfaceParkingImplem"/>
+<fullyQualifiedTypeName name="co.ceiba.parking.model.Vehiculo"/>
+<fullyQualifiedTypeName name="org.junit.Test"/>
+<fullyQualifiedTypeName name="co.ceiba.parking.modelo.service.InterfaceVehiculoImplem"/>
 </qualifiedTypeNameHistroy>

@@ -10,8 +10,6 @@ import org.springframework.test.context.junit4.SpringRunner;
 import co.ceiba.parking.model.Vehiculo;
 import co.ceiba.parking.modelo.service.InterfaceParkingImplem;
 
-@RunWith(SpringRunner.class)
-@SpringBootTest
 public class ParkingIngresoVehiculoTest {
 
 	@Test

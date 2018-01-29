@@ -29,3 +29,13 @@ R
 "src/main/resources/application.yml,a\6\a6d8b8556fee0e03112ce2bf34b8cb27a7dc9e58
 f
 6src/main/java/co/ceiba/parking/ParkingApplication.java,5\0\5009939f5ed04d6db4c367642d302bf66ca3e5fb
+{
+Ksrc/test/java/co/ceiba/test/parking/ParkingDisponibilidadVehiculosTest.java,7\0\708d593d42cc065992a26167907c5dcad6917e62
+s
+Csrc/test/java/co/ceiba/test/parking/ParkingIngresoVehiculoTest.java,a\c\ac803a68e97fdb12f79b8dd239c3861b06600476
+t
+Dsrc/test/java/co/ceiba/test/vehiculo/VehiculoVerificarPlacaTest.java,a\e\aed78853648d4aab0d66c21a73b6680738d18e1e
+~
+Nsrc/test/java/co/ceiba/test/vehiculo/VehiculoValorAdicionalCilindrajeTest.java,6\9\695ced84ef510ba168a23be3129e7ff7a4441c5f
+q
+Asrc/test/java/co/ceiba/test/vehiculo/VehiculoValidarTipoTest.java,4\4\44c71b5b6ff1d5b722605b9b77de4fbec325aa03
