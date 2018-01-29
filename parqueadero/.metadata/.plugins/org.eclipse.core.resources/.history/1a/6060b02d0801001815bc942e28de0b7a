@@ -1,0 +1,19 @@
+package co.ceiba.parking.modelo.servicio;
+
+
+
+public class Inicio {
+
+	public static void main(String[] args) {
+
+
+		Vehiculo[] cuposCarro = new Vehiculo[20];
+		Vehiculo[] moto = new Vehiculo[10];
+
+			for (int i = 1; cuposCarro.length < 21; i++) {
+				// cuposCarro;
+				System.out.println("ARREGLO " + cuposCarro);
+			}
+		}
+	}
+

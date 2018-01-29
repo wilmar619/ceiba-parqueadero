@@ -1,0 +1,9 @@
+
+}squid:CommentedOutCodeLine-"<This block of commented-out lines of code should be removed.(Æ×Ê§ÿÿÿÿÿHÅRMAJORZ
+CODE_SMELL
+msquid:S1126u"AReplace this if-then-else statement by a single return statement.(Ë«ã^HÆRMINORZ
+CODE_SMELL
+^squid:S1135p"2Complete the task associated to this TODO comment.(ª‚Ù•HÇRINFOZ
+CODE_SMELL
+Šsquid:S00120"WRename this package name to match the regular expression '^[a-z]+(\.[a-z][a-z0-9]*)*$'.(µè¨ÑüÿÿÿÿHÈRMINORZ
+CODE_SMELL

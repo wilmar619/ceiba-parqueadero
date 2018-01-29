@@ -1,0 +1,22 @@
+package co.ceiba.test;
+
+import org.junit.jupiter.api.Test;
+
+import co.ceiba.parking.modelo.servicio.prueba.InterfaceVehiculoImplem;
+
+class VehiculoVerificarPlaca {
+
+	@Test
+	public void VerificarPlacatest() {
+		//Arrange
+		InterfaceVehiculoImplem prueba = new InterfaceVehiculoImplem();
+		
+		//Act
+		
+		String dia;
+		char letra = (char) prueba.verificarPlaca(dia );
+		
+		//Assert
+	}
+
+}

@@ -1,0 +1,25 @@
+package co.ceiba.test;
+
+import static org.junit.Assert.assertArrayEquals;
+import static org.junit.Assert.assertEquals;
+import org.junit.jupiter.api.Test;
+
+import co.ceiba.parking.modelo.servicio.prueba.InterfaceVehiculoImplem;
+
+class VehiculoVerificarPlaca {
+
+	@Test
+	public void VerificarPlacatest() {
+		//Arrange
+		InterfaceVehiculoImplem prueba = new InterfaceVehiculoImplem();
+		
+		//Act
+		String dia = "Domingo";
+		char letra = (char) prueba.verificarPlaca().indexOf(0);
+		if (letra == 'A' && dia.equals("Domingo") && dia.equals("Lunes")) {
+		}
+		//Assert
+	
+	}
+
+}

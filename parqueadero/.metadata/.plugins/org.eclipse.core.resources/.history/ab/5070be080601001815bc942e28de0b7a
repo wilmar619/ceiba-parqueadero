@@ -1,0 +1,24 @@
+package co.ceiba.parking.modelo.servicio;
+
+import java.util.Scanner;
+
+public class Inicio {
+
+	public static void main(String[] args) {
+
+		Scanner entradaEscaner = new Scanner(System.in);
+
+		System.out.println("Ingresar que tipo de vehiculo a ingresar carro o moto");
+		String vehiculo = entradaEscaner.next();
+
+		Vehiculo[] cuposCarro = new Vehiculo[20];
+		Vehiculo[] moto = new Vehiculo[10];
+
+		if (vehiculo == "carro") {
+			for (int i = 1; cuposCarro.length < 21; i++) {
+				// cuposCarro;
+				System.out.println("fue ingresado un carro " + cuposCarro);
+			}
+		}
+	}
+}

@@ -1,0 +1,30 @@
+package co.ceiba.parking.model;
+
+public class Parking {
+
+	private int celdaCarro;
+	private int celdaMoto;
+
+	public Parking(int celdaCarro, int celdaMoto) {
+		super();
+		this.celdaCarro = celdaCarro;
+		this.celdaMoto = celdaMoto;
+	}
+
+	public int getCeldaCarro() {
+		return celdaCarro;
+	}
+
+	public void setCeldaCarro(int celdaCarro) {
+		this.celdaCarro = celdaCarro;
+	}
+
+	public int getCeldaMoto() {
+		return celdaMoto;
+	}
+
+	public void setCeldaMoto(int celdaMoto) {
+		this.celdaMoto = celdaMoto;
+	}
+
+}

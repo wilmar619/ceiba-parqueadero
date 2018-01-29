@@ -1,0 +1,76 @@
+package co.ceiba.parking.modelo.servicio;
+
+public class Parking {
+
+	private int celdaCarro = 20;
+	private int celdaMoto = 10;
+	private int precioHoraCarro = 1000;
+	private int precioHoraMoto = 500;
+	private int precioDiaCarro = 8000;
+	private int precioDiaMoto = 4000;
+
+	public Parking() {
+
+	}
+
+	public Parking(int celdaCarro, int celdaMoto, int precioHoraCarro, int precioHoraMoto, int precioDiaCarro,
+			int precioDiaMoto) {
+		super();
+		this.celdaCarro = celdaCarro;
+		this.celdaMoto = celdaMoto;
+		this.precioHoraCarro = precioHoraCarro;
+		this.precioHoraMoto = precioHoraMoto;
+		this.precioDiaCarro = precioDiaCarro;
+		this.precioDiaMoto = precioDiaMoto;
+	}
+
+	public int getCeldaCarro() {
+		return celdaCarro;
+	}
+
+	public void setCeldaCarro(int celdaCarro) {
+		this.celdaCarro = celdaCarro;
+	}
+
+	public int getCeldaMoto() {
+		return celdaMoto;
+	}
+
+	public void setCeldaMoto(int celdaMoto) {
+		this.celdaMoto = celdaMoto;
+	}
+
+	public int getPrecioHoraCarro() {
+		return precioHoraCarro;
+	}
+
+	public void setPrecioHoraCarro(int precioHoraCarro) {
+		this.precioHoraCarro = precioHoraCarro;
+	}
+
+	public int getPrecioHoraMoto() {
+		return precioHoraMoto;
+	}
+
+	public void setPrecioHoraMoto(int precioHoraMoto) {
+		this.precioHoraMoto = precioHoraMoto;
+	}
+
+	public int getPrecioDiaCarro() {
+		return precioDiaCarro;
+	}
+
+	public void setPrecioDiaCarro(int precioDiaCarro) {
+		this.precioDiaCarro = precioDiaCarro;
+	}
+
+	public int getPrecioDiaMoto() {
+		return precioDiaMoto;
+	}
+
+	public void setPrecioDiaMoto(int precioDiaMoto) {
+		this.precioDiaMoto = precioDiaMoto;
+	}
+
+
+}

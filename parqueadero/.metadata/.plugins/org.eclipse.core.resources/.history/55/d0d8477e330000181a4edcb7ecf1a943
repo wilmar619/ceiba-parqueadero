@@ -1,0 +1,30 @@
+package co.ceiba.parking.modelo.servicio;
+
+public class InterfaceCarroImplem implements InterfaceCarro {
+
+	@Override
+	public boolean tipo() {
+		return false;
+	}
+
+	@Override
+	public String verificarCelda() {
+		return null;
+	}
+
+	@Override
+	public String verificarPlaca() {
+		return null;
+	}
+
+	@Override
+	public String ingresoVehiculo() {
+		return null;
+	}
+
+	@Override
+	public String salidaVehiculo() {
+		return null;
+	}
+
+}

@@ -1,0 +1,28 @@
+1516622576026	Rename package 'co.ceiba.parking'
+1516622581666	Delete element
+1516624924840	Delete element
+1516627634894	Move compilation unit
+1516627637533	Move compilation unit
+1516627704147	Rename type 'Vehiculo'
+1516627732852	Rename type 'Servicio'
+1516628178642	Rename type 'InterfaceVehiculo'
+1516628189680	Rename type 'InterfaceVehiculoImplem'
+1516634223021	Copy compilation units
+1516634230469	Copy compilation units
+1516708150938	Delete element
+1516708155481	Delete element
+1516708156713	Delete element
+1516708159843	Delete element
+1516708177798	Delete element
+1516708179682	Delete element
+1516708182416	Delete element
+1516708184073	Delete element
+1516717028479	Rename type 'VehiculoTest'
+1516718390913	Convert local variable 'dia' to field
+1516793492874	Convert local variable 'entradaEscaner' to field
+1516799527283	Delete element
+1516803309746	Rename package 'co.ceiba.test'
+1516809310691	Rename type 'VehiculoValorAdicionalCilindraje'
+1516809319976	Rename type 'VehiculoVerificarPlaca'
+1516809328577	Rename type 'ParkingIngresoVehiculo'
+1516809335192	Rename type 'ParkingDisponibilidadVehiculos'

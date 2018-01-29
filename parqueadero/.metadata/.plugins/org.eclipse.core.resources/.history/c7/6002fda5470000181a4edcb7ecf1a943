@@ -1,0 +1,25 @@
+package co.ceiba.test;
+
+import static org.junit.jupiter.api.Assertions.*;
+
+import org.junit.jupiter.api.Test;
+
+import co.ceiba.parking.modelo.servicio.Vehiculo;
+import co.ceiba.parking.modelo.servicio.prueba.InterfaceVehiculoImplem;
+
+class VehiculoTest {
+
+	@Test
+	public void validarTipoTest() {
+		//Arrange
+		InterfaceVehiculoImplem prueba = new InterfaceVehiculoImplem();
+		
+		//Act
+		String resultado = prueba.validarTipo();
+		
+		// Assert
+		assertFalse(resultado);
+		
+	}
+
+}

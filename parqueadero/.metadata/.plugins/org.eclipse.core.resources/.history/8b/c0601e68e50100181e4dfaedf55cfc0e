@@ -1,0 +1,15 @@
+spring:
+  application:
+    name: cruncher
+  datasource:
+    driverClassName: org.postgresql.Driver
+    url: jdbc:postgresql://localhost:5432/HORUS
+    username: postgres
+    password: CETAd2016
+  jpa:
+    hibernate:
+      ddl-auto: none
+
+server:
+  address: localhost
+  port: 9000

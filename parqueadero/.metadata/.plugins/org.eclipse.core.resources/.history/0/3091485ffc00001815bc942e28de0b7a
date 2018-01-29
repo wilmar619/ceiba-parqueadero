@@ -1,0 +1,40 @@
+package co.ceiba.parking.modelo.servicio;
+
+import java.util.Scanner;
+
+public class Inicio {
+
+	public static void main(String[] args) {
+
+		Scanner entradaEscaner = new Scanner(System.in);
+
+		System.out.println("vehiculo a ingresar si es carro o moto");
+		String vehiculoCarro = entradaEscaner.next();
+		String vehiculoMoto = entradaEscaner.next();
+		
+		int saldo = 1;
+	//	String vehiculoCarro = "";
+	//	String vehiculoMoto = "";
+		if (vehiculoCarro == "carro") {
+			for (vehiculoCarro = "carro"; saldo < 20; saldo++) {
+
+				System.out.println("favor ingresar para carro ");
+			//	vehiculoCarro = entradaEscaner.next();
+				vehiculoCarro = vehiculoCarro + saldo;
+				System.out.println("carros ingresados" + saldo);
+			}
+			if (vehiculoMoto == "moto") {
+				for (vehiculoMoto = "moto"; saldo < 10; saldo++) {
+
+					System.out.println("favor ingresar para moto");
+			//		vehiculoMoto = entradaEscaner.next();
+					vehiculoMoto = vehiculoMoto + saldo;
+					System.out.println("motos ingresados" + saldo);
+
+				}
+
+			}
+		}
+
+	}
+}

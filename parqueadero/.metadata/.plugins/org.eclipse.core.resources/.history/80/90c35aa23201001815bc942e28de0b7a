@@ -1,0 +1,29 @@
+package co.ceiba.test.parking;
+
+import static org.junit.Assert.assertEquals;
+import org.junit.jupiter.api.Test;
+
+import co.ceiba.parking.modelo.servicio.Parking;
+import co.ceiba.parking.modelo.servicio.Vehiculo;
+import co.ceiba.parking.modelo.servicio.prueba.InterfaceParkingImplem;
+
+class ParkingIngresoVehiculoTest {
+
+	@Test
+	public void ingresoVehiculoTest() {
+		
+		//Arrange
+		InterfaceParkingImplem prueba = new InterfaceParkingImplem();
+		Vehiculo pruebaCarro = new Vehiculo(500, "carro", "AGH562");
+		//Act
+		String tipoVehiculo = pruebaCarro.getTipo();
+		
+		String carro = prueba.ingresoVehiculo(tipoVehiculo);
+		
+		// Assert
+		assertEquals("ingresado carro con exito", tipoVehiculo);
+		//assertEquals("ingresado moto con exito", moto);
+		
+	}
+
+}

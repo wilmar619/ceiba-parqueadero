@@ -1,0 +1,9 @@
+package co.ceiba.parking.modelo.servicio.prueba;
+
+public interface InterfaceParking {
+	
+	public String ingresoVehiculo();
+
+	public String salidaVehiculo();
+
+}

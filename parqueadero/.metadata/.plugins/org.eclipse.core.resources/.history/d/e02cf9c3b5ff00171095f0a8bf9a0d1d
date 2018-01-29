@@ -1,0 +1,5 @@
+package co.ceiba.parking.modelo.service;
+
+public interface InterfaceParking {
+
+}

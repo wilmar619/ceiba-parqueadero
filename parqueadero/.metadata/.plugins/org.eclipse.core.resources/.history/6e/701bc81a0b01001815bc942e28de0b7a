@@ -1,0 +1,41 @@
+package co.ceiba.parking.modelo.servicio.prueba;
+
+import co.ceiba.parking.modelo.servicio.Parking;
+import co.ceiba.parking.modelo.servicio.Vehiculo;
+
+public class InterfaceParkingImplem implements InterfaceParking {
+	Parking parqueadero = new Parking();
+	Vehiculo pruebaCarro = new Vehiculo(500, "carro", "AGH562");
+	Vehiculo pruebaMoto = new Vehiculo(800, "Moto", "TGH562");
+
+	@Override
+	public String ingresoVehiculo(String tipoVehiculo, String placa) {
+		if (tipoVehiculo.equals("Carro")){
+	        parqueadero.setCeldasCarro(parqueadero.getCeldasCarro()-1);
+	    }else{
+	        parqueadero.setCeldasMoto(parqueadero.getCeldasMoto()-1);
+	    }
+	}
+
+	@Override
+	public Integer calcularPago() {
+		return null;
+	}
+
+	@Override
+	public String salidaVehiculo() {
+		return null;
+	}
+
+	@Override
+	public int disponibilidadVehiculos() {
+		if (pruebaCarro.getTipo() == "carro" && parqueadero.getCeldaCarro()==0) {
+			return "NO HAY CUPOS PARA CARROS";
+	    }else if (pruebaCarro.getTipo() == "moto" && parqueadero.getCeldaMoto()==0){
+	        return "No hay cupos para motos";
+	    }else {
+	        return "Puede ingresar el vehiculo";
+	    }
+	}
+
+}

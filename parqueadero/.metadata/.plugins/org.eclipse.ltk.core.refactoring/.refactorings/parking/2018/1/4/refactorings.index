@@ -1,0 +1,17 @@
+1516634160423	Rename package 'co.ceiba.parking.modelo'
+1516634504414	Rename type 'Parking2Application'
+1516634505839	Rename type 'Parking2ApplicationTests'
+1516636190278	Delete element
+1516636193326	Delete element
+1516636239606	Rename type 'TipoVehiculo'
+1516637168882	Rename type 'InterfaceCarro'
+1516637183343	Rename type 'InterfaceCarroImplem'
+1516637190860	Delete element
+1516637193966	Delete element
+1516643554090	Rename package 'com.example.parking'
+1516643650436	Rename package 'co.example.parking'
+1516643862133	Rename package 'com.example.parking'
+1516648554724	Extract local variable 'string'
+1516648569372	Convert local variable 'carro' to field
+1516708214994	Copy compilation units
+1516708282889	Copy compilation units

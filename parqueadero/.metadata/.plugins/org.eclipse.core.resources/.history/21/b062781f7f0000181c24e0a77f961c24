@@ -1,0 +1,38 @@
+package co.ceiba.parking.modelo.servicio;
+
+import java.util.Scanner;
+
+import co.ceiba.parking.modelo.servicio.prueba.InterfaceVehiculoImplem;
+
+public class Inicio {
+
+	public static void main(String[] args) {
+
+		Scanner entradaEscaner = new Scanner(System.in);
+
+		int saldo = 1;
+
+		String vehiculoCarro = "carro";
+		String vehiculoMoto = "moto";
+
+		for (vehiculoCarro = "carro"; saldo < 20; saldo++) {
+
+			System.out.println("favor ingresar para carro 1 o para moto 2");
+			vehiculoCarro = entradaEscaner.next();
+			vehiculoCarro = vehiculoCarro + saldo;
+			System.out.println("saldocarros" + saldo);
+		}
+
+		for (vehiculoMoto = "moto"; saldo < 10; saldo++) {
+
+			System.out.println("favor ingresar para carro 1 o para moto 2");
+			vehiculoMoto = entradaEscaner.next();
+			vehiculoMoto = vehiculoMoto + saldo;
+			System.out.println("saldocarros" + saldo);
+
+			System.out.println("hay tantos carros" + saldo);
+
+		}
+
+	}
+}

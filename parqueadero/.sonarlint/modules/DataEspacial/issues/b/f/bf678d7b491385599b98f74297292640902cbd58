@@ -1,0 +1,13 @@
+
+f
+squid:S106õ"9Replace this use of System.out or System.err by a logger.(æŽþ‡HÓRMAJORZ
+CODE_SMELL
+f
+squid:S106Ý"9Replace this use of System.out or System.err by a logger.(æŽþ‡HÔRMAJORZ
+CODE_SMELL
+Šsquid:S00120"WRename this package name to match the regular expression '^[a-z]+(\.[a-z][a-z0-9]*)*$'.(¡ª¬æþÿÿÿÿHÕRMINORZ
+CODE_SMELL
+ysquid:CommentedOutCodeLineÜ"<This block of commented-out lines of code should be removed.(°®¿¹HÖRMAJORZ
+CODE_SMELL
+‚squid:S3776O"RRefactor this method to reduce its Cognitive Complexity from 35 to the 15 allowed.(ÜÑãH×RCRITICALZ
+CODE_SMELL

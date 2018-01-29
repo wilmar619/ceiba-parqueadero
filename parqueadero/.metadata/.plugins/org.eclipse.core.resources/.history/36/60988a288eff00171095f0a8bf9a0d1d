@@ -1,0 +1,15 @@
+package co.ceiba.parking.modelo.service;
+
+public interface InterfaceCarro {
+
+	public boolean tipo();
+
+	public String verificarCelda();
+
+	public String verificarPlaca();
+	
+	public String ingresoVehiculo();
+	
+	public String salidaVehiculo();
+
+}
