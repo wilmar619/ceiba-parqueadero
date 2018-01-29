@@ -2,73 +2,68 @@ package co.ceiba.parking.model;
 
 public class Parking {
 
-	private int totalCarro = 20;
-	private int totalMoto = 10;
-	private int horaCarro = 1000;
-	private int horaMoto = 500;
-	private int diaCarro = 8000;
-	private int diaMoto = 4000;
+	private int celdaCarro;
+	private int celdaMoto;
+	private int precioHoraCarro;
+	private int precioHoraMoto;
+	private int precioDiaCarro;
+	private int precioDiaMoto;
 
 	public Parking() {
-
+		this.celdaCarro = 20;
+		this.celdaMoto = 10;
+		this.precioHoraCarro = 1000;
+		this.precioHoraMoto = 500;
+		this.precioDiaCarro = 8000;
+		this.precioDiaMoto = 4000;
 	}
 
-	public Parking(int totalCarro, int totalMoto, int horaCarro, int horaMoto, int diaCarro, int diaMoto) {
-		super();
-		this.totalCarro = totalCarro;
-		this.totalMoto = totalMoto;
-		this.horaCarro = horaCarro;
-		this.horaMoto = horaMoto;
-		this.diaCarro = diaCarro;
-		this.diaMoto = diaMoto;
+	public int getCeldaCarro() {
+		return celdaCarro;
 	}
 
-	public int getTotalCarro() {
-		return totalCarro;
+	public void setCeldaCarro(int celdaCarro) {
+		this.celdaCarro = celdaCarro;
 	}
 
-	public void setTotalCarro(int totalCarro) {
-		this.totalCarro = totalCarro;
+	public int getCeldaMoto() {
+		return celdaMoto;
 	}
 
-	public int getTotalMoto() {
-		return totalMoto;
+	public void setCeldaMoto(int celdaMoto) {
+		this.celdaMoto = celdaMoto;
 	}
 
-	public void setTotalMoto(int totalMoto) {
-		this.totalMoto = totalMoto;
+	public int getPrecioHoraCarro() {
+		return precioHoraCarro;
 	}
 
-	public int getHoraCarro() {
-		return horaCarro;
+	public void setPrecioHoraCarro(int precioHoraCarro) {
+		this.precioHoraCarro = precioHoraCarro;
 	}
 
-	public void setHoraCarro(int horaCarro) {
-		this.horaCarro = horaCarro;
+	public int getPrecioHoraMoto() {
+		return precioHoraMoto;
 	}
 
-	public int getHoraMoto() {
-		return horaMoto;
+	public void setPrecioHoraMoto(int precioHoraMoto) {
+		this.precioHoraMoto = precioHoraMoto;
 	}
 
-	public void setHoraMoto(int horaMoto) {
-		this.horaMoto = horaMoto;
+	public int getPrecioDiaCarro() {
+		return precioDiaCarro;
 	}
 
-	public int getDiaCarro() {
-		return diaCarro;
+	public void setPrecioDiaCarro(int precioDiaCarro) {
+		this.precioDiaCarro = precioDiaCarro;
 	}
 
-	public void setDiaCarro(int diaCarro) {
-		this.diaCarro = diaCarro;
+	public int getPrecioDiaMoto() {
+		return precioDiaMoto;
 	}
 
-	public int getDiaMoto() {
-		return diaMoto;
-	}
-
-	public void setDiaMoto(int diaMoto) {
-		this.diaMoto = diaMoto;
+	public void setPrecioDiaMoto(int precioDiaMoto) {
+		this.precioDiaMoto = precioDiaMoto;
 	}
 
 }

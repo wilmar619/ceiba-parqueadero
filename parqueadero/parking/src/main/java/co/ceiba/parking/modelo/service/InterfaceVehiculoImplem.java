@@ -1,18 +1,16 @@
 package co.ceiba.parking.modelo.service;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import co.ceiba.parking.model.Vehiculo;
 
 public class InterfaceVehiculoImplem implements InterfaceVehiculo {
 
-	@Autowired
-	Vehiculo pruebaVehiculo = new Vehiculo();
+	Vehiculo pruebaVehiculo = new Vehiculo(800, "moto", "ADF125");
 
 	@Override
-	public boolean validarTipo() {
+	public String validarTipo() {
 
-		boolean carro = true;
-		boolean moto = false;
+		String carro = "carro";
+		String moto = "moto";
 
 		if (carro == pruebaVehiculo.getTipo()) {
 			return carro;
@@ -23,9 +21,9 @@ public class InterfaceVehiculoImplem implements InterfaceVehiculo {
 	@Override
 	public String verificarPlaca(String dia) {
 
-		String letra = pruebaVehiculo.getPlaca();
+		char letra = pruebaVehiculo.getPlaca().charAt(0);
 
-		if (letra == "A" && dia.equals("Domingo") && dia.equals("Lunes")) {
+		if (letra == 'A' && (dia.equals("Domingo") || dia.equals("Lunes"))) {
 
 			return "puede ingresar";
 		} else {
@@ -33,7 +31,6 @@ public class InterfaceVehiculoImplem implements InterfaceVehiculo {
 			return "no puede ingresar";
 
 		}
-
 	}
 
 	@Override
@@ -41,7 +38,7 @@ public class InterfaceVehiculoImplem implements InterfaceVehiculo {
 		int valorAdicional = 2000;
 		int mayorCilindraje = pruebaVehiculo.getCilindraje();
 
-		if (mayorCilindraje > 500 && validarTipo() == false) {
+		if (mayorCilindraje > 500 && validarTipo() == "moto") {
 
 			return valorAdicional;
 		}
@@ -50,3 +47,4 @@ public class InterfaceVehiculoImplem implements InterfaceVehiculo {
 	}
 
 }
+

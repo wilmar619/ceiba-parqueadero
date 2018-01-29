@@ -3,14 +3,14 @@ package co.ceiba.parking.model;
 public class Vehiculo {
 	
 	private int cilindraje;
-	private boolean tipo;
+	private String tipo;
 	private String placa;
 	
 	public Vehiculo(){
 		
 	}
 
-	public Vehiculo(int cilindraje, boolean tipo, String placa) {
+	public Vehiculo(int cilindraje, String tipo, String placa) {
 		super();
 		this.cilindraje = cilindraje;
 		this.tipo = tipo;
@@ -25,11 +25,11 @@ public class Vehiculo {
 		this.cilindraje = cilindraje;
 	}
 
-	public boolean getTipo() {
+	public String getTipo() {
 		return tipo;
 	}
 
-	public void setTipo(boolean tipo) {
+	public void setTipo(String tipo) {
 		this.tipo = tipo;
 	}
 
