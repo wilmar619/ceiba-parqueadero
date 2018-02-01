@@ -10,7 +10,6 @@ public class InterfaceParkingImplem implements InterfaceParking {
 	Parking parqueadero = new Parking();
 	Vehiculo pruebaCarro = new Vehiculo(500, "", "AGH562");
 	Vehiculo pruebaMoto = new Vehiculo(800, "moto", "TGH562");
-	Vehiculo pruebaVehiculo = new Vehiculo();
 	
 	@Override
 	public String ingresoVehiculo(String tipoVehiculo) {
@@ -24,8 +23,7 @@ public class InterfaceParkingImplem implements InterfaceParking {
 	}
 
 	@Override
-	public Integer calcularPago() {		
-		
+	public Integer calcularPago() {
 		return null;
 	}
 

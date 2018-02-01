@@ -42,12 +42,12 @@ public class Vehiculo implements Serializable {
     @Column(name = "placa")
     private String placa;
 
-    public Vehiculo() {
-    }
-
-    public Vehiculo(Integer idVehiculo) {
-        this.idVehiculo = idVehiculo;
-    }
+//    public Vehiculo() {
+//    }
+//
+//    public Vehiculo(Integer idVehiculo) {
+//        this.idVehiculo = idVehiculo;
+//    }
 
     public Vehiculo(Integer idVehiculo, String tipo, String placa) {
         this.idVehiculo = idVehiculo;
@@ -55,61 +55,61 @@ public class Vehiculo implements Serializable {
         this.placa = placa;
     }
 
-    public Integer getIdVehiculo() {
-        return idVehiculo;
-    }
-
-    public void setIdVehiculo(Integer idVehiculo) {
-        this.idVehiculo = idVehiculo;
-    }
+//    public Integer getIdVehiculo() {
+//        return idVehiculo;
+//    }
+//
+//    public void setIdVehiculo(Integer idVehiculo) {
+//        this.idVehiculo = idVehiculo;
+//    }
 
     public Integer getCilindraje() {
         return cilindraje;
     }
 
-    public void setCilindraje(Integer cilindraje) {
-        this.cilindraje = cilindraje;
-    }
+//    public void setCilindraje(Integer cilindraje) {
+//        this.cilindraje = cilindraje;
+//    }
 
     public String getTipo() {
         return tipo;
     }
 
-    public void setTipo(String tipo) {
-        this.tipo = tipo;
-    }
+//    public void setTipo(String tipo) {
+//        this.tipo = tipo;
+//    }
 
     public String getPlaca() {
         return placa;
     }
 
-    public void setPlaca(String placa) {
-        this.placa = placa;
-    }
-
-    @Override
-    public int hashCode() {
-        int hash = 0;
-        hash += (idVehiculo != null ? idVehiculo.hashCode() : 0);
-        return hash;
-    }
-
-    @Override
-    public boolean equals(Object object) {
-
-        if (!(object instanceof Vehiculo)) {
-            return false;
-        }
-        Vehiculo other = (Vehiculo) object;
-        if ((this.idVehiculo == null && other.idVehiculo != null) || (this.idVehiculo != null && !this.idVehiculo.equals(other.idVehiculo))) {
-            return false;
-        }
-        return true;
-    }
-
-    @Override
-    public String toString() {
-        return "parqueadero.Vehiculo[ idVehiculo=" + idVehiculo + " ]";
-    }
+//    public void setPlaca(String placa) {
+//        this.placa = placa;
+//    }
+//
+//    @Override
+//    public int hashCode() {
+//        int hash = 0;
+//        hash += (idVehiculo != null ? idVehiculo.hashCode() : 0);
+//        return hash;
+//    }
+//
+//    @Override
+//    public boolean equals(Object object) {
+//
+//        if (!(object instanceof Vehiculo)) {
+//            return false;
+//        }
+//        Vehiculo other = (Vehiculo) object;
+//        if ((this.idVehiculo == null && other.idVehiculo != null) || (this.idVehiculo != null && !this.idVehiculo.equals(other.idVehiculo))) {
+//            return false;
+//        }
+//        return true;
+//    }
+//
+//    @Override
+//    public String toString() {
+//        return "parqueadero.Vehiculo[ idVehiculo=" + idVehiculo + " ]";
+//    }
     
 }
