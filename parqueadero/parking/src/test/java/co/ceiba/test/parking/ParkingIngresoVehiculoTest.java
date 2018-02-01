@@ -3,12 +3,8 @@ package co.ceiba.test.parking;
 import static org.junit.Assert.assertEquals;
 
 import org.junit.Test;
-import org.junit.runner.RunWith;
-import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.test.context.junit4.SpringRunner;
-
 import co.ceiba.parking.model.Vehiculo;
-import co.ceiba.parking.modelo.service.InterfaceParkingImplem;
+import co.ceiba.parking.service.InterfaceParkingImplem;
 
 public class ParkingIngresoVehiculoTest {
 

@@ -7,14 +7,6 @@ p
 @src/main/java/co/ceiba/parking/repository/ParkingRepository.java,c\9\c9a62eae83568644afb285ef1600b1a07261b660
 X
 (gradle/wrapper/gradle-wrapper.properties,f\b\fbe448ebfc3eb2d4e308f6b8b043666f5b57235e
-s
-Csrc/main/java/co/ceiba/parking/modelo/service/InterfaceParking.java,3\1\317075b5ff01dbd464fc19fd7b908599583f350a
-y
-Isrc/main/java/co/ceiba/parking/modelo/service/InterfaceParkingImplem.java,f\c\fcef72b393e909837b908d1758c12417a501ffcb
-z
-Jsrc/main/java/co/ceiba/parking/modelo/service/InterfaceVehiculoImplem.java,6\f\6f6c1c73648de7f99a9e46e2d41b361d5b9870c2
-t
-Dsrc/main/java/co/ceiba/parking/modelo/service/InterfaceVehiculo.java,9\6\962424ccf96e7419ee7411d78acb80f192428c5e
 Y
 )src/main/resources/application.properties,0\6\06f65155ec73600b9fc5c4dc2883d4bb84d8e284
 <
@@ -39,3 +31,11 @@ Dsrc/test/java/co/ceiba/test/vehiculo/VehiculoVerificarPlacaTest.java,a\e\aed78
 Nsrc/test/java/co/ceiba/test/vehiculo/VehiculoValorAdicionalCilindrajeTest.java,6\9\695ced84ef510ba168a23be3129e7ff7a4441c5f
 q
 Asrc/test/java/co/ceiba/test/vehiculo/VehiculoValidarTipoTest.java,4\4\44c71b5b6ff1d5b722605b9b77de4fbec325aa03
+l
+<src/main/java/co/ceiba/parking/service/InterfaceParking.java,c\c\cc03ef23ac1de025f47d5bb1af011ad3ddf7922c
+r
+Bsrc/main/java/co/ceiba/parking/service/InterfaceParkingImplem.java,e\f\ef2ea144a188d25624a5fc28b220c53338977b92
+s
+Csrc/main/java/co/ceiba/parking/service/InterfaceVehiculoImplem.java,d\a\da14383d773ccf67fa7e5111b711b45b86347a3d
+m
+=src/main/java/co/ceiba/parking/service/InterfaceVehiculo.java,3\7\37774ecfa3af8bbcc714731726a35c501773f87b
