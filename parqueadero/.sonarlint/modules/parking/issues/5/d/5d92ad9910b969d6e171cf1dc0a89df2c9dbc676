@@ -1,5 +1,33 @@
 
-{squid:S1126"AReplace this if-then-else statement by a single return statement.(¤£‰ÿÿÿÿÿ8…£¼·”,HïRMINORZ
+squid:CommentedOutCodeLinep"<This block of commented-out lines of code should be removed.(Ïãç8¦ŒßŠ•,HåRMAJORZ
 CODE_SMELL
-fsquid:S1135‰"2Complete the task associated to this TODO comment.(ª‚Ù•8…£¼·”,HğRINFOZ
+½squid:S11866"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(ˆá×ùÿÿÿÿ8ì€ŞŠ•,HàRCRITICALZ
+CODE_SMELL
+„squid:CommentedOutCodeLined"<This block of commented-out lines of code should be removed.(ÄÚßäüÿÿÿÿ8¦ŒßŠ•,HâRMAJORZ
+CODE_SMELL
+„squid:CommentedOutCodeLine|"<This block of commented-out lines of code should be removed.(Åõ¿óûÿÿÿÿ8¦ŒßŠ•,HèRMAJORZ
+CODE_SMELL
+squid:CommentedOutCodeLine9"<This block of commented-out lines of code should be removed.(™ôÎØ8ì€ŞŠ•,HÜRMAJORZ
+CODE_SMELL
+€squid:CommentedOutCodeLine"<This block of commented-out lines of code should be removed.(İ ’ì8¦ŒßŠ•,HéRMAJORZ
+CODE_SMELL
+squid:CommentedOutCodeLinel"<This block of commented-out lines of code should be removed.(î–ÿ±8¦ŒßŠ•,HäRMAJORZ
+CODE_SMELL
+squid:CommentedOutCodeLineL"<This block of commented-out lines of code should be removed.(÷Œ­»8ì€ŞŠ•,HßRMAJORZ
+CODE_SMELL
+…squid:CommentedOutCodeLineˆ"<This block of commented-out lines of code should be removed.(µ¶àíøÿÿÿÿ8¦ŒßŠ•,HêRMAJORZ
+CODE_SMELL
+„squid:CommentedOutCodeLineh"<This block of commented-out lines of code should be removed.(ÄÒÌ³ûÿÿÿÿ8¦ŒßŠ•,HãRMAJORZ
+CODE_SMELL
+squid:CommentedOutCodeLineH"<This block of commented-out lines of code should be removed.(¾ŠÊØ8ì€ŞŠ•,HŞRMAJORZ
+CODE_SMELL
+squid:CommentedOutCodeLine="<This block of commented-out lines of code should be removed.(İ¯“Ì8ì€ŞŠ•,HİRMAJORZ
+CODE_SMELL
+…squid:CommentedOutCodeLine•"<This block of commented-out lines of code should be removed.(òß¿•üÿÿÿÿ8¦ŒßŠ•,HëRMAJORZ
+CODE_SMELL
+„squid:CommentedOutCodeLine`"<This block of commented-out lines of code should be removed.(ÉÅúîûÿÿÿÿ8¦ŒßŠ•,HáRMAJORZ
+CODE_SMELL
+„squid:CommentedOutCodeLinet"<This block of commented-out lines of code should be removed.(äá°‡úÿÿÿÿ8¦ŒßŠ•,HæRMAJORZ
+CODE_SMELL
+„squid:CommentedOutCodeLinex"<This block of commented-out lines of code should be removed.(…ìÅİıÿÿÿÿ8¦ŒßŠ•,HçRMAJORZ
 CODE_SMELL

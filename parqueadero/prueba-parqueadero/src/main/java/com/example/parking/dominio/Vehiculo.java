@@ -31,7 +31,7 @@ public class Vehiculo implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Basic(optional = false)
-    @Column(name = "idVehiculo")
+    @Column(name = "idvehiculo")
     private Integer idVehiculo;
     @Column(name = "cilindraje")
     private Integer cilindraje;
@@ -96,7 +96,7 @@ public class Vehiculo implements Serializable {
 
     @Override
     public boolean equals(Object object) {
-
+        // TODO: Warning - this method won't work in the case the id fields are not set
         if (!(object instanceof Vehiculo)) {
             return false;
         }
@@ -109,7 +109,7 @@ public class Vehiculo implements Serializable {
 
     @Override
     public String toString() {
-        return "parqueadero.Vehiculo[ idVehiculo=" + idVehiculo + " ]";
+        return "pru.Vehiculo[ idVehiculo=" + idVehiculo + " ]";
     }
     
 }

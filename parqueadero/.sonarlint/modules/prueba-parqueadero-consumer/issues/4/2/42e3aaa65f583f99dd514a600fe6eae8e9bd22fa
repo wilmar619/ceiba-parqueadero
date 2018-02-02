@@ -1,18 +1,0 @@
-
-¥"squid:ClassVariableVisibilityCheck"WMake rdbBuscarId a static final constant or non-public and provide accessors if needed.(Æ¾«Ø8½­ÿÅ”,HÄRMINORZVULNERABILITY
-£"squid:ClassVariableVisibilityCheck"UMake panelHead a static final constant or non-public and provide accessors if needed.(¿ŒÎ8½­ÿÅ”,H¾RMINORZVULNERABILITY
-¤"squid:ClassVariableVisibilityCheck"QMake table a static final constant or non-public and provide accessors if needed.(¡øñ™úÿÿÿÿ8½­ÿÅ”,H¼RMINORZVULNERABILITY
-¡"squid:ClassVariableVisibilityCheck"SMake cmbTipo a static final constant or non-public and provide accessors if needed.(¡Ÿ¨«8½­ÿÅ”,H¿RMINORZVULNERABILITY
-Ÿ"squid:ClassVariableVisibilityCheck"QMake panel a static final constant or non-public and provide accessors if needed.(á‘ß«8½­ÿÅ”,H»RMINORZVULNERABILITY
-¥"squid:ClassVariableVisibilityCheck"WMake botonListar a static final constant or non-public and provide accessors if needed.(‘âÜ¨8½­ÿÅ”,H½RMINORZVULNERABILITY
-¥"squid:ClassVariableVisibilityCheck"WMake textFiltrar a static final constant or non-public and provide accessors if needed.(‰Ìç‹8½­ÿÅ”,HÁRMINORZVULNERABILITY
-«"squid:ClassVariableVisibilityCheck"XMake labelFiltrar a static final constant or non-public and provide accessors if needed.(ÖËüÁüÿÿÿÿ8½­ÿÅ”,HÂRMINORZVULNERABILITY
-¥"squid:ClassVariableVisibilityCheck "WMake textSelecId a static final constant or non-public and provide accessors if needed.(ÆØò¬8½­ÿÅ”,HÇRMINORZVULNERABILITY
-¥"squid:ClassVariableVisibilityCheck"WMake butGroGrupo a static final constant or non-public and provide accessors if needed.(Ë»ñÄ8½­ÿÅ”,HÃRMINORZVULNERABILITY
-«"squid:ClassVariableVisibilityCheck!"]Make textSelecRangoMin a static final constant or non-public and provide accessors if needed.(—¯å§8½­ÿÅ”,HÈRMINORZVULNERABILITY
-‡squid:MaximumInheritanceDepth"<This class has 6 parents which is greater than 5 authorized.(à‹÷şÿÿÿÿ8½­ÿÅ”,HÊRMAJORZ
-CODE_SMELL
-¢"squid:ClassVariableVisibilityCheck"TMake cmbTabla a static final constant or non-public and provide accessors if needed.(…·8½­ÿÅ”,HÀRMINORZVULNERABILITY
-ª"squid:ClassVariableVisibilityCheck""]Make textSelecRangoMax a static final constant or non-public and provide accessors if needed.(ƒàÛO8½­ÿÅ”,HÉRMINORZVULNERABILITY
-­"squid:ClassVariableVisibilityCheck"ZMake rdbBuscarRango a static final constant or non-public and provide accessors if needed.(À¨çÿÿÿÿÿ8½­ÿÅ”,HÅRMINORZVULNERABILITY
-¬"squid:ClassVariableVisibilityCheck"YMake rdbBuscarTodo a static final constant or non-public and provide accessors if needed.(¾¾—üÿÿÿÿ8½­ÿÅ”,HÆRMINORZVULNERABILITY

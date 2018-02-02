@@ -6,17 +6,16 @@ import org.junit.Test;
 
 import co.ceiba.parking.service.InterfaceVehiculoImplem;
 
-
 public class VehiculoVerificarPlacaTest {
 
 	@Test
 	public void verificarPlacatest() {
-		//Arrange
+		// Arrange
 		InterfaceVehiculoImplem prueba = new InterfaceVehiculoImplem();
-		//Act	
-		String vehiculo = prueba.verificarPlaca("Domingo");		
-		//Assert
-	assertEquals("puede ingresar", vehiculo);
+		// Act
+		String vehiculo = prueba.verificarPlaca("Domingo");
+		// Assert
+		assertEquals("puede ingresar", vehiculo);
 	}
 
 }

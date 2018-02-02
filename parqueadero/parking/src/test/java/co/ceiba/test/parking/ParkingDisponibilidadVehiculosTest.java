@@ -24,8 +24,8 @@ public class ParkingDisponibilidadVehiculosTest {
 //			System.out.println("esto es-----" + carro);
 //		}
 //
-		String carro = pruebaCarro.getTipo();
-		String ingreso = prueba.ingresoVehiculo(carro);
+		String carro2 = pruebaCarro.getTipo();
+		String ingreso = prueba.ingresoVehiculo(carro2);
 		ingreso = prueba.disponibilidadVehiculos();
 
 		// Assert

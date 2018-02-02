@@ -54,28 +54,28 @@ public class Parking implements Serializable {
 	public Parking() {
 	}
 
-//	public Parking(Integer idParking) {
-//		this.idParking = idParking;
-//	}
-//
-//	public Parking(Integer idParking, int celdaCarro, int celdaMoto, int precioHoraCarro, int precioHoraMoto,
-//			int precioDiaCarro, int precioDiaMoto) {
-//		this.idParking = idParking;
-//		this.celdaCarro = celdaCarro;
-//		this.celdaMoto = celdaMoto;
-//		this.precioHoraCarro = precioHoraCarro;
-//		this.precioHoraMoto = precioHoraMoto;
-//		this.precioDiaCarro = precioDiaCarro;
-//		this.precioDiaMoto = precioDiaMoto;
-//	}
-//
-//	public Integer getIdParking() {
-//		return idParking;
-//	}
-//
-//	public void setIdParking(Integer idParking) {
-//		this.idParking = idParking;
-//	}
+	public Parking(Integer idParking) {
+		this.idParking = idParking;
+	}
+
+	public Parking(Integer idParking, int celdaCarro, int celdaMoto, int precioHoraCarro, int precioHoraMoto,
+			int precioDiaCarro, int precioDiaMoto) {
+		this.idParking = idParking;
+		this.celdaCarro = celdaCarro;
+		this.celdaMoto = celdaMoto;
+		this.precioHoraCarro = precioHoraCarro;
+		this.precioHoraMoto = precioHoraMoto;
+		this.precioDiaCarro = precioDiaCarro;
+		this.precioDiaMoto = precioDiaMoto;
+	}
+
+	public Integer getIdParking() {
+		return idParking;
+	}
+
+	public void setIdParking(Integer idParking) {
+		this.idParking = idParking;
+	}
 
 	public int getCeldaCarro() {
 		return celdaCarro;
@@ -93,61 +93,61 @@ public class Parking implements Serializable {
 		this.celdaMoto = celdaMoto;
 	}
 
-//	public int getPrecioHoraCarro() {
-//		return precioHoraCarro;
-//	}
-//
-//	public void setPrecioHoraCarro(int precioHoraCarro) {
-//		this.precioHoraCarro = precioHoraCarro;
-//	}
-//
-//	public int getPrecioHoraMoto() {
-//		return precioHoraMoto;
-//	}
-//
-//	public void setPrecioHoraMoto(int precioHoraMoto) {
-//		this.precioHoraMoto = precioHoraMoto;
-//	}
-//
-//	public int getPrecioDiaCarro() {
-//		return precioDiaCarro;
-//	}
-//
-//	public void setPrecioDiaCarro(int precioDiaCarro) {
-//		this.precioDiaCarro = precioDiaCarro;
-//	}
-//
-//	public int getPrecioDiaMoto() {
-//		return precioDiaMoto;
-//	}
-//
-//	public void setPrecioDiaMoto(int precioDiaMoto) {
-//		this.precioDiaMoto = precioDiaMoto;
-//	}
-//
-//	@Override
-//	public int hashCode() {
-//		int hash = 0;
-//		hash += (idParking != null ? idParking.hashCode() : 0);
-//		return hash;
-//	}
-//
-//	@Override
-//	public boolean equals(Object object) {
-//		if (!(object instanceof Parking)) {
-//			return false;
-//		}
-//		Parking other = (Parking) object;
-//		if ((this.idParking == null && other.idParking != null)
-//				|| (this.idParking != null && !this.idParking.equals(other.idParking))) {
-//			return false;
-//		}
-//		return true;
-//	}
-//
-//	@Override
-//	public String toString() {
-//		return "parqueadero.Parking[ idParking=" + idParking + " ]";
-//	}
+	public int getPrecioHoraCarro() {
+		return precioHoraCarro;
+	}
+
+	public void setPrecioHoraCarro(int precioHoraCarro) {
+		this.precioHoraCarro = precioHoraCarro;
+	}
+
+	public int getPrecioHoraMoto() {
+		return precioHoraMoto;
+	}
+
+	public void setPrecioHoraMoto(int precioHoraMoto) {
+		this.precioHoraMoto = precioHoraMoto;
+	}
+
+	public int getPrecioDiaCarro() {
+		return precioDiaCarro;
+	}
+
+	public void setPrecioDiaCarro(int precioDiaCarro) {
+		this.precioDiaCarro = precioDiaCarro;
+	}
+
+	public int getPrecioDiaMoto() {
+		return precioDiaMoto;
+	}
+
+	public void setPrecioDiaMoto(int precioDiaMoto) {
+		this.precioDiaMoto = precioDiaMoto;
+	}
+
+	@Override
+	public int hashCode() {
+		int hash = 0;
+		hash += (idParking != null ? idParking.hashCode() : 0);
+		return hash;
+	}
+
+	@Override
+	public boolean equals(Object object) {
+		if (!(object instanceof Parking)) {
+			return false;
+		}
+		Parking other = (Parking) object;
+		if ((this.idParking == null && other.idParking != null)
+				|| (this.idParking != null && !this.idParking.equals(other.idParking))) {
+			return false;
+		}
+		return true;
+	}
+
+	@Override
+	public String toString() {
+		return "parqueadero.Parking[ idParking=" + idParking + " ]";
+	}
 
 }

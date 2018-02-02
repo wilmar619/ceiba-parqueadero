@@ -1,0 +1,8 @@
+
+l
+squid:S106"9Replace this use of System.out or System.err by a logger.(šôÈû8±ÍÜ•,HéRMAJORZ
+CODE_SMELL
+’squid:S1488%"YImmediately return this expression instead of assigning it to the temporary variable "c".(ôæ€åûÿÿÿÿ8ºñå•,HêRMINORZ
+CODE_SMELL
+usquid:S3457$"AFormat specifiers should be used instead of string concatenation.(‹¨»’8ºñå•,HëRMAJORZ
+CODE_SMELL

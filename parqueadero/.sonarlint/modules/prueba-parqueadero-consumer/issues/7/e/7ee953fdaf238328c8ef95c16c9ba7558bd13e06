@@ -1,0 +1,5 @@
+
+Œsquid:ModifiersOrderCheck"EReorder the modifiers to comply with the Java Language Specification.(ÎåÕ¢øÿÿÿÿ8åÂÖ•,H‡RMINORZ
+CODE_SMELL
+nsquid:S1118":Add a private constructor to hide the implicit public one.(±³¶ü8åÂÖ•,HˆRMAJORZ
+CODE_SMELL
