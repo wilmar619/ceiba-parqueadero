@@ -1,21 +1,37 @@
-package co.ceiba.parking.model;
+package co.ceiba.parking.entities;
 
-public class Parking {
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.Table;
 
+@Entity
+@Table(name = "parking")
+public class ParkingEntity {
 
+	@Id
+	@GeneratedValue
+	@Column(name = "idParking")
 	private int idParking;
+	@Column(name = "numCeldaCarro")
 	private int numCeldaCarro;
+	@Column(name = "numCeldaMoto")
 	private int numCeldaMoto;
+	@Column(name = "precioHoraCarro")
 	private int precioHoraCarro;
+	@Column(name = "precioHoraMoto")
 	private int precioHoraMoto;
+	@Column(name = "precioDiaCarro")
 	private int precioDiaCarro;
+	@Column(name = "precioDiaMoto")
 	private int precioDiaMoto;
 
-	public Parking() {
+	public ParkingEntity() {
 		super();
 	}
 
-	public Parking(int idParking, int numCeldaCarro, int numCeldaMoto, int precioHoraCarro, int precioHoraMoto,
+	public ParkingEntity(int idParking, int numCeldaCarro, int numCeldaMoto, int precioHoraCarro, int precioHoraMoto,
 			int precioDiaCarro, int precioDiaMoto) {
 		super();
 		this.idParking = idParking;
