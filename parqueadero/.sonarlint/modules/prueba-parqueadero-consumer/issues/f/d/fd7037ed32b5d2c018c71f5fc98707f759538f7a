@@ -1,9 +1,9 @@
 
-„squid:CommentedOutCodeLine"<This block of commented-out lines of code should be removed.(‘„¨Ãùÿÿÿÿ8ÂÒ£”•,H©RMAJORZ
+bsquid:S1068")Remove this unused "forms" private field.(Û›½‚þÿÿÿÿ8ÂÒ£”•,HRMAJORZ
 CODE_SMELL
-bsquid:S1068")Remove this unused "forms" private field.(Û›½‚þÿÿÿÿ8ÂÒ£”•,H§RMAJORZ
+~squid:CommentedOutCodeLine"<This block of commented-out lines of code should be removed.(ïˆ·~8ÂÒ£”•,H‘RMAJORZ
 CODE_SMELL
-asquid:S1185,"(Remove this method to simply inherit it.(“ÚÑ•ûÿÿÿÿ8«©°•,HRMINORZ
+„squid:CommentedOutCodeLine"<This block of commented-out lines of code should be removed.(‘„¨Ãùÿÿÿÿ8ÂÒ£”•,H’RMAJORZ
 CODE_SMELL
-~squid:CommentedOutCodeLine"<This block of commented-out lines of code should be removed.(ïˆ·~8ÂÒ£”•,H¨RMAJORZ
+asquid:S1185,"(Remove this method to simply inherit it.(“ÚÑ•ûÿÿÿÿ8«©°•,H“RMINORZ
 CODE_SMELL

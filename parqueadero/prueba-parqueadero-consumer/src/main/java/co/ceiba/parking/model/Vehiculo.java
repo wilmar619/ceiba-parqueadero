@@ -14,13 +14,14 @@ public class Vehiculo implements Serializable {
 	public Vehiculo() {
 	}
 
+    public Vehiculo(Integer cilindraje, String tipo, String placa) {
+        this.cilindraje = cilindraje;
+        this.tipo = tipo;
+        this.placa = placa;
+    }
+
 	
-	public Vehiculo(Integer cilindraje, String tipo, String placa) {
-		super();
-		this.cilindraje = cilindraje;
-		this.tipo = tipo;
-		this.placa = placa;
-	}
+	
 
 
 	public Integer getIdVehiculo() {

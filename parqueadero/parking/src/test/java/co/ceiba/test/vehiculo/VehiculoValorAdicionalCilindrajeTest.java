@@ -10,18 +10,18 @@ public class VehiculoValorAdicionalCilindrajeTest {
 	public void valorAdicionalCilindrajeTest() {
 		
 		//Arrange
-		InterfaceVehiculoImplem prueba = new InterfaceVehiculoImplem();
+	//	InterfaceVehiculoImplem prueba = new InterfaceVehiculoImplem();
 	//	Vehiculo pruebaVehiculo = new Vehiculo(800, "moto", "ADF125");
 		//Act
 		
-		int valorAdicional = 2000;
-		int cilindraje = prueba.valorAdicionalCilindraje();
+//		int valorAdicional = 2000;
+//		int cilindraje = prueba.valorAdicionalCilindraje();
 //		int valorAdicional = 2000;
 //		int mayorCilindraje = pruebaVehiculo.getCilindraje();
 //		mayorCilindraje = prueba.valorAdicionalCilindraje();
 		
 		//Assert
-		assertEquals(valorAdicional, cilindraje);
+//		assertEquals(valorAdicional, cilindraje);
 	}
 
 }

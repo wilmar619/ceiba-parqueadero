@@ -27,3 +27,9 @@ p
 @src/main/java/co/ceiba/parking/controller/ParkingController.java,e\9\e9bc2d3dbecb1b92fe482cd8363a4b65c960905b
 q
 Asrc/main/java/co/ceiba/parking/controller/VehiculoController.java,4\8\4813a50dc65783f4dfea896f59dcae2cec2e4182
+X
+(gradle/wrapper/gradle-wrapper.properties,f\b\fbe448ebfc3eb2d4e308f6b8b043666f5b57235e
+<
+build.gradle,f\0\f07866736216be0ee2aba49e392191aeae700a35
+€
+Psrc/test/java/com/example/parking/PruebaParqueaderoConsumerApplicationTests.java,7\4\74a16614411c326171c02c76713b3b230a20a91e

@@ -19,7 +19,6 @@
 <fullyQualifiedTypeName name="com.example.parking.service.InterfaceVehiculo"/>
 <fullyQualifiedTypeName name="org.springframework.beans.factory.annotation.Autowired"/>
 <fullyQualifiedTypeName name="org.springframework.http.HttpStatus"/>
-<fullyQualifiedTypeName name="org.springframework.stereotype.Service"/>
 <fullyQualifiedTypeName name="org.springframework.web.bind.annotation.RequestMethod"/>
 <fullyQualifiedTypeName name="org.springframework.web.bind.annotation.PathVariable"/>
 <fullyQualifiedTypeName name="org.springframework.boot.autoconfigure.kafka.KafkaProperties.Producer"/>
@@ -48,16 +47,17 @@
 <fullyQualifiedTypeName name="org.springframework.web.bind.annotation.GetMapping"/>
 <fullyQualifiedTypeName name="co.ceiba.parking.modeloweb.DatesWebController"/>
 <fullyQualifiedTypeName name="co.ceiba.parking.modeloweb.FormDatesWeb"/>
-<fullyQualifiedTypeName name="co.ceiba.parking.service.InterfaceVehiculo"/>
-<fullyQualifiedTypeName name="co.ceiba.parking.service.InterfaceVehiculoImplem"/>
-<fullyQualifiedTypeName name="co.ceiba.parking.model.Vehiculo"/>
 <fullyQualifiedTypeName name="javax.xml.ws.Service"/>
 <fullyQualifiedTypeName name="javax.xml.ws.Service.Mode"/>
 <fullyQualifiedTypeName name="co.ceiba.parking.modeloweb.PruebaIngresarDatos"/>
 <fullyQualifiedTypeName name="org.jboss.jandex.Main"/>
 <fullyQualifiedTypeName name="java.util.ArrayList"/>
 <fullyQualifiedTypeName name="org.springframework.web.client.RestTemplate"/>
-<fullyQualifiedTypeName name="co.ceiba.parking.config.KeyConstans"/>
 <fullyQualifiedTypeName name="org.springframework.http.converter.json.MappingJackson2HttpMessageConverter"/>
 <fullyQualifiedTypeName name="org.springframework.http.ResponseEntity"/>
+<fullyQualifiedTypeName name="org.springframework.stereotype.Service"/>
+<fullyQualifiedTypeName name="co.ceiba.parking.config.KeyConstans"/>
+<fullyQualifiedTypeName name="co.ceiba.parking.service.InterfaceVehiculo"/>
+<fullyQualifiedTypeName name="co.ceiba.parking.service.InterfaceVehiculoImplem"/>
+<fullyQualifiedTypeName name="co.ceiba.parking.model.Vehiculo"/>
 </qualifiedTypeNameHistroy>
