@@ -35,7 +35,6 @@ INDEX VERSION 1.130+D:\repositorio\ceiba-parqueadero\parqueadero\.metadata\.plug
 1055679481.index
 772010039.index
 1167102303.index
-1223734500.index
 1079559709.index
 3808123788.index
 1580166048.index

@@ -32,7 +32,6 @@ public class Registro {
 	private int pagoTotal;
 
 	public Registro() {
-		super();
 	}
 
 	public Registro(int idRegistro, String tipoVehiculo, String placa, int cilindraje, Date fechaEntrada,

@@ -12,7 +12,6 @@ public class Parking {
 	private int precioDiaMoto;
 
 	public Parking() {
-		super();
 	}
 
 	public Parking(int idParking, int numCeldaCarro, int numCeldaMoto, int precioHoraCarro, int precioHoraMoto,
