@@ -1,16 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <qualifiedTypeNameHistroy>
-<fullyQualifiedTypeName name="org.springframework.context.annotation.Bean"/>
-<fullyQualifiedTypeName name="co.ceiba.parking.modelo.servicio.Inicio"/>
-<fullyQualifiedTypeName name="co.ceiba.parking.modelo.servicio.Vehiculo"/>
-<fullyQualifiedTypeName name="co.ceiba.parking.modelo.servicio.Parking"/>
-<fullyQualifiedTypeName name="co.ceiba.parking.modelo.servicio.prueba.InterfaceParkingImplem"/>
-<fullyQualifiedTypeName name="co.ceiba.parking.modelo.service.InterfaceParkingImplem"/>
-<fullyQualifiedTypeName name="org.junit.Test"/>
-<fullyQualifiedTypeName name="co.ceiba.parking.modelo.service.InterfaceVehiculoImplem"/>
-<fullyQualifiedTypeName name="org.springframework.stereotype.Repository"/>
-<fullyQualifiedTypeName name="org.springframework.data.repository.CrudRepository"/>
-<fullyQualifiedTypeName name="co.ceiba.parking.repository.ParkingRepository"/>
 <fullyQualifiedTypeName name="com.example.parking.repository.ParkingRepository"/>
 <fullyQualifiedTypeName name="com.example.parking.dominio.Parking"/>
 <fullyQualifiedTypeName name="com.example.parking.repository.VehiculoRepository"/>
@@ -40,7 +29,6 @@
 <fullyQualifiedTypeName name="java.awt.Dimension"/>
 <fullyQualifiedTypeName name="java.awt.BorderLayout"/>
 <fullyQualifiedTypeName name="javax.swing.JScrollPane"/>
-<fullyQualifiedTypeName name="java.lang.String"/>
 <fullyQualifiedTypeName name="java.io.Serializable"/>
 <fullyQualifiedTypeName name="co.ceiba.parking.model.Parking"/>
 <fullyQualifiedTypeName name="java.util.List"/>
@@ -60,4 +48,16 @@
 <fullyQualifiedTypeName name="co.ceiba.parking.service.InterfaceVehiculo"/>
 <fullyQualifiedTypeName name="co.ceiba.parking.service.InterfaceVehiculoImplem"/>
 <fullyQualifiedTypeName name="co.ceiba.parking.model.Vehiculo"/>
+<fullyQualifiedTypeName name="javax.persistence.Entity"/>
+<fullyQualifiedTypeName name="javax.persistence.Table"/>
+<fullyQualifiedTypeName name="javax.persistence.Id"/>
+<fullyQualifiedTypeName name="javax.persistence.GeneratedValue"/>
+<fullyQualifiedTypeName name="javax.persistence.Column"/>
+<fullyQualifiedTypeName name="java.lang.String"/>
+<fullyQualifiedTypeName name="java.sql.Date"/>
+<fullyQualifiedTypeName name="java.util.Date"/>
+<fullyQualifiedTypeName name="co.ceiba.parking.entities.ParkingEntity"/>
+<fullyQualifiedTypeName name="org.springframework.data.jpa.repository.JpaRepository"/>
+<fullyQualifiedTypeName name="co.ceiba.parking.entities.RegistroEntity"/>
+<fullyQualifiedTypeName name="java.lang.Integer"/>
 </qualifiedTypeNameHistroy>

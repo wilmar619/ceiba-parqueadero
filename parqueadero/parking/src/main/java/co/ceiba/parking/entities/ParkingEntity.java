@@ -14,10 +14,10 @@ public class ParkingEntity {
 	@GeneratedValue
 	@Column(name = "idParking")
 	private int idParking;
-	@Column(name = "numCeldaCarro")
-	private int numCeldaCarro;
-	@Column(name = "numCeldaMoto")
-	private int numCeldaMoto;
+	@Column(name = "numCeldasCarro")
+	private int numCeldasCarro;
+	@Column(name = "numCeldasMoto")
+	private int numCeldasMoto;
 	@Column(name = "precioHoraCarro")
 	private int precioHoraCarro;
 	@Column(name = "precioHoraMoto")
@@ -28,15 +28,15 @@ public class ParkingEntity {
 	private int precioDiaMoto;
 
 	public ParkingEntity() {
-		super();
+
 	}
 
-	public ParkingEntity(int idParking, int numCeldaCarro, int numCeldaMoto, int precioHoraCarro, int precioHoraMoto,
+	public ParkingEntity(int idParking, int numCeldasCarro, int numCeldasMoto, int precioHoraCarro, int precioHoraMoto,
 			int precioDiaCarro, int precioDiaMoto) {
 		super();
 		this.idParking = idParking;
-		this.numCeldaCarro = numCeldaCarro;
-		this.numCeldaMoto = numCeldaMoto;
+		this.numCeldasCarro = numCeldasCarro;
+		this.numCeldasMoto = numCeldasMoto;
 		this.precioHoraCarro = precioHoraCarro;
 		this.precioHoraMoto = precioHoraMoto;
 		this.precioDiaCarro = precioDiaCarro;
@@ -51,20 +51,20 @@ public class ParkingEntity {
 		this.idParking = idParking;
 	}
 
-	public int getNumCeldaCarro() {
-		return numCeldaCarro;
+	public int getNumCeldasCarro() {
+		return numCeldasCarro;
 	}
 
-	public void setNumCeldaCarro(int numCeldaCarro) {
-		this.numCeldaCarro = numCeldaCarro;
+	public void setNumCeldasCarro(int numCeldasCarro) {
+		this.numCeldasCarro = numCeldasCarro;
 	}
 
-	public int getNumCeldaMoto() {
-		return numCeldaMoto;
+	public int getNumCeldasMoto() {
+		return numCeldasMoto;
 	}
 
-	public void setNumCeldaMoto(int numCeldaMoto) {
-		this.numCeldaMoto = numCeldaMoto;
+	public void setNumCeldasMoto(int numCeldasMoto) {
+		this.numCeldasMoto = numCeldasMoto;
 	}
 
 	public int getPrecioHoraCarro() {
@@ -101,8 +101,8 @@ public class ParkingEntity {
 
 	@Override
 	public String toString() {
-		return "ParkingEntity [idParking=" + idParking + ", numCeldaCarro=" + numCeldaCarro + ", numCeldaMoto="
-				+ numCeldaMoto + ", precioHoraCarro=" + precioHoraCarro + ", precioHoraMoto=" + precioHoraMoto
+		return "ParkingEntity [idParking=" + idParking + ", numCeldasCarro=" + numCeldasCarro + ", numCeldasMoto="
+				+ numCeldasMoto + ", precioHoraCarro=" + precioHoraCarro + ", precioHoraMoto=" + precioHoraMoto
 				+ ", precioDiaCarro=" + precioDiaCarro + ", precioDiaMoto=" + precioDiaMoto + "]";
 	}
 

@@ -1,0 +1,62 @@
+package co.ceiba.parking.entities;
+
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+@Entity
+@Table(name = "carro")
+public class CarroEntity {
+
+	@Id
+	@GeneratedValue
+	@Column(name = "idCarro")
+	private int idCarro;
+	@Column(name = "placa")
+	private int placa;
+	@Column(name = "estado")
+	private boolean estado;
+
+	public CarroEntity() {
+	}
+
+	public CarroEntity(int idCarro, int placa, boolean estado) {
+		super();
+		this.idCarro = idCarro;
+		this.placa = placa;
+		this.estado = estado;
+	}
+
+	public int getIdCarro() {
+		return idCarro;
+	}
+
+	public void setIdCarro(int idCarro) {
+		this.idCarro = idCarro;
+	}
+
+	public int getPlaca() {
+		return placa;
+	}
+
+	public void setPlaca(int placa) {
+		this.placa = placa;
+	}
+
+	public boolean isEstado() {
+		return estado;
+	}
+
+	public void setEstado(boolean estado) {
+		this.estado = estado;
+	}
+
+	@Override
+	public String toString() {
+		return "CarroEntity [idCarro=" + idCarro + ", placa=" + placa + ", estado=" + estado + "]";
+	}
+
+	
+}

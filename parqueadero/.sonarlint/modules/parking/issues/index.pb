@@ -1,8 +1,4 @@
 
-q
-Asrc/main/java/co/ceiba/parking/repository/VehiculoRepository.java,4\6\462aaa02dad0da37c316e5eac93efb4141e6f3be
-b
-2src/main/java/co/ceiba/parking/model/Vehiculo.java,4\f\4f5c0669e98ec288eb4784aaa387c415c83af3f3
 p
 @src/main/java/co/ceiba/parking/repository/ParkingRepository.java,c\9\c9a62eae83568644afb285ef1600b1a07261b660
 X
@@ -11,34 +7,12 @@ Y
 )src/main/resources/application.properties,0\6\06f65155ec73600b9fc5c4dc2883d4bb84d8e284
 <
 build.gradle,f\0\f07866736216be0ee2aba49e392191aeae700a35
-p
-@src/main/java/co/ceiba/parking/controller/ParkingController.java,e\9\e9bc2d3dbecb1b92fe482cd8363a4b65c960905b
-q
-Asrc/main/java/co/ceiba/parking/controller/VehiculoController.java,4\8\4813a50dc65783f4dfea896f59dcae2cec2e4182
 a
 1src/main/java/co/ceiba/parking/model/Parking.java,5\d\5d92ad9910b969d6e171cf1dc0a89df2c9dbc676
 R
 "src/main/resources/application.yml,a\6\a6d8b8556fee0e03112ce2bf34b8cb27a7dc9e58
 f
 6src/main/java/co/ceiba/parking/ParkingApplication.java,5\0\5009939f5ed04d6db4c367642d302bf66ca3e5fb
-{
-Ksrc/test/java/co/ceiba/test/parking/ParkingDisponibilidadVehiculosTest.java,7\0\708d593d42cc065992a26167907c5dcad6917e62
-s
-Csrc/test/java/co/ceiba/test/parking/ParkingIngresoVehiculoTest.java,a\c\ac803a68e97fdb12f79b8dd239c3861b06600476
-t
-Dsrc/test/java/co/ceiba/test/vehiculo/VehiculoVerificarPlacaTest.java,a\e\aed78853648d4aab0d66c21a73b6680738d18e1e
-~
-Nsrc/test/java/co/ceiba/test/vehiculo/VehiculoValorAdicionalCilindrajeTest.java,6\9\695ced84ef510ba168a23be3129e7ff7a4441c5f
-q
-Asrc/test/java/co/ceiba/test/vehiculo/VehiculoValidarTipoTest.java,4\4\44c71b5b6ff1d5b722605b9b77de4fbec325aa03
-l
-<src/main/java/co/ceiba/parking/service/InterfaceParking.java,c\c\cc03ef23ac1de025f47d5bb1af011ad3ddf7922c
-r
-Bsrc/main/java/co/ceiba/parking/service/InterfaceParkingImplem.java,e\f\ef2ea144a188d25624a5fc28b220c53338977b92
-s
-Csrc/main/java/co/ceiba/parking/service/InterfaceVehiculoImplem.java,d\a\da14383d773ccf67fa7e5111b711b45b86347a3d
-m
-=src/main/java/co/ceiba/parking/service/InterfaceVehiculo.java,3\7\37774ecfa3af8bbcc714731726a35c501773f87b
 }
 Mjacoco/test-results/TEST-co.ceiba.test.parking.ParkingIngresoVehiculoTest.xml,f\f\fff12e8936f27a251885295d11a07bed2c02c9ef
 …
@@ -57,3 +31,9 @@ Njacoco/test-results/TEST-co.ceiba.test.vehiculo.VehiculoVerificarPlacaTest.xml
 Xjacoco/test-results/TEST-co.ceiba.test.vehiculo.VehiculoValorAdicionalCilindrajeTest.xml,0\e\0eaa10ca68fac25c9e38bb7d632d62c16d44625b
 ;
 gradlew.bat,2\a\2a45a911a8f1836b0b6c5b758962572012d8f8c3
+k
+;src/main/java/co/ceiba/parking/entities/RegistroEntity.java,2\a\2aa49d9fd03c430ada9038c850b58573fb620648
+q
+Asrc/main/java/co/ceiba/parking/repository/RegistroRepository.java,c\f\cf73486f160298f2d70fc91ee18d0ec96dac3056
+b
+2src/main/java/co/ceiba/parking/model/Registro.java,f\f\ff380cdb8f06a2576786e1fa8876a8089214c660
