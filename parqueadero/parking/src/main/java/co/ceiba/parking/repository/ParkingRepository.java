@@ -10,4 +10,5 @@ import co.ceiba.parking.entities.ParkingEntity;
 @Repository("parkingRepository")
 public interface ParkingRepository extends JpaRepository<ParkingEntity, Serializable> {
 
+
 }

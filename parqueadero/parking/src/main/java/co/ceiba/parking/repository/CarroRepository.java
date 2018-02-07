@@ -8,6 +8,8 @@ import co.ceiba.parking.entities.CarroEntity;
 
 @Repository("carroRepository")
 public interface CarroRepository extends JpaRepository<CarroEntity, Serializable>{
+
+	String save(String vehiculo);
 	
 //	List <CarroEntity> list ();
 	
