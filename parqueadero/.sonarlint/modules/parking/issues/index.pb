@@ -7,8 +7,6 @@ Y
 )src/main/resources/application.properties,0\6\06f65155ec73600b9fc5c4dc2883d4bb84d8e284
 <
 build.gradle,f\0\f07866736216be0ee2aba49e392191aeae700a35
-a
-1src/main/java/co/ceiba/parking/model/Parking.java,5\d\5d92ad9910b969d6e171cf1dc0a89df2c9dbc676
 R
 "src/main/resources/application.yml,a\6\a6d8b8556fee0e03112ce2bf34b8cb27a7dc9e58
 f
@@ -31,9 +29,3 @@ Njacoco/test-results/TEST-co.ceiba.test.vehiculo.VehiculoVerificarPlacaTest.xml
 Xjacoco/test-results/TEST-co.ceiba.test.vehiculo.VehiculoValorAdicionalCilindrajeTest.xml,0\e\0eaa10ca68fac25c9e38bb7d632d62c16d44625b
 ;
 gradlew.bat,2\a\2a45a911a8f1836b0b6c5b758962572012d8f8c3
-k
-;src/main/java/co/ceiba/parking/entities/RegistroEntity.java,2\a\2aa49d9fd03c430ada9038c850b58573fb620648
-q
-Asrc/main/java/co/ceiba/parking/repository/RegistroRepository.java,c\f\cf73486f160298f2d70fc91ee18d0ec96dac3056
-b
-2src/main/java/co/ceiba/parking/model/Registro.java,f\f\ff380cdb8f06a2576786e1fa8876a8089214c660

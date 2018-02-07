@@ -1,8 +1,9 @@
 package co.ceiba.parking.service;
 
+import co.ceiba.parking.model.CarroModel;
 
 public interface VigilanteService {
 	
-	String ingresoVehiculo(String Vehiculo);	
+	CarroModel ingresoVehiculo(CarroModel vehiculo);
 	
 }

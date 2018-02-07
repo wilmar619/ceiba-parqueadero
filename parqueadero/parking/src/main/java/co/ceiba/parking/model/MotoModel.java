@@ -4,8 +4,20 @@ public class MotoModel {
 
 	private int idMoto;
 	private int cilindraje;
-	private int placa;
+	private String placa;
 	private boolean estado;
+
+	public MotoModel() {
+
+	}
+
+	public MotoModel(int idMoto, int cilindraje, String placa, boolean estado) {
+		super();
+		this.idMoto = idMoto;
+		this.cilindraje = cilindraje;
+		this.placa = placa;
+		this.estado = estado;
+	}
 
 	public int getIdMoto() {
 		return idMoto;
@@ -23,11 +35,11 @@ public class MotoModel {
 		this.cilindraje = cilindraje;
 	}
 
-	public int getPlaca() {
+	public String getPlaca() {
 		return placa;
 	}
 
-	public void setPlaca(int placa) {
+	public void setPlaca(String placa) {
 		this.placa = placa;
 	}
 

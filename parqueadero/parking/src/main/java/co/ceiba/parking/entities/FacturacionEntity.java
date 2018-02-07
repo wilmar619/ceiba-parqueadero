@@ -17,7 +17,7 @@ public class FacturacionEntity {
 	@Column(name = "tipoVehiculo")
 	private int tipoVehiculo;
 	@Column(name = "placa")
-	private int placa;
+	private String placa;
 	@Column(name = "cilindraje")
 	private int cilindraje;
 	@Column(name = "horaIngreso")
@@ -33,7 +33,7 @@ public class FacturacionEntity {
 
 	}
 
-	public FacturacionEntity(int idFacturacion, int tipoVehiculo, int placa, int cilindraje, int horaIngreso,
+	public FacturacionEntity(int idFacturacion, int tipoVehiculo, String placa, int cilindraje, int horaIngreso,
 			int horaSalida, boolean estado, int pagoTotal) {
 		super();
 		this.idFacturacion = idFacturacion;
@@ -62,11 +62,11 @@ public class FacturacionEntity {
 		this.tipoVehiculo = tipoVehiculo;
 	}
 
-	public int getPlaca() {
+	public String getPlaca() {
 		return placa;
 	}
 
-	public void setPlaca(int placa) {
+	public void setPlaca(String placa) {
 		this.placa = placa;
 	}
 

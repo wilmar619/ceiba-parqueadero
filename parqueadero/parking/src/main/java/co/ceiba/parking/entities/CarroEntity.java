@@ -15,14 +15,14 @@ public class CarroEntity {
 	@Column(name = "idCarro")
 	private int idCarro;
 	@Column(name = "placa")
-	private int placa;
+	private String placa;
 	@Column(name = "estado")
 	private boolean estado;
 
 	public CarroEntity() {
 	}
 
-	public CarroEntity(int idCarro, int placa, boolean estado) {
+	public CarroEntity(int idCarro, String placa, boolean estado) {
 		super();
 		this.idCarro = idCarro;
 		this.placa = placa;
@@ -37,11 +37,11 @@ public class CarroEntity {
 		this.idCarro = idCarro;
 	}
 
-	public int getPlaca() {
+	public String getPlaca() {
 		return placa;
 	}
 
-	public void setPlaca(int placa) {
+	public void setPlaca(String placa) {
 		this.placa = placa;
 	}
 

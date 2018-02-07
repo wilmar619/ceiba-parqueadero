@@ -3,9 +3,20 @@ package co.ceiba.parking.model;
 public class CarroModel {
 
 	private int idCarro;
-	private int placa;
+	private String placa;
 	private boolean estado;
 	
+		
+	public CarroModel() {
+
+	}
+
+	public CarroModel(int idCarro, String placa, boolean estado) {
+		super();
+		this.idCarro = idCarro;
+		this.placa = placa;
+		this.estado = estado;
+	}
 	
 	public int getIdCarro() {
 		return idCarro;
@@ -13,10 +24,10 @@ public class CarroModel {
 	public void setIdCarro(int idCarro) {
 		this.idCarro = idCarro;
 	}
-	public int getPlaca() {
+	public String getPlaca() {
 		return placa;
 	}
-	public void setPlaca(int placa) {
+	public void setPlaca(String placa) {
 		this.placa = placa;
 	}
 	public boolean isEstado() {
@@ -25,6 +36,7 @@ public class CarroModel {
 	public void setEstado(boolean estado) {
 		this.estado = estado;
 	}
+	
 	
 	
 }

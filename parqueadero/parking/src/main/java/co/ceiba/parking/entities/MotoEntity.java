@@ -17,7 +17,7 @@ public class MotoEntity {
 	@Column(name = "cilindraje")
 	private int cilindraje;
 	@Column(name = "placa")
-	private int placa;
+	private String placa;
 	@Column(name = "estado")
 	private boolean estado;
 
@@ -25,7 +25,7 @@ public class MotoEntity {
 
 	}
 
-	public MotoEntity(int idMoto, int cilindraje, int placa, boolean estado) {
+	public MotoEntity(int idMoto, int cilindraje, String placa, boolean estado) {
 		super();
 		this.idMoto = idMoto;
 		this.cilindraje = cilindraje;
@@ -49,11 +49,11 @@ public class MotoEntity {
 		this.cilindraje = cilindraje;
 	}
 
-	public int getPlaca() {
+	public String getPlaca() {
 		return placa;
 	}
 
-	public void setPlaca(int placa) {
+	public void setPlaca(String placa) {
 		this.placa = placa;
 	}
 
