@@ -23,7 +23,7 @@ public class MotoController {
 	private static final Log LOG = LogFactory.getLog(MotoController.class);
 
 	@Autowired
-	@Qualifier("meterVehiculoService")
+	@Qualifier("VehiculoService")
 	private VigilanteService vigilante;
 
 	@PostMapping("/addVehiculo")

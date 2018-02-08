@@ -95,4 +95,11 @@ public class EntradaVehiculo implements VigilanteService {
 		
 	}
 
+	@Override
+	public void outVehiculo(VehiculoModel vehiculoModel, String tipoVehiculo, int idParqueadero) {
+		
+		
+		
+	}
+
 }
