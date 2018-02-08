@@ -29,3 +29,23 @@ Njacoco/test-results/TEST-co.ceiba.test.vehiculo.VehiculoVerificarPlacaTest.xml
 Xjacoco/test-results/TEST-co.ceiba.test.vehiculo.VehiculoValorAdicionalCilindrajeTest.xml,0\e\0eaa10ca68fac25c9e38bb7d632d62c16d44625b
 ;
 gradlew.bat,2\a\2a45a911a8f1836b0b6c5b758962572012d8f8c3
+o
+?src/main/java/co/ceiba/parking/service/impl/SalidaVehiculo.java,5\f\5f4b198bcf510ed161f043547dd9f5fffb4b5cf0
+d
+4src/main/java/co/ceiba/parking/model/CarroModel.java,9\e\9e280b2505fb42fa603e7ddaf1477e8861622205
+c
+3src/main/java/co/ceiba/parking/model/MotoModel.java,8\0\80308233d32572eb26c81019e0ca55609d0c9621
+n
+>src/main/java/co/ceiba/parking/repository/CarroRepository.java,6\e\6e84742f0db387efabbe24dd8dfb313081b60f48
+l
+<src/main/java/co/ceiba/parking/service/VigilanteService.java,a\0\a07dfba959fe9895d2b6359049479d84b97602de
+n
+>src/main/java/co/ceiba/parking/controller/CarroController.java,6\6\6682d7bbb25df6b47327ecd04e87920723d92980
+k
+;src/main/java/co/ceiba/parking/Converter/MotoConverter.java,e\9\e9d9523ca3bed8370c0ecaa400b1b1fa0de6358c
+p
+@src/main/java/co/ceiba/parking/service/impl/EntradaVehiculo.java,5\a\5a43abb90d5383f5d16c9948b3611fea363ae3cd
+h
+8src/main/java/co/ceiba/parking/entities/CarroEntity.java,6\9\69b936a827fa912d466e7cf319def7241d8239ab
+l
+<src/main/java/co/ceiba/parking/Converter/CarroConverter.java,3\0\303ae4a4e0a08a7368063bd8aaee50a2b2c9733e

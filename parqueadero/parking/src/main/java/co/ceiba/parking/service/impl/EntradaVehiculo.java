@@ -7,7 +7,7 @@ import org.springframework.stereotype.Service;
 import co.ceiba.parking.entities.CarroEntity;
 import co.ceiba.parking.model.CarroModel;
 import co.ceiba.parking.repository.CarroRepository;
-import co.ceiba.parking.repository.FacturacionRepository;
+import co.ceiba.parking.repository.FacturaRepository;
 import co.ceiba.parking.repository.MotoRepository;
 import co.ceiba.parking.repository.ParkingRepository;
 import co.ceiba.parking.service.VigilanteService;
@@ -21,7 +21,7 @@ public class EntradaVehiculo implements VigilanteService {
 	
 	@Autowired
 	@Qualifier("facturacionRepository")
-	private FacturacionRepository facturacionRepo ;
+	private FacturaRepository facturacionRepo ;
 	
 	@Autowired
 	@Qualifier("motoRepository")

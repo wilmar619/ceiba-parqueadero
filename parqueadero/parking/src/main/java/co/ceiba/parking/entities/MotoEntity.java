@@ -7,30 +7,27 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "moto")
+@Table(name="moto")
 public class MotoEntity {
-
+ 
 	@Id
 	@GeneratedValue
-	@Column(name = "idMoto")
+	@Column(name="idMoto")
 	private int idMoto;
-	@Column(name = "cilindraje")
-	private int cilindraje;
-	@Column(name = "placa")
+	@Column(name="placa")
 	private String placa;
-	@Column(name = "estado")
-	private boolean estado;
-
+	@Column(name="cilindraje")
+	private int cilindraje;
+	
 	public MotoEntity() {
-
+		
 	}
-
-	public MotoEntity(int idMoto, int cilindraje, String placa, boolean estado) {
+	
+	public MotoEntity(int idMoto, String placa, int cilindraje) {
 		super();
 		this.idMoto = idMoto;
-		this.cilindraje = cilindraje;
 		this.placa = placa;
-		this.estado = estado;
+		this.cilindraje = cilindraje;
 	}
 
 	public int getIdMoto() {
@@ -41,14 +38,6 @@ public class MotoEntity {
 		this.idMoto = idMoto;
 	}
 
-	public int getCilindraje() {
-		return cilindraje;
-	}
-
-	public void setCilindraje(int cilindraje) {
-		this.cilindraje = cilindraje;
-	}
-
 	public String getPlaca() {
 		return placa;
 	}
@@ -57,18 +46,11 @@ public class MotoEntity {
 		this.placa = placa;
 	}
 
-	public boolean isEstado() {
-		return estado;
+	public int getCilindraje() {
+		return cilindraje;
 	}
 
-	public void setEstado(boolean estado) {
-		this.estado = estado;
+	public void setCilindraje(int cilindraje) {
+		this.cilindraje = cilindraje;
 	}
-
-	@Override
-	public String toString() {
-		return "MotoEntity [idMoto=" + idMoto + ", cilindraje=" + cilindraje + ", placa=" + placa + ", estado=" + estado
-				+ "]";
-	}
-
 }

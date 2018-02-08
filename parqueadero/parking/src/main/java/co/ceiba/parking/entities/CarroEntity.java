@@ -16,18 +16,16 @@ public class CarroEntity {
 	private int idCarro;
 	@Column(name = "placa")
 	private String placa;
-	@Column(name = "estado")
-	private boolean estado;
 
 	public CarroEntity() {
 	}
 
-	public CarroEntity(int idCarro, String placa, boolean estado) {
+	public CarroEntity(int idCarro, String placa) {
 		super();
 		this.idCarro = idCarro;
 		this.placa = placa;
-		this.estado = estado;
 	}
+
 
 	public int getIdCarro() {
 		return idCarro;
@@ -45,18 +43,12 @@ public class CarroEntity {
 		this.placa = placa;
 	}
 
-	public boolean isEstado() {
-		return estado;
-	}
-
-	public void setEstado(boolean estado) {
-		this.estado = estado;
-	}
-
 	@Override
 	public String toString() {
-		return "CarroEntity [idCarro=" + idCarro + ", placa=" + placa + ", estado=" + estado + "]";
+		return "CarroEntity [idCarro=" + idCarro + ", placa=" + placa + "]";
 	}
 
-	
+
+
+
 }

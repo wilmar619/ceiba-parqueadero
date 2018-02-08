@@ -99,11 +99,4 @@ public class ParkingEntity {
 		this.precioDiaMoto = precioDiaMoto;
 	}
 
-	@Override
-	public String toString() {
-		return "ParkingEntity [idParking=" + idParking + ", numCeldasCarro=" + numCeldasCarro + ", numCeldasMoto="
-				+ numCeldasMoto + ", precioHoraCarro=" + precioHoraCarro + ", precioHoraMoto=" + precioHoraMoto
-				+ ", precioDiaCarro=" + precioDiaCarro + ", precioDiaMoto=" + precioDiaMoto + "]";
-	}
-
 }
