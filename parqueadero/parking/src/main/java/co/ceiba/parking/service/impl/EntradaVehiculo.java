@@ -1,11 +1,16 @@
 package co.ceiba.parking.service.impl;
 
+import java.util.Date;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
-
-import co.ceiba.parking.entities.CarroEntity;
+import co.ceiba.parking.converter.CarroConverter;
+import co.ceiba.parking.converter.MotoConverter;
+import co.ceiba.parking.entities.FacturaEntity;
+import co.ceiba.parking.entities.ParkingEntity;
 import co.ceiba.parking.model.CarroModel;
+import co.ceiba.parking.model.MotoModel;
 import co.ceiba.parking.repository.CarroRepository;
 import co.ceiba.parking.repository.FacturaRepository;
 import co.ceiba.parking.repository.MotoRepository;
@@ -16,31 +21,68 @@ import co.ceiba.parking.service.VigilanteService;
 public class EntradaVehiculo implements VigilanteService {
 
 	@Autowired
+	@Qualifier("carroConverter")
+	private CarroConverter carroConverter;
+
+	@Autowired
+	@Qualifier("motoConverter")
+	private MotoConverter motoConverter;
+
+	@Autowired
 	@Qualifier("parkingRepository")
 	private ParkingRepository parkingRepo;
-	
+
 	@Autowired
-	@Qualifier("facturacionRepository")
-	private FacturaRepository facturacionRepo ;
-	
+	@Qualifier("facturaRepository")
+	private FacturaRepository facturaRepo;
+
 	@Autowired
 	@Qualifier("motoRepository")
-	private MotoRepository motoRepo ;
-	
+	private MotoRepository motoRepo;
+
 	@Autowired
 	@Qualifier("carroRepository")
-	private CarroRepository carroRepo ;
-	
+	private CarroRepository carroRepo;
+
 	@Override
-	public CarroModel ingresoVehiculo(CarroModel vehiculo) {
-		//CarroEntity carro = carroRepo.save();
-		return carroRepo.save(vehiculo);
+	public boolean verificarPlaca(CarroModel carroModel, int dia) {
+		String placa = carroModel.getPlaca();
+		char primeraLetra = placa.charAt(0);
+		if (primeraLetra == 'A') {
+			return (1 == dia) || (2 == dia);
+		}
+		return true;
 	}
-	
-//	@Override
-//	public CarroModel addCarro(CarroModel carroModel) {
-//	CarroEntity carro = carroRepository.save(carroConverter.model2entity(carroModel));
-//	return carroConverter.entity2model(carro);
-//	}
+
+	@Override
+	public boolean verificarDisponibilidad() {
+		return true;
+	}
+
+	@Override
+	public void addCarro(CarroModel carroModel) {
+		ParkingEntity parqueadero = parkingRepo.findByIdParking(1);
+		parqueadero.setNumCeldasCarro(parqueadero.getNumCeldasCarro() - 1);
+		parkingRepo.save(parqueadero);
+		comenzarFactura(carroModel);
+		carroRepo.save(carroConverter.model2entity(carroModel));
+	}
+
+	@Override
+	public void addMoto(MotoModel motoModel) {
+
+	}
+
+	@Override
+	public void comenzarFactura(CarroModel carroModel) {
+
+		Date fechaInicio = new Date();
+		FacturaEntity factura = new FacturaEntity();
+		factura.setEstado(true);
+		factura.setPlaca(carroModel.getPlaca());
+		factura.setTipoVehiculo("Carro");
+		factura.setHoraIngreso(fechaInicio);
+		facturaRepo.save(factura);
+	}
 
 }
