@@ -8,7 +8,7 @@ import co.ceiba.parking.repository.FacturaRepository;
 import co.ceiba.parking.repository.ParkingRepository;
 import co.ceiba.parking.service.VigilanteService;
 
-@Service
+
 public class SalidaVehiculo implements VigilanteService {
 
 	@Autowired
@@ -20,7 +20,7 @@ public class SalidaVehiculo implements VigilanteService {
 	private FacturaRepository facturacionRepo;
 
 	@Override
-	public boolean verificarPlaca(VehiculoModel vehiculoModel, int dia) {
+	public boolean verificarPlaca(VehiculoModel VehiculoModel, int dia) {
 		// TODO Auto-generated method stub
 		return false;
 	}
@@ -38,9 +38,10 @@ public class SalidaVehiculo implements VigilanteService {
 	}
 
 	@Override
-	public void comenzarFactura(VehiculoModel vehiculoModel) {
+	public void comenzarFactura(VehiculoModel vehiculoModel, String tipoVehiculo) {
 		// TODO Auto-generated method stub
 		
 	}
 
+	
 }

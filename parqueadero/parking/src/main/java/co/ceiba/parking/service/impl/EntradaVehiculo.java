@@ -16,7 +16,8 @@ import co.ceiba.parking.repository.MotoRepository;
 import co.ceiba.parking.repository.ParkingRepository;
 import co.ceiba.parking.service.VigilanteService;
 
-@Service("vigilanteServicioIngreso")
+
+@Service("meterVehiculoService")
 public class EntradaVehiculo implements VigilanteService {
 
 	@Autowired
@@ -45,7 +46,12 @@ public class EntradaVehiculo implements VigilanteService {
 
 	@Override
 	public boolean verificarPlaca(VehiculoModel vehiculoModel, int dia) {
-		return false;
+		String placa = vehiculoModel.getPlaca();
+		char primeraLetra = placa.charAt(0);
+		if (primeraLetra == 'A') {
+			return (1 == dia) || (2 == dia);
+		}
+		return true;
 	}
 
 	@Override
@@ -53,30 +59,40 @@ public class EntradaVehiculo implements VigilanteService {
 		ParkingEntity parqueadero = parkingRepo.findByIdParking(idParking);
 		if ("Carro".equals(tipoVehiculo)) {
 			parqueadero.setNumCeldasCarro(parqueadero.getNumCeldasCarro() - 1);
+			carroRepo.save(carroConverter.model2entity(vehiculoModel));
 		} else {
 			parqueadero.setNumCeldasMoto(parqueadero.getNumCeldasMoto() - 1);
+			motoRepo.save(motoConverter.model2entity(vehiculoModel));
 		}
 		parkingRepo.save(parqueadero);
-		comenzarFactura(vehiculoModel);
-		carroRepo.save(carroConverter.model2entity(vehiculoModel));
+		comenzarFactura(vehiculoModel, tipoVehiculo);
 
 	}
 
 	@Override
 	public boolean verificarDisponibilidad(String tipoVehiculo) {
-		return false;
+		return (celdasParqueadero(1, tipoVehiculo)!=0);
 	}
 
 	@Override
-	public void comenzarFactura(VehiculoModel vehiculoModel) {
-
+	public void comenzarFactura(VehiculoModel vehiculoModel, String tipoVehiculo) {
 		Date fechaInicio = new Date();
 		FacturaEntity factura = new FacturaEntity();
 		factura.setEstado(true);
 		factura.setPlaca(vehiculoModel.getPlaca());
-		factura.setTipoVehiculo("Carro");
+		factura.setTipoVehiculo(tipoVehiculo);
 		factura.setHoraIngreso(fechaInicio);
 		facturaRepo.save(factura);
+	}
+	
+	public int celdasParqueadero(int idParking, String tipoVehiculo) {		
+		ParkingEntity parqueadero = parkingRepo.findByIdParking(idParking);
+		if("Carro".equals(tipoVehiculo)) {
+			return parqueadero.getNumCeldasCarro();
+		}else {
+			return parqueadero.getNumCeldasMoto();
+		}
+		
 	}
 
 }
