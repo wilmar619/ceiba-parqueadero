@@ -3,8 +3,7 @@ package co.ceiba.parking.service.impl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
-import co.ceiba.parking.model.CarroModel;
-import co.ceiba.parking.model.MotoModel;
+import co.ceiba.parking.model.VehiculoModel;
 import co.ceiba.parking.repository.FacturaRepository;
 import co.ceiba.parking.repository.ParkingRepository;
 import co.ceiba.parking.service.VigilanteService;
@@ -21,27 +20,25 @@ public class SalidaVehiculo implements VigilanteService {
 	private FacturaRepository facturacionRepo;
 
 	@Override
-	public boolean verificarPlaca(CarroModel carroModel, int dia) {
+	public boolean verificarPlaca(VehiculoModel vehiculoModel, int dia) {
+		// TODO Auto-generated method stub
 		return false;
 	}
 
 	@Override
-	public boolean verificarDisponibilidad() {
+	public void addVehiculo(VehiculoModel vehiculoModel, String tipoVehiculo, int idParqueadero) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public boolean verificarDisponibilidad(String tipoVehiculo) {
+		// TODO Auto-generated method stub
 		return false;
 	}
 
 	@Override
-	public void addCarro(CarroModel carroModel) {
-
-	}
-
-	@Override
-	public void addMoto(MotoModel motoModel) {
-
-	}
-
-	@Override
-	public void comenzarFactura(CarroModel carroModel) {
+	public void comenzarFactura(VehiculoModel vehiculoModel) {
 		// TODO Auto-generated method stub
 		
 	}

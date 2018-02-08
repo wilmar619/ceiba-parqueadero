@@ -13,14 +13,14 @@ import co.ceiba.parking.model.VehiculoModel;
 import co.ceiba.parking.service.VigilanteService;
 
 @RestController
-@RequestMapping("/carro")
-public class CarroController {
+@RequestMapping("/moto")
+public class MotoController {
 
 	Calendario calendario = new Calendario();
 	int dia = calendario.getActualDay();
-	private static final String CARRO = "Carro";
+	private static final String MOTO = "Moto";
 
-	private static final Log LOG = LogFactory.getLog(CarroController.class);
+	private static final Log LOG = LogFactory.getLog(MotoController.class);
 
 	@Autowired
 	@Qualifier("meterVehiculoService")
@@ -29,9 +29,9 @@ public class CarroController {
 	@PostMapping("/addVehiculo")
 	public void addVehiculo(@RequestBody VehiculoModel vehiculoModel) {
 		LOG.info("METHOD: addContact() -- PARAMS: " + vehiculoModel.toString());
-		if (vigilante.verificarPlaca(vehiculoModel, dia) && vigilante.verificarDisponibilidad(CARRO)) {
-			vigilante.addVehiculo(vehiculoModel, CARRO, 1);
-			LOG.info("Carro ingresado");
+		if (vigilante.verificarPlaca(vehiculoModel, dia) && vigilante.verificarDisponibilidad(MOTO)) {
+			vigilante.addVehiculo(vehiculoModel, MOTO, 1);
+			LOG.info("Moto ingresada");
 		} else {
 			LOG.info("Acceso denegado");
 		}
@@ -39,6 +39,6 @@ public class CarroController {
 
 	@PostMapping("/numCeldas")
 	public boolean numCeldas() {
-		return vigilante.verificarDisponibilidad(CARRO);
+		return vigilante.verificarDisponibilidad(MOTO);
 	}
 }

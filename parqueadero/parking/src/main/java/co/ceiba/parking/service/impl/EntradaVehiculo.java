@@ -9,8 +9,7 @@ import co.ceiba.parking.converter.CarroConverter;
 import co.ceiba.parking.converter.MotoConverter;
 import co.ceiba.parking.entities.FacturaEntity;
 import co.ceiba.parking.entities.ParkingEntity;
-import co.ceiba.parking.model.CarroModel;
-import co.ceiba.parking.model.MotoModel;
+import co.ceiba.parking.model.VehiculoModel;
 import co.ceiba.parking.repository.CarroRepository;
 import co.ceiba.parking.repository.FacturaRepository;
 import co.ceiba.parking.repository.MotoRepository;
@@ -45,41 +44,36 @@ public class EntradaVehiculo implements VigilanteService {
 	private CarroRepository carroRepo;
 
 	@Override
-	public boolean verificarPlaca(CarroModel carroModel, int dia) {
-		String placa = carroModel.getPlaca();
-		char primeraLetra = placa.charAt(0);
-		if (primeraLetra == 'A') {
-			return (1 == dia) || (2 == dia);
+	public boolean verificarPlaca(VehiculoModel vehiculoModel, int dia) {
+		return false;
+	}
+
+	@Override
+	public void addVehiculo(VehiculoModel vehiculoModel, String tipoVehiculo, int idParking) {
+		ParkingEntity parqueadero = parkingRepo.findByIdParking(idParking);
+		if ("Carro".equals(tipoVehiculo)) {
+			parqueadero.setNumCeldasCarro(parqueadero.getNumCeldasCarro() - 1);
+		} else {
+			parqueadero.setNumCeldasMoto(parqueadero.getNumCeldasMoto() - 1);
 		}
-		return true;
-	}
-
-	@Override
-	public boolean verificarDisponibilidad() {
-		return true;
-	}
-
-	@Override
-	public void addCarro(CarroModel carroModel) {
-		ParkingEntity parqueadero = parkingRepo.findByIdParking(1);
-		parqueadero.setNumCeldasCarro(parqueadero.getNumCeldasCarro() - 1);
 		parkingRepo.save(parqueadero);
-		comenzarFactura(carroModel);
-		carroRepo.save(carroConverter.model2entity(carroModel));
-	}
-
-	@Override
-	public void addMoto(MotoModel motoModel) {
+		comenzarFactura(vehiculoModel);
+		carroRepo.save(carroConverter.model2entity(vehiculoModel));
 
 	}
 
 	@Override
-	public void comenzarFactura(CarroModel carroModel) {
+	public boolean verificarDisponibilidad(String tipoVehiculo) {
+		return false;
+	}
+
+	@Override
+	public void comenzarFactura(VehiculoModel vehiculoModel) {
 
 		Date fechaInicio = new Date();
 		FacturaEntity factura = new FacturaEntity();
 		factura.setEstado(true);
-		factura.setPlaca(carroModel.getPlaca());
+		factura.setPlaca(vehiculoModel.getPlaca());
 		factura.setTipoVehiculo("Carro");
 		factura.setHoraIngreso(fechaInicio);
 		facturaRepo.save(factura);

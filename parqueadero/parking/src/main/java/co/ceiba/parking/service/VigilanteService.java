@@ -1,18 +1,15 @@
 package co.ceiba.parking.service;
 
-import co.ceiba.parking.model.CarroModel;
-import co.ceiba.parking.model.MotoModel;
+import co.ceiba.parking.model.VehiculoModel;
 
 public interface VigilanteService {
 
-	boolean verificarPlaca(CarroModel carroModel, int dia);
+	public boolean verificarPlaca(VehiculoModel vehiculoModel, int dia);
 
-	boolean verificarDisponibilidad();
+	void addVehiculo(VehiculoModel vehiculoModel, String tipoVehiculo, int idParqueadero);
 
-	void addCarro(CarroModel carroModel);
+	boolean verificarDisponibilidad(String tipoVehiculo);
 
-	void addMoto(MotoModel motoModel);
-	
-	void comenzarFactura(CarroModel carroModel);
+	void comenzarFactura(VehiculoModel vehiculoModel);
 
 }
