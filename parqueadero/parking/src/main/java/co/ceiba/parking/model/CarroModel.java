@@ -1,17 +1,19 @@
 package co.ceiba.parking.model;
 
-public abstract class VehiculoModel {
-
+public class CarroModel extends VehiculoModel{
+	
+	public static final String tipo = "carro";
 	private String placa;
-	private boolean estado;
+	boolean estado;
 
-	public VehiculoModel() {
+	
+	public CarroModel() {
+		super();
 	}
 
-	public VehiculoModel(String placa, boolean estado) {
-		super();
-		this.placa = placa;
-		this.estado = estado;
+	public CarroModel(String placa, boolean estado) {
+		super(placa, estado);
+		
 	}
 
 	public String getPlaca() {
@@ -29,5 +31,8 @@ public abstract class VehiculoModel {
 	public void setEstado(boolean estado) {
 		this.estado = estado;
 	}
+
+
+
 
 }

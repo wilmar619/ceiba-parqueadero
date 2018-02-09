@@ -11,9 +11,7 @@ import co.ceiba.parking.converter.MotoConverter;
 import co.ceiba.parking.entities.FacturaEntity;
 import co.ceiba.parking.entities.ParkingEntity;
 import co.ceiba.parking.model.VehiculoModel;
-import co.ceiba.parking.repository.CarroRepository;
 import co.ceiba.parking.repository.FacturaRepository;
-import co.ceiba.parking.repository.MotoRepository;
 import co.ceiba.parking.repository.ParkingRepository;
 import co.ceiba.parking.service.VigilanteService;
 
@@ -40,13 +38,6 @@ public class EntradaVehiculo implements VigilanteService {
 	@Qualifier("facturaRepository")
 	private FacturaRepository facturaRepo;
 
-	@Autowired
-	@Qualifier("motoRepository")
-	private MotoRepository motoRepo;
-
-	@Autowired
-	@Qualifier("carroRepository")
-	private CarroRepository carroRepo;
 
 	@Override
 	public boolean verificarPlacaConElDia(VehiculoModel vehiculoModel, int diaIngreso) {

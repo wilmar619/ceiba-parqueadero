@@ -1,23 +1,25 @@
 package co.ceiba.parking.converter;
 
 import org.springframework.stereotype.Component;
-import co.ceiba.parking.entities.MotoEntity;
-import co.ceiba.parking.model.VehiculoModel;
+import co.ceiba.parking.entities.VehiculoEntity;
+import co.ceiba.parking.model.MotoModel;
+
 @Component("motoConverter")
 public class MotoConverter {
-	public MotoEntity model2entity(VehiculoModel vehiculoModel) {
-		MotoEntity motoEntity = new MotoEntity();
-		motoEntity.setIdMoto(vehiculoModel.getIdVehiculo());
-		motoEntity.setPlaca(vehiculoModel.getPlaca());
-		motoEntity.setCilindraje(vehiculoModel.getCilindraje());
-		return motoEntity;
+
+	public MotoModel model2entity(VehiculoEntity vehiculoEntity) {
+		MotoModel motoModel = new MotoModel();
+		motoModel.setPlaca(vehiculoEntity.getPlaca());
+		motoModel.setCilindraje(vehiculoEntity.getCilindraje());
+		motoModel.setEstado(vehiculoEntity.isEstado());
+		return motoModel;
 	}
 
-	public VehiculoModel entity2model(MotoEntity motoEntity) {
-		VehiculoModel vehiculoModel = new VehiculoModel();
-		vehiculoModel.setIdVehiculo(motoEntity.getIdMoto());
-		vehiculoModel.setPlaca(motoEntity.getPlaca());
-		vehiculoModel.setCilindraje(motoEntity.getCilindraje());
-		return vehiculoModel;
+	public VehiculoEntity model2entity(MotoModel motoModel) {
+		VehiculoEntity vehiculo = new VehiculoEntity();
+		vehiculo.setPlaca(motoModel.getPlaca());
+		vehiculo.setCilindraje(motoModel.getCilindraje());
+		vehiculo.setEstado(motoModel.isEstado());
+		return vehiculo;
 	}
 }
