@@ -13,7 +13,7 @@ public class VigilanteServiceImpl implements VigilanteService {
 	private VigilanteService vigilanteService;
 
 	@Override
-	public boolean verificarPlaca(VehiculoModel VehiculoModel, int dia) {
+	public boolean verificarPlacaConElDia(VehiculoModel VehiculoModel, int dia) {
 		return false;
 	}
 

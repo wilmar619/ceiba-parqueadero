@@ -12,7 +12,7 @@ import co.ceiba.parking.service.VigilanteService;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest(classes = ParkingApplication.class)
-public class VerificarPlacaTest {
+public class verificarPlacaConElDia {
 
 	@Autowired
 	private VigilanteService vigilanteService;
@@ -22,7 +22,7 @@ public class VerificarPlacaTest {
 		VehiculoModel vehiculoModel = new VehiculoModel();
 		vehiculoModel.setPlaca("AAA123");
 
-		boolean placaIniciaPorA = vigilanteService.verificarPlaca(vehiculoModel, Calendar.MONDAY);
+		boolean placaIniciaPorA = vigilanteService.verificarPlacaConElDia(vehiculoModel, Calendar.MONDAY);
 
 		assertTrue(placaIniciaPorA);
 	}
@@ -32,7 +32,7 @@ public class VerificarPlacaTest {
 		VehiculoModel vehiculoModel = new VehiculoModel();
 		vehiculoModel.setPlaca("AAA123");
 
-		boolean placaIniciaPorA = vigilanteService.verificarPlaca(vehiculoModel, Calendar.SUNDAY);
+		boolean placaIniciaPorA = vigilanteService.verificarPlacaConElDia(vehiculoModel, Calendar.SUNDAY);
 
 		assertTrue(placaIniciaPorA);
 	}

@@ -4,7 +4,7 @@ import co.ceiba.parking.model.VehiculoModel;
 
 public interface VigilanteService {
 
-	public boolean verificarPlaca(VehiculoModel vehiculoModel, int diaIngreso);
+	public boolean verificarPlacaConElDia(VehiculoModel vehiculoModel, int diaIngreso);
 
 	void addVehiculo(VehiculoModel vehiculoModel, String tipoVehiculo, int idParking);
 

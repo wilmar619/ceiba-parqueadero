@@ -49,7 +49,7 @@ public class EntradaVehiculo implements VigilanteService {
 	private CarroRepository carroRepo;
 
 	@Override
-	public boolean verificarPlaca(VehiculoModel vehiculoModel, int diaIngreso) {
+	public boolean verificarPlacaConElDia(VehiculoModel vehiculoModel, int diaIngreso) {
 		String placa = vehiculoModel.getPlaca();
 		char primeraLetra = placa.charAt(0);
 		if (primeraLetra == 'A'|| primeraLetra =='a') {
