@@ -39,23 +39,23 @@ public class verificarPlacaConElDia {
 	}
 
 	@Test
-	public void testVerificarPlacaNoTieneLetraAyDiaDomingo() {
-		VehiculoModel vehiculoModel = new VehiculoModel();
-		vehiculoModel.setPlaca("BBB123");
-		boolean placaNoIniciaPorA = vigilanteService.verificarPlacaConElDia(vehiculoModel, Calendar.SUNDAY);
-
-		assertFalse(placaNoIniciaPorA);
-	}
-
-	@Test
 	public void testVerificarPlacaNoTieneLetraAyDiaLunes() {
 		VehiculoModel vehiculoModel = new VehiculoModel();
 		vehiculoModel.setPlaca("BAA123");
-		
+
 		boolean placaNoIniciaPorA = vigilanteService.verificarPlacaConElDia(vehiculoModel, Calendar.MONDAY);
 
 		assertFalse(placaNoIniciaPorA);
+
+	}
+
+	@Test
+	public void testVerificarPlacaNoTieneLetraAyDiaDomingo() {
+		VehiculoModel vehiculoModel = new VehiculoModel();
+		vehiculoModel.setPlaca("BAA123");
 		
-		
+		boolean placaNoIniciaPorA = vigilanteService.verificarPlacaConElDia(vehiculoModel, Calendar.SUNDAY);
+
+		assertFalse(placaNoIniciaPorA);
 	}
 }

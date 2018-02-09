@@ -52,7 +52,7 @@ public class EntradaVehiculo implements VigilanteService {
 	public boolean verificarPlacaConElDia(VehiculoModel vehiculoModel, int diaIngreso) {
 		String placa = vehiculoModel.getPlaca();
 		char primeraLetra = placa.charAt(0);
-		if (primeraLetra == 'A'|| primeraLetra =='a' && (lunes == diaIngreso) || (domingo == diaIngreso)) {
+		if ((primeraLetra == 'A') && ((lunes == diaIngreso) || (domingo == diaIngreso))){
 			return  true;
 		}
 		return false;
