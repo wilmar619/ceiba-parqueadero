@@ -55,6 +55,11 @@ public class VigilanteServiceImpl implements VigilanteService {
 	@Override
 	public void addVehiculo(CarroModel carroModel, int idParking) {
 		ParkingEntity parqueadero = parkingRepo.findByIdParking(idParking);
+		if ("Carro".equals(CarroModel.tipo)) {
+			
+			
+		}
+		
 //		if ("Carro".equals(tipoVehiculo)) {
 //			parqueadero.setNumCeldasCarro(parqueadero.getNumCeldasCarro() - 1);
 //			vehiculoRepo.save(carroConverter.entity2model(vehiculoModel));
