@@ -5,7 +5,6 @@ import org.apache.commons.logging.LogFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -29,18 +28,19 @@ public class CarroController {
 
 	@PostMapping("/addVehiculo")
 	public void addVehiculo(@RequestBody VehiculoModel vehiculoModel) {
-		LOG.info("METHOD: addCarro() -- PARAMS: " + vehiculoModel.toString());
-		if (vigilante.verificarPlacaConElDia(vehiculoModel, dia) && vigilante.verificarDisponibilidad(CARRO)) {
-			vigilante.addVehiculo(vehiculoModel, CARRO, 1);
-			LOG.info("Carro ingresado");
-		} else {
-			LOG.info("Acceso denegado");
-		}
+//		LOG.info("METHOD: addCarro() -- PARAMS: " + vehiculoModel.toString());
+//		if (vigilante.verificarPlacaConElDia(vehiculoModel, dia) && vigilante.verificarDisponibilidad(CARRO)) {
+//			vigilante.addVehiculo(vehiculoModel, CARRO, 1);
+//			LOG.info("Carro ingresado");
+//		} else {
+//			LOG.info("Acceso denegado");
+//		}
 	}
 
 	@PostMapping("/numCeldas")
 	public boolean numCeldas() {
-		return vigilante.verificarDisponibilidad(CARRO);
+		return false;
+		//return vigilante.verificarDisponibilidad(CARRO);
 	}
 
 //	@PutMapping
