@@ -1,14 +1,13 @@
 package co.ceiba.parking.service.impl;
 
 import java.util.Calendar;
-import java.util.Date;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
 import co.ceiba.parking.converter.CarroConverter;
 import co.ceiba.parking.converter.MotoConverter;
-import co.ceiba.parking.entities.FacturaEntity;
 import co.ceiba.parking.entities.ParkingEntity;
+import co.ceiba.parking.model.CarroModel;
 import co.ceiba.parking.model.VehiculoModel;
 import co.ceiba.parking.repository.FacturaRepository;
 import co.ceiba.parking.repository.ParkingRepository;
@@ -54,8 +53,8 @@ public class VigilanteServiceImpl implements VigilanteService {
 	}
 
 	@Override
-	public void addVehiculo(VehiculoModel vehiculoModel, String tipoVehiculo, int idParking) {
-//		ParkingEntity parqueadero = parkingRepo.findByIdParking(idParking);
+	public void addVehiculo(CarroModel carroModel, int idParking) {
+		ParkingEntity parqueadero = parkingRepo.findByIdParking(idParking);
 //		if ("Carro".equals(tipoVehiculo)) {
 //			parqueadero.setNumCeldasCarro(parqueadero.getNumCeldasCarro() - 1);
 //			vehiculoRepo.save(carroConverter.entity2model(vehiculoModel));
