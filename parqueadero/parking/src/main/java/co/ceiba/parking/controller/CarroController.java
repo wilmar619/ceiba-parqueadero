@@ -30,7 +30,7 @@ public class CarroController {
 	@PostMapping("/addVehiculo")
 	public void addVehiculo(@RequestBody VehiculoModel vehiculoModel) {
 		LOG.info("METHOD: addCarro() -- PARAMS: " + vehiculoModel.toString());
-		if (vigilante.verificarPlaca(vehiculoModel, dia) && vigilante.verificarDisponibilidad(CARRO)) {
+		if (vigilante.verificarPlacaConElDia(vehiculoModel, dia) && vigilante.verificarDisponibilidad(CARRO)) {
 			vigilante.addVehiculo(vehiculoModel, CARRO, 1);
 			LOG.info("Carro ingresado");
 		} else {

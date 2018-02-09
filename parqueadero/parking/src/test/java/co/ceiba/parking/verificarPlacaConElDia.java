@@ -36,4 +36,12 @@ public class verificarPlacaConElDia {
 
 		assertTrue(placaIniciaPorA);
 	}
+	@Test
+	public void testVerificarPlacaTieneNoLetraAyDiaDomingo() {
+		
+	}
+	@Test
+	public void testVerificarPlacaTieneNoLetraAyDiaLunes() {
+		
+	}
 }

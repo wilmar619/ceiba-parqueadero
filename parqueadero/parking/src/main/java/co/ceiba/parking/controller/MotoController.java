@@ -29,7 +29,7 @@ public class MotoController {
 	@PostMapping("/addVehiculo")
 	public void addVehiculo(@RequestBody VehiculoModel vehiculoModel) {
 		LOG.info("METHOD: addContact() -- PARAMS: " + vehiculoModel.toString());
-		if (vigilante.verificarPlaca(vehiculoModel, dia) && vigilante.verificarDisponibilidad(MOTO)) {
+		if (vigilante.verificarPlacaConElDia(vehiculoModel, dia) && vigilante.verificarDisponibilidad(MOTO)) {
 			vigilante.addVehiculo(vehiculoModel, MOTO, 1);
 			LOG.info("Moto ingresada");
 		} else {
