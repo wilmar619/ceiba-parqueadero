@@ -1,5 +1,6 @@
 package co.ceiba.parking;
 
+import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
 import java.util.Calendar;
 import org.junit.Test;
@@ -36,12 +37,25 @@ public class verificarPlacaConElDia {
 
 		assertTrue(placaIniciaPorA);
 	}
+
 	@Test
-	public void testVerificarPlacaTieneNoLetraAyDiaDomingo() {
-		
+	public void testVerificarPlacaNoTieneLetraAyDiaDomingo() {
+		VehiculoModel vehiculoModel = new VehiculoModel();
+		vehiculoModel.setPlaca("BBB123");
+		boolean placaNoIniciaPorA = vigilanteService.verificarPlacaConElDia(vehiculoModel, Calendar.SUNDAY);
+
+		assertFalse(placaNoIniciaPorA);
 	}
+
 	@Test
-	public void testVerificarPlacaTieneNoLetraAyDiaLunes() {
+	public void testVerificarPlacaNoTieneLetraAyDiaLunes() {
+		VehiculoModel vehiculoModel = new VehiculoModel();
+		vehiculoModel.setPlaca("BAA123");
+		
+		boolean placaNoIniciaPorA = vigilanteService.verificarPlacaConElDia(vehiculoModel, Calendar.MONDAY);
+
+		assertFalse(placaNoIniciaPorA);
+		
 		
 	}
 }
