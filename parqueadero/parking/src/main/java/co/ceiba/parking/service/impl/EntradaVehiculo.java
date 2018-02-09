@@ -1,5 +1,6 @@
 package co.ceiba.parking.service.impl;
 
+import java.util.Calendar;
 import java.util.Date;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,8 +18,11 @@ import co.ceiba.parking.repository.ParkingRepository;
 import co.ceiba.parking.service.VigilanteService;
 
 
-@Service("meterVehiculoService")
+@Service("VehiculoService")
 public class EntradaVehiculo implements VigilanteService {
+	
+	int	 lunes = Calendar.MONDAY;
+	int	 domingo = Calendar.SUNDAY;
 
 	@Autowired
 	@Qualifier("carroConverter")
@@ -45,11 +49,11 @@ public class EntradaVehiculo implements VigilanteService {
 	private CarroRepository carroRepo;
 
 	@Override
-	public boolean verificarPlaca(VehiculoModel vehiculoModel, int dia) {
+	public boolean verificarPlaca(VehiculoModel vehiculoModel, int diaIngreso) {
 		String placa = vehiculoModel.getPlaca();
 		char primeraLetra = placa.charAt(0);
 		if (primeraLetra == 'A'|| primeraLetra =='a') {
-			return (1 == dia) || (2 == dia);
+			return (lunes == diaIngreso) || (domingo == diaIngreso);
 		}
 		return true;
 	}

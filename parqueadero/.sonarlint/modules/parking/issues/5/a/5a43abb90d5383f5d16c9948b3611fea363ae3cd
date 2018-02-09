@@ -1,5 +1,3 @@
 
-„squid:CommentedOutCodeLine$"<This block of commented-out lines of code should be removed.(äÌ•íüÿÿÿÿ8£¿þ—,Hº!RMAJORZ
-CODE_SMELL
-squid:CommentedOutCodeLine)"<This block of commented-out lines of code should be removed.(®®æ²8£¿þ—,H»!RMAJORZ
+½squid:S1186c"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(˜‡úøÿÿÿÿ8¬þê±—,Hš$RCRITICALZ
 CODE_SMELL

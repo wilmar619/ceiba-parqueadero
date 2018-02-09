@@ -1,3 +1,13 @@
 
-Ñsquid:S00117"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(∏Ÿê°¯ˇˇˇˇHÜ!RMINORZ
+∏squid:S1186?"ÄAdd a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(÷ÈÖ©8Õ◊‰±ó,Hï$RCRITICALZ
+CODE_SMELL
+Üsquid:S001170"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(◊‰Åò8›¬ï±ó,Hê$RMINORZ
+CODE_SMELL
+msquid:S3400_"9Remove this method and declare a constant for this value.(î∑≥õ8é¶¨µó,H¥$RMINORZ
+CODE_SMELL
+∏squid:S11865"ÄAdd a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(ú–Ã‹8Õ◊‰±ó,Hî$RCRITICALZ
+CODE_SMELL
+gsquid:S1172R"3Remove this unused method parameter "tipoVehiculo".(Õ·∆‰8ÊÓµ¥ó,H≠$RMAJORZ
+CODE_SMELL
+squid:CommentedOutCodeLineM"<This block of commented-out lines of code should be removed.(É∏Ωæ8ß∆Æ≤ó,H™$RMAJORZ
 CODE_SMELL

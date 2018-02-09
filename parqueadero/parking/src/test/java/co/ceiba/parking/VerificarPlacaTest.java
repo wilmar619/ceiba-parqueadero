@@ -10,24 +10,30 @@ import org.springframework.test.context.junit4.SpringRunner;
 import co.ceiba.parking.model.VehiculoModel;
 import co.ceiba.parking.service.VigilanteService;
 
-
 @RunWith(SpringRunner.class)
-@SpringBootTest(classes=ParkingApplication.class)
-
- 
+@SpringBootTest(classes = ParkingApplication.class)
 public class VerificarPlacaTest {
-	
+
 	@Autowired
 	private VigilanteService vigilanteService;
 
 	@Test
-	public void TestVerificarPlacaTieneLetraAyDiaQuePuedeIngresar() {
+	public void testVerificarPlacaTieneLetraAyDiaLunes() {
 		VehiculoModel vehiculoModel = new VehiculoModel();
 		vehiculoModel.setPlaca("AAA123");
-		
-		boolean placaIniciaPorA = vigilanteService.verificarPlaca(vehiculoModel,Calendar.MONDAY);
-		
+
+		boolean placaIniciaPorA = vigilanteService.verificarPlaca(vehiculoModel, Calendar.MONDAY);
+
 		assertTrue(placaIniciaPorA);
 	}
 
+	@Test
+	public void testVerificarPlacaTieneLetraAyDiaDomingo() {
+		VehiculoModel vehiculoModel = new VehiculoModel();
+		vehiculoModel.setPlaca("AAA123");
+
+		boolean placaIniciaPorA = vigilanteService.verificarPlaca(vehiculoModel, Calendar.SUNDAY);
+
+		assertTrue(placaIniciaPorA);
+	}
 }

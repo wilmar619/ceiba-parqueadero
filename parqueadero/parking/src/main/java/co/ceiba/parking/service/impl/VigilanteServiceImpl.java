@@ -6,7 +6,7 @@ import org.springframework.stereotype.Service;
 import co.ceiba.parking.model.VehiculoModel;
 import co.ceiba.parking.service.VigilanteService;
 
-@Service("VehiculoService")
+//@Service("VehiculoService")
 public class VigilanteServiceImpl implements VigilanteService {
 	
 	@Autowired

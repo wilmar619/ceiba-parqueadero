@@ -17,7 +17,7 @@ import co.ceiba.parking.repository.MotoRepository;
 import co.ceiba.parking.repository.ParkingRepository;
 import co.ceiba.parking.service.VigilanteService;
 
-@Service("sacarVehiculoService")
+//@Service("sacarVehiculoService")
 public class SalidaVehiculo implements VigilanteService {
 
 	@Autowired

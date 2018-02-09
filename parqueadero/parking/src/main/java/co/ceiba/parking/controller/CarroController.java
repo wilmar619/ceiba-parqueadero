@@ -43,10 +43,10 @@ public class CarroController {
 		return vigilante.verificarDisponibilidad(CARRO);
 	}
 
-	@PutMapping
-	public int outVehiculo(@RequestBody VehiculoModel vehiculoModel) {
-		vigilante.verificarPlaca(vehiculoModel, dia);
-		int total = 0 ;
-		return total;
-	}
+//	@PutMapping
+//	public int outVehiculo(@RequestBody VehiculoModel vehiculoModel) {
+//		vigilante.verificarPlaca(vehiculoModel, dia);
+//		int total = 0 ;
+//		return total;
+//	}
 }
