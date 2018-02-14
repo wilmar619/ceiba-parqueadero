@@ -11,9 +11,14 @@ public class MotoModel extends VehiculoModel {
 	public MotoModel() {
 		
 	}
-	public MotoModel(String placa, boolean estado) {
-		super(placa, estado);
+
+	public MotoModel(String placa, int cilindraje, boolean estado) {
+		super();
+		this.placa = placa;
+		this.cilindraje = cilindraje;
+		this.estado = estado;
 	}
+
 
 
 	public String getPlaca() {

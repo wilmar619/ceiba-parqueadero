@@ -7,7 +7,7 @@ import co.ceiba.parking.model.MotoModel;
 @Component("motoConverter")
 public class MotoConverter {
 
-	public MotoModel model2entity(VehiculoEntity vehiculoEntity) {
+	public MotoModel entity2model(VehiculoEntity vehiculoEntity) {
 		MotoModel motoModel = new MotoModel();
 		motoModel.setPlaca(vehiculoEntity.getPlaca());
 		motoModel.setCilindraje(vehiculoEntity.getCilindraje());
@@ -19,7 +19,7 @@ public class MotoConverter {
 		VehiculoEntity vehiculo = new VehiculoEntity();
 		vehiculo.setPlaca(motoModel.getPlaca());
 		vehiculo.setCilindraje(motoModel.getCilindraje());
-		vehiculo.setEstado(motoModel.isEstado());
+		vehiculo.setEstado(true);
 		return vehiculo;
 	}
 }

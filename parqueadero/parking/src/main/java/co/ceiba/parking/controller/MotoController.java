@@ -1,7 +1,5 @@
 package co.ceiba.parking.controller;
 
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -18,9 +16,9 @@ public class MotoController {
 
 	Calendario calendario = new Calendario();
 	int dia = calendario.getActualDay();
-	private static final String MOTO = "Moto";
+//	private static final String MOTO = "Moto";
 
-	private static final Log LOG = LogFactory.getLog(MotoController.class);
+//	private static final Log LOG = LogFactory.getLog(MotoController.class);
 
 	@Autowired
 	@Qualifier("VehiculoService")
@@ -28,18 +26,6 @@ public class MotoController {
 
 	@PostMapping("/addVehiculo")
 	public void addVehiculo(@RequestBody VehiculoModel vehiculoModel) {
-//		LOG.info("METHOD: addContact() -- PARAMS: " + vehiculoModel.toString());
-//		if (vigilante.verificarPlacaConElDia(vehiculoModel, dia) && vigilante.verificarDisponibilidad(MOTO)) {
-//			vigilante.addVehiculo(vehiculoModel, MOTO, 1);
-//			LOG.info("Moto ingresada");
-//		} else {
-//			LOG.info("Acceso denegado");
-//		}
-	}
 
-	@PostMapping("/numCeldas")
-	public boolean numCeldas() {
-		return false;
-//		return vigilante.verificarDisponibilidad(MOTO);
 	}
 }

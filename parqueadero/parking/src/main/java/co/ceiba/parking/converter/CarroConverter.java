@@ -17,8 +17,7 @@ public class CarroConverter {
 	public VehiculoEntity model2entity(CarroModel carroModel) {
 		VehiculoEntity vehiculoModel = new VehiculoEntity();
 		vehiculoModel.setPlaca(carroModel.getPlaca());
-		vehiculoModel.setEstado(carroModel.isEstado());
-
+		vehiculoModel.setEstado(true);
 		return vehiculoModel;
 	}
 
