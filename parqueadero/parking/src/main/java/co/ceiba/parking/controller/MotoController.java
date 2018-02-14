@@ -21,7 +21,7 @@ public class MotoController {
 //	private static final Log LOG = LogFactory.getLog(MotoController.class);
 
 	@Autowired
-	@Qualifier("VehiculoService")
+	@Qualifier("VigilanteService")
 	private VigilanteService vigilante;
 
 	@PostMapping("/addVehiculo")

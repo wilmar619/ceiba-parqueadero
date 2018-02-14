@@ -32,15 +32,17 @@ public class FacturaEntity {
 	private Date horaSalida;
 	@Column(name="estado")
 	private boolean estado;
+	@Column(name="tiempoDeParqueo")
+	private int tiempoDeParqueo;
 	@Column(name="pagoTotal")
 	private int pagoTotal;
 	
 	public FacturaEntity() {
 		
 	}
-	
+
 	public FacturaEntity(int idFactura, String tipoVehiculo, String placa, int cilindraje, Date horaIngreso,
-			Date horaSalida, boolean estado, int pagoTotal) {
+			Date horaSalida, boolean estado, int tiempoDeParqueo, int pagoTotal) {
 		super();
 		this.idFactura = idFactura;
 		this.tipoVehiculo = tipoVehiculo;
@@ -49,6 +51,7 @@ public class FacturaEntity {
 		this.horaIngreso = horaIngreso;
 		this.horaSalida = horaSalida;
 		this.estado = estado;
+		this.tiempoDeParqueo = tiempoDeParqueo;
 		this.pagoTotal = pagoTotal;
 	}
 
@@ -56,8 +59,8 @@ public class FacturaEntity {
 		return idFactura;
 	}
 
-	public void setIdFactura(int idRegistro) {
-		this.idFactura = idRegistro;
+	public void setIdFactura(int idFactura) {
+		this.idFactura = idFactura;
 	}
 
 	public String getTipoVehiculo() {
@@ -108,6 +111,14 @@ public class FacturaEntity {
 		this.estado = estado;
 	}
 
+	public int getTiempoDeParqueo() {
+		return tiempoDeParqueo;
+	}
+
+	public void setTiempoDeParqueo(int tiempoDeParqueo) {
+		this.tiempoDeParqueo = tiempoDeParqueo;
+	}
+
 	public int getPagoTotal() {
 		return pagoTotal;
 	}
@@ -115,4 +126,6 @@ public class FacturaEntity {
 	public void setPagoTotal(int pagoTotal) {
 		this.pagoTotal = pagoTotal;
 	}
+	
+	
 }

@@ -1,7 +1,5 @@
 package co.ceiba.parking.controller;
 
-import java.util.Iterator;
-
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.json.JSONException;
@@ -25,7 +23,7 @@ public class CarroController {
 	private static final Log LOG = LogFactory.getLog(CarroController.class);
 
 	@Autowired
-	@Qualifier("VehiculoService")
+	@Qualifier("VigilanteService")
 	private VigilanteService vigilante;
 
 	@PostMapping("/addVehiculo")

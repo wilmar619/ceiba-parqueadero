@@ -19,7 +19,7 @@ import co.ceiba.parking.repository.ParkingRepository;
 import co.ceiba.parking.repository.VehiculoRepository;
 import co.ceiba.parking.service.VigilanteService;
 
-@Service("VehiculoService")
+@Service("VigilanteService")
 public class VigilanteServiceImpl implements VigilanteService {
 
 	private static final Log LOG = LogFactory.getLog(VigilanteServiceImpl.class);
@@ -101,8 +101,10 @@ public class VigilanteServiceImpl implements VigilanteService {
 		FacturaEntity factura = facturaRepo.findByPlaca(placa);
 		factura.setEstado(false);
 		factura.setHoraSalida(fechaSalida);
-		int total = calcularTotalApagar(factura.getHoraIngreso(), fechaSalida);
-		factura.setPagoTotal(total);
+		long tiempoEnDias = calcularTimpoEnHoras(factura.getHoraIngreso(), fechaSalida);
+		factura.setTiempoDeParqueo((int)tiempoEnDias);
+		int totalAPagar = calcularTotalApagar(factura.getHoraIngreso(), fechaSalida);
+		factura.setPagoTotal(totalAPagar);
 		facturaRepo.save(factura);
 
 	}
@@ -110,6 +112,11 @@ public class VigilanteServiceImpl implements VigilanteService {
 	public int calcularTotalApagar(Date fechaEntrada, Date fechaSalida) {
 
 		return 0;
+	}
+	@Override
+	public long calcularTimpoEnHoras(Date fechaEntrada, Date fechaSalida) {
+		long horas=((fechaSalida.getTime()-fechaEntrada.getTime())/(60*60*1000));
+		return horas;
 	}
 
 	public int valorAdicionalCilindraje(int cilindraje) {
