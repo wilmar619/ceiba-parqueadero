@@ -1,3 +1,11 @@
 
-–squid:S14881"]Immediately return this expression instead of assigning it to the temporary variable "total".(óË üÿÿÿÿ8Íâ£µ—,H³$RMINORZ
+„squid:CommentedOutCodeLine+"<This block of commented-out lines of code should be removed.(ÄäòŠÿÿÿÿÿ8Ê¤×á—,H™*RMAJORZ
+CODE_SMELL
+„squid:CommentedOutCodeLine"<This block of commented-out lines of code should be removed.(ª»”Ûüÿÿÿÿ8Ê¤×á—,H˜*RMAJORZ
+CODE_SMELL
+bsquid:S1068")Remove this unused "CARRO" private field.(¿ò®úûÿÿÿÿ8Ê¤×á—,H–*RMAJORZ
+CODE_SMELL
+`squid:S1068"'Remove this unused "LOG" private field.(•İ“Íøÿÿÿÿ8Ê¤×á—,H—*RMAJORZ
+CODE_SMELL
+„squid:CommentedOutCodeLine/"<This block of commented-out lines of code should be removed.(ª¹ö¬úÿÿÿÿ8¯¶ÍÔ—,Hó$RMAJORZ
 CODE_SMELL

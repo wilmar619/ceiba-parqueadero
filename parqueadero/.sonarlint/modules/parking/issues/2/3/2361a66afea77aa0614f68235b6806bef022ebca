@@ -1,9 +1,21 @@
 
-½squid:S1186"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(ìàÂüÿÿÿÿ8å¥¹¸—,HÆ$RCRITICALZ
+csquid:S00108:")Either remove or fill this block of code.(§½ıÿÿÿÿ8£éáâ—,Hå*RMAJORZ
 CODE_SMELL
-¸squid:S1186"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(Öé…©8å¥¹¸—,HÇ$RCRITICALZ
+squid:CommentedOutCodeLineM"<This block of commented-out lines of code should be removed.(œôæÙ8ÖêÓá—,H*RMAJORZ
 CODE_SMELL
-†squid:S00117"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(×ä˜8ë­¶¸—,HÅ$RMINORZ
+squid:CommentedOutCodeLine?"<This block of commented-out lines of code should be removed.(ĞÜ‘†8‰£Ñâ—,Há*RMAJORZ
 CODE_SMELL
-½squid:S1186$"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(—‡‚¯ıÿÿÿÿ8å¥¹¸—,HÈ$RCRITICALZ
+squid:CommentedOutCodeLine^"<This block of commented-out lines of code should be removed.(íı•±8ÖêÓá—,H‘*RMAJORZ
+CODE_SMELL
+ssquid:S18549"?Remove this useless assignment to local variable "parqueadero".(º’Ç¾8‰£Ñâ—,Hã*RMAJORZ
+CODE_SMELL
+dsquid:S14819"0Remove this unused "parqueadero" local variable.(º’Ç¾8‰£Ñâ—,Hâ*RMINORZ
+CODE_SMELL
+squid:CommentedOutCodeLineS"<This block of commented-out lines of code should be removed.(½ŒÔ²8ÖêÓá—,H*RMAJORZ
+CODE_SMELL
+½squid:S1186h"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(˜‡úøÿÿÿÿ8ù­¢á—,H‹*RCRITICALZ
+CODE_SMELL
+fsquid:S1172\"3Remove this unused method parameter "tipoVehiculo".(ØÊ„H8ÖêÓá—,H’*RMAJORZ
+CODE_SMELL
+zsquid:S11261"AReplace this if-then-else statement by a single return statement.(¾È²–øÿÿÿÿ8ıå¡á—,HŠ*RMINORZ
 CODE_SMELL
