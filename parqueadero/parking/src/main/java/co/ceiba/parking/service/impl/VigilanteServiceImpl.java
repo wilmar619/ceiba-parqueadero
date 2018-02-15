@@ -101,8 +101,8 @@ public class VigilanteServiceImpl implements VigilanteService {
 		FacturaEntity factura = facturaRepo.findByPlaca(placa);
 		factura.setEstado(false);
 		factura.setHoraSalida(fechaSalida);
-		long tiempoEnDias = calcularTimpoEnHoras(factura.getHoraIngreso(), fechaSalida);
-		factura.setTiempoDeParqueo((int)tiempoEnDias);
+		long tiempoDeParqueo = calcularTimpoEnHoras(factura.getHoraIngreso(), fechaSalida);
+		factura.setTiempoDeParqueo((int) tiempoDeParqueo);
 		int totalAPagar = calcularTotalApagar(factura.getHoraIngreso(), fechaSalida);
 		factura.setPagoTotal(totalAPagar);
 		facturaRepo.save(factura);
@@ -113,10 +113,16 @@ public class VigilanteServiceImpl implements VigilanteService {
 
 		return 0;
 	}
+
 	@Override
 	public long calcularTimpoEnHoras(Date fechaEntrada, Date fechaSalida) {
-		long horas=((fechaSalida.getTime()-fechaEntrada.getTime())/(60*60*1000));
-		return horas;
+		long tiempoEnHoras = ((fechaSalida.getTime() - fechaEntrada.getTime()) / (60 * 60 * 1000));
+		long timpoEnSegundos = ((fechaSalida.getTime() - fechaEntrada.getTime()) % (60 * 60 * 1000));
+		if ((timpoEnSegundos) != 0) {
+			tiempoEnHoras++;
+		}
+
+		return tiempoEnHoras;
 	}
 
 	public int valorAdicionalCilindraje(int cilindraje) {

@@ -36,7 +36,7 @@ public class CarroController {
 	public void addVehiculo(@RequestBody String placa) throws JSONException {
 		LOG.info("METHOD: outCarroController: " + placa) ;
 		JSONObject json = new JSONObject(placa);
-		String jsonPlaca = json.getString("placa");	
+		String jsonPlaca = json.getString("placa");	 
 		vigilante.outVehiculo(jsonPlaca);
 	}
 }

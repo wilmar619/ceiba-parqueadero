@@ -1,9 +1,7 @@
 
-„squid:CommentedOutCodeLine+"<This block of commented-out lines of code should be removed.(ßÂÛëÿÿÿÿÿ8ÞúØá—,H£*RMAJORZ
+¸squid:S1186"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(é£û8§ŸÑ­™,Hš.RCRITICALZ
 CODE_SMELL
-`squid:S1068"'Remove this unused "LOG" private field.(…®ÿ®ûÿÿÿÿ8¡äØá—,H*RMAJORZ
+„squid:CommentedOutCodeLine"<This block of commented-out lines of code should be removed.(žŽÄçûÿÿÿÿ8§ŸÑ­™,H˜.RMAJORZ
 CODE_SMELL
-asquid:S1068"(Remove this unused "MOTO" private field.(Õ“àýÿÿÿÿ8ÞúØá—,H¢*RMAJORZ
-CODE_SMELL
-„squid:CommentedOutCodeLine"<This block of commented-out lines of code should be removed.(˜ûæÂÿÿÿÿÿ8¡äØá—,Hž*RMAJORZ
+„squid:CommentedOutCodeLine"<This block of commented-out lines of code should be removed.(ÐÇŸ’þÿÿÿÿ8§ŸÑ­™,H™.RMAJORZ
 CODE_SMELL

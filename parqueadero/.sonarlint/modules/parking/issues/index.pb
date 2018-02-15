@@ -63,3 +63,5 @@ k
 ;src/test/java/co/ceiba/parking/VerificarDisponibilidad.java,1\e\1efc54ab4a87299b70b790ab73480ac263d31642
 j
 :src/test/java/co/ceiba/parking/VerificarPlacaConElDia.java,3\7\377b8414b291193dd16679082078721e1a13e432
+]
+-src/test/java/co/ceiba/parking/Vigilante.java,f\e\fe0008f52c5013ea3beec839b68c7cbba4a6245d
