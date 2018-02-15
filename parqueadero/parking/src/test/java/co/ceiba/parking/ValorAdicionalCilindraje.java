@@ -15,6 +15,7 @@ import co.ceiba.parking.service.VigilanteService;
 @SpringBootTest(classes = ParkingApplication.class)
 public class ValorAdicionalCilindraje {
 	
+	private static final Object VALOR_ADICIONAL_MOTO = 2000;
 	@Autowired
 	@Qualifier("VigilanteService")
 	VigilanteService vigilante;
@@ -26,7 +27,7 @@ public class ValorAdicionalCilindraje {
 //		moto.setCilindraje(500);
 		int cilindrajeDeLaMoto = 800;
 		
-		assertEquals(2000, vigilante.valorAdicionalCilindraje(cilindrajeDeLaMoto));
+		assertEquals(VALOR_ADICIONAL_MOTO, vigilante.valorAdicionalCilindraje(cilindrajeDeLaMoto));
 	}
 	@Test
 	public void ValorAdicionalCilindrajeNoValidotest() {
@@ -35,7 +36,7 @@ public class ValorAdicionalCilindraje {
 //		moto.setCilindraje(500);
 		int cilindrajeDeLaMoto = 100;
 		
-		assertNotEquals(2000, vigilante.valorAdicionalCilindraje(cilindrajeDeLaMoto));
+		assertNotEquals(VALOR_ADICIONAL_MOTO, vigilante.valorAdicionalCilindraje(cilindrajeDeLaMoto));
 	}
 
 }
