@@ -68,6 +68,24 @@ public class CalcularTotalApagarCarro {
 		vehiculoRepo.delete(carro);
 		facturaRepo.delete(fac);
 
+	}@Test
+	public void CalcularTotalApagarCarroHorasYMinutos() {
+		VehiculoEntity carro = new VehiculoEntity();
+		FacturaEntity fac = new FacturaEntity();
+		
+		carro.setPlaca("TWB413");
+		vehiculoRepo.save(carro);	
+		
+		fac.setPlaca(carro.getPlaca());
+		fac.setTiempoDeParqueo(49);
+		fac.setTipoVehiculo("carro");
+		facturaRepo.save(fac);
+
+		assertEquals(17000, vigilante.calcularTotalApagarCarro("TWB413"));
+		
+		vehiculoRepo.delete(carro);
+		facturaRepo.delete(fac);
+
 	}
 
 }

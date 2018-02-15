@@ -22,10 +22,15 @@ import co.ceiba.parking.service.VigilanteService;
 @Service("VigilanteService")
 public class VigilanteServiceImpl implements VigilanteService {
 
-	private static final Log LOG = LogFactory.getLog(VigilanteServiceImpl.class);
 
-	int lunes = Calendar.MONDAY;
-	int domingo = Calendar.SUNDAY;
+	private static final Log LOG = LogFactory.getLog(VigilanteServiceImpl.class);
+	private static final int LIMITE_CILINDRAJE = 500;
+	private static final int VALOR_ADICIONAL_MOTO = 2000;
+	private static final int LIMITE_DE_HORAS_PERMITIDAS = 9;
+	private static final int CANTIDAD_HORAS_DIA = 24;
+	private static final int LUNES = Calendar.MONDAY;
+	private static final int DOMINGO = Calendar.SUNDAY;
+	private static final int MILISEGUNDOS_EN_HORAS = 3600000;
 
 	@Autowired
 	@Qualifier("carroConverter")
@@ -78,7 +83,7 @@ public class VigilanteServiceImpl implements VigilanteService {
 	public boolean verificarPlacaConElDia(VehiculoModel vehiculoModel, int diaIngreso) {
 		String placa = vehiculoModel.getPlaca();
 		char primeraLetra = placa.charAt(0);
-		if ((primeraLetra == 'A') && ((lunes == diaIngreso) || (domingo == diaIngreso))) {
+		if ((primeraLetra == 'A') && ((LUNES == diaIngreso) || (DOMINGO == diaIngreso))) {
 			return true;
 		}
 		return false;
@@ -115,9 +120,9 @@ public class VigilanteServiceImpl implements VigilanteService {
 		FacturaEntity factura = facturaRepo.findByPlaca(placa);
 
 		int tiempoParqueado = factura.getTiempoDeParqueo();
-		int totalHoras = tiempoParqueado % 24;
-		int totalDias = tiempoParqueado / 24;
-		if (totalHoras % 24 > 9) {
+		int totalHoras = tiempoParqueado % CANTIDAD_HORAS_DIA;
+		int totalDias = tiempoParqueado / CANTIDAD_HORAS_DIA;
+		if (totalHoras % CANTIDAD_HORAS_DIA > LIMITE_DE_HORAS_PERMITIDAS) {
 			totalDias++;
 			return totalDias * parqueadero.getPrecioDiaCarro();
 		}
@@ -127,8 +132,8 @@ public class VigilanteServiceImpl implements VigilanteService {
 
 	@Override
 	public long calcularTimpoEnHoras(Date fechaEntrada, Date fechaSalida) {
-		long tiempoEnHoras = ((fechaSalida.getTime() - fechaEntrada.getTime()) / (60 * 60 * 1000));
-		long timpoEnSegundos = ((fechaSalida.getTime() - fechaEntrada.getTime()) % (60 * 60 * 1000));
+		long tiempoEnHoras = ((fechaSalida.getTime() - fechaEntrada.getTime()) / MILISEGUNDOS_EN_HORAS);
+		long timpoEnSegundos = ((fechaSalida.getTime() - fechaEntrada.getTime()) % (MILISEGUNDOS_EN_HORAS));
 		if ((timpoEnSegundos) != 0) {
 			tiempoEnHoras++;
 		}
@@ -136,13 +141,12 @@ public class VigilanteServiceImpl implements VigilanteService {
 		return tiempoEnHoras;
 	}
 
+	@Override
 	public int valorAdicionalCilindraje(int cilindraje) {
-		int valorAdicional = 2000;
-		if (cilindraje > 500) {
-			return valorAdicional;
+		if (cilindraje > LIMITE_CILINDRAJE) {
+			return VALOR_ADICIONAL_MOTO;
 		}
-		int noValorAdicional = 0;
-		return noValorAdicional;
+		return 0;
 
 	}
 

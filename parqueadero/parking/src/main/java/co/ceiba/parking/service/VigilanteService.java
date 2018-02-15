@@ -23,4 +23,6 @@ public interface VigilanteService {
 	long calcularTimpoEnHoras(Date fechaEntrada, Date fechaSalida);
 
 	int calcularTotalApagarCarro(String placa);
+	
+	int valorAdicionalCilindraje(int cilindraje);
 }
