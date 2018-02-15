@@ -33,7 +33,7 @@ public class CarroController {
 	}
 	
 	@PostMapping("/outVehiculo")
-	public void addVehiculo(@RequestBody String placa) throws JSONException {
+	public void addVehiculo(@RequestBody String placa) throws Exception  {
 		LOG.info("METHOD: outCarroController: " + placa) ;
 		JSONObject json = new JSONObject(placa);
 		String jsonPlaca = json.getString("placa");	 

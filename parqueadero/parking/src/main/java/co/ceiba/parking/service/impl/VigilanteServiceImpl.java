@@ -103,15 +103,27 @@ public class VigilanteServiceImpl implements VigilanteService {
 		factura.setHoraSalida(fechaSalida);
 		long tiempoDeParqueo = calcularTimpoEnHoras(factura.getHoraIngreso(), fechaSalida);
 		factura.setTiempoDeParqueo((int) tiempoDeParqueo);
-		int totalAPagar = calcularTotalApagar(factura.getHoraIngreso(), fechaSalida);
+		int totalAPagar = calcularTotalApagar(placa);
 		factura.setPagoTotal(totalAPagar);
 		facturaRepo.save(factura);
 
 	}
 
-	public int calcularTotalApagar(Date fechaEntrada, Date fechaSalida) {
+	@Override
+	public int calcularTotalApagar(String placa) {
+		ParkingEntity parqueadero = parkingRepo.findByIdParking(1);
+		FacturaEntity factura = facturaRepo.findByPlaca(placa);
 
-		return 0;
+		int tiempoParqueado = factura.getTiempoDeParqueo();
+		LOG.info("METHOD: juligono " + tiempoParqueado);
+		int totalHoras = tiempoParqueado % 24;
+		int totalDias = tiempoParqueado / 24;
+		if (totalHoras % 24 > 9) {
+			totalDias++;
+			return totalDias * parqueadero.getPrecioDiaCarro();
+		}
+
+		return totalHoras * parqueadero.getPrecioHoraCarro() + totalDias * parqueadero.getPrecioDiaCarro();
 	}
 
 	@Override
@@ -130,7 +142,8 @@ public class VigilanteServiceImpl implements VigilanteService {
 		if (cilindraje > 500) {
 			return valorAdicional;
 		}
-		return 0;
+		int noValorAdicional = 0;
+		return noValorAdicional;
 
 	}
 

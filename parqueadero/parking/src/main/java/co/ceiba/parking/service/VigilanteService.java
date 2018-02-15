@@ -22,4 +22,5 @@ public interface VigilanteService {
 
 	long calcularTimpoEnHoras(Date fechaEntrada, Date fechaSalida);
 
+	int calcularTotalApagar(String placa);
 }

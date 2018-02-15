@@ -126,6 +126,8 @@ public class FacturaEntity {
 	public void setPagoTotal(int pagoTotal) {
 		this.pagoTotal = pagoTotal;
 	}
+
+	
 	
 	
 }
