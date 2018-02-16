@@ -2,6 +2,8 @@ package co.ceiba.parking.controller;
 
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
+import org.json.JSONException;
+import org.json.JSONObject;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -30,11 +32,11 @@ public class CarroController {
 		vigilante.addVehiculo(carroModel, 1);
 	}
 	
-//	@PostMapping("/outVehiculo")
-//	public void addVehiculo(@RequestBody String placa) throws JSONException  {
-//		LOG.info("METHOD: outCarroController: " + placa) ;
-//		JSONObject json = new JSONObject(placa);
-//		String jsonPlaca = json.getString("placa");	 
-//		vigilante.outVehiculoCarro(jsonPlaca);
-//	}
+	@PostMapping("/outVehiculo")
+	public void addVehiculo(@RequestBody String placa) throws JSONException  {
+		LOG.info("METHOD: outCarroController: " + placa) ;
+		JSONObject json = new JSONObject(placa);
+		String jsonPlaca = json.getString("placa");	 
+		vigilante.outVehiculoCarro(jsonPlaca);
+	}
 }
