@@ -8,7 +8,6 @@ public class CarroModel extends VehiculoModel{
 
 	
 	public CarroModel() {
-		super();
 	}
 
 	public CarroModel(String placa, boolean estado) {

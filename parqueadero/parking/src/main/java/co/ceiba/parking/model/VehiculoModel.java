@@ -9,7 +9,6 @@ public abstract class VehiculoModel {
 	}
 
 	public VehiculoModel(String placa, boolean estado) {
-		super();
 		this.placa = placa;
 		this.estado = estado;
 	}

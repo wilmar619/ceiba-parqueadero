@@ -22,7 +22,6 @@ public class VehiculoEntity {
 	private int cilindraje;
 
 	public VehiculoEntity() {
-		super();
 	}
 
 	public VehiculoEntity(int idVehiculo, String placa, boolean estado, int cilindraje) {

@@ -67,3 +67,5 @@ h
 8src/test/java/co/ceiba/parking/CalcularTimpoEnHoras.java,0\5\054fbdb3cd675d550f08ea97bf919a1d755f064c
 l
 <src/test/java/co/ceiba/parking/ValorAdicionalCilindraje.java,e\b\eb7d39474de9e4d98f31ca4bd84646c8b9fe9382
+k
+;src/test/java/co/ceiba/parking/CalcularTotalApagarMoto.java,4\7\47f7c128c145d7453659d8ff2193ec520e9f8ef1
