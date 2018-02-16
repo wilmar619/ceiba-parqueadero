@@ -18,11 +18,15 @@ public interface VigilanteService {
 
 	void comenzarFactura(VehiculoModel vehiculoModel, String tipoVehiculo);
 
-	void outVehiculo(String placa);
+	void outVehiculoCarro(String placa);
+	
+	void outVehiculoMoto(String placa);
 
 	long calcularTimpoEnHoras(Date fechaEntrada, Date fechaSalida);
 
 	int calcularTotalApagarCarro(String placa);
+	
+	int calcularTotalApagarMoto(String placa);
 	
 	int valorAdicionalCilindraje(int cilindraje);
 }

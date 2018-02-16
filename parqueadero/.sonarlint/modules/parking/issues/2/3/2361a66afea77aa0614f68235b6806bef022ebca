@@ -1,11 +1,5 @@
 
-Zsquid:S1172p"&Remove these unused method parameters.(¯ÊªÄ8ñÇ­™,H–.RMAJORZ
+¾squid:S1186š"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(·ü‘Éıÿÿÿÿ8õš¬Ñ™,H„0RCRITICALZ
 CODE_SMELL
-zsquid:S1126Q"AReplace this if-then-else statement by a single return statement.(¾È²–øÿÿÿÿ8ıå¡á—,H”.RMINORZ
-CODE_SMELL
-msquid:S3400r"9Remove this method and declare a constant for this value.(”·³›8ñÇ­™,H•.RMINORZ
-CODE_SMELL
-¾squid:S1186„"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(·ü‘Éıÿÿÿÿ8ñÇ­™,H—.RCRITICALZ
-CODE_SMELL
-‘squid:S1488v"]Immediately return this expression instead of assigning it to the temporary variable "horas".(Ñö¹†8—ÄÃ°™,Hğ.RMINORZ
+usquid:S1126V"AReplace this if-then-else statement by a single return statement.(¨­»Å8ıå¡á—,Hñ.RMINORZ
 CODE_SMELL

@@ -6,8 +6,8 @@ import org.springframework.stereotype.Repository;
 import co.ceiba.parking.entities.FacturaEntity;
 
 @Repository("facturaRepository")
-public interface FacturaRepository extends JpaRepository<FacturaEntity, Serializable>{
-	
-	public abstract FacturaEntity findByPlaca (String placa); 
+public interface FacturaRepository extends JpaRepository<FacturaEntity, Serializable> {
+
+	public abstract FacturaEntity findByPlaca(String placa);
 
 }

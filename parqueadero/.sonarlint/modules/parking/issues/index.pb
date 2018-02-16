@@ -59,9 +59,11 @@ d
 4src/main/java/co/ceiba/parking/model/CarroModel.java,9\e\9e280b2505fb42fa603e7ddaf1477e8861622205
 q
 Asrc/main/java/co/ceiba/parking/repository/VehiculoRepository.java,4\6\462aaa02dad0da37c316e5eac93efb4141e6f3be
-k
-;src/test/java/co/ceiba/parking/VerificarDisponibilidad.java,1\e\1efc54ab4a87299b70b790ab73480ac263d31642
 j
 :src/test/java/co/ceiba/parking/VerificarPlacaConElDia.java,3\7\377b8414b291193dd16679082078721e1a13e432
-]
--src/test/java/co/ceiba/parking/Vigilante.java,f\e\fe0008f52c5013ea3beec839b68c7cbba4a6245d
+l
+<src/test/java/co/ceiba/parking/CalcularTotalApagarCarro.java,6\f\6fc921fb5ca41f1fc9541e19d09168db42096be7
+h
+8src/test/java/co/ceiba/parking/CalcularTimpoEnHoras.java,0\5\054fbdb3cd675d550f08ea97bf919a1d755f064c
+l
+<src/test/java/co/ceiba/parking/ValorAdicionalCilindraje.java,e\b\eb7d39474de9e4d98f31ca4bd84646c8b9fe9382

@@ -23,7 +23,6 @@
 <fullyQualifiedTypeName name="co.ceiba.parking.entities.MotoEntity"/>
 <fullyQualifiedTypeName name="co.ceiba.parking.converter.CarroConverter"/>
 <fullyQualifiedTypeName name="co.ceiba.parking.converter.MotoConverter"/>
-<fullyQualifiedTypeName name="co.ceiba.parking.entities.FacturaEntity"/>
 <fullyQualifiedTypeName name="com.mysql.jdbc.log.LogFactory"/>
 <fullyQualifiedTypeName name="com.mysql.jdbc.log.Log"/>
 <fullyQualifiedTypeName name="org.hibernate.annotations.common.util.impl.Log"/>
@@ -39,16 +38,11 @@
 <fullyQualifiedTypeName name="junit.framework.Assert"/>
 <fullyQualifiedTypeName name="javax.validation.constraints.AssertTrue"/>
 <fullyQualifiedTypeName name="java.util.Calendar"/>
-<fullyQualifiedTypeName name="java.lang.String"/>
 <fullyQualifiedTypeName name="com.sun.mail.handlers.image_gif"/>
 <fullyQualifiedTypeName name="org.springframework.data.jpa.repository.JpaRepository"/>
 <fullyQualifiedTypeName name="java.io.Serializable"/>
-<fullyQualifiedTypeName name="co.ceiba.parking.entities.VehiculoEntity"/>
 <fullyQualifiedTypeName name="co.ceiba.parking.model.MotoModel"/>
-<fullyQualifiedTypeName name="co.ceiba.parking.model.VehiculoModel"/>
 <fullyQualifiedTypeName name="co.ceiba.parking.repository.VehiculoRepository"/>
-<fullyQualifiedTypeName name="co.ceiba.parking.model.CarroModel"/>
-<fullyQualifiedTypeName name="co.ceiba.parking.entities.ParkingEntity"/>
 <fullyQualifiedTypeName name="org.springframework.stereotype.Repository"/>
 <fullyQualifiedTypeName name="org.json.JSONObject"/>
 <fullyQualifiedTypeName name="java.lang.Iterable"/>
@@ -58,6 +52,12 @@
 <fullyQualifiedTypeName name="org.springframework.beans.factory.annotation.Qualifier"/>
 <fullyQualifiedTypeName name="java.util.Date"/>
 <fullyQualifiedTypeName name="java.util.GregorianCalendar"/>
-<fullyQualifiedTypeName name="co.ceiba.parking.service.VigilanteService"/>
 <fullyQualifiedTypeName name="co.ceiba.parking.service.impl.VigilanteServiceImpl"/>
+<fullyQualifiedTypeName name="co.ceiba.parking.service.VigilanteService"/>
+<fullyQualifiedTypeName name="co.ceiba.parking.entities.ParkingEntity"/>
+<fullyQualifiedTypeName name="java.lang.String"/>
+<fullyQualifiedTypeName name="co.ceiba.parking.model.VehiculoModel"/>
+<fullyQualifiedTypeName name="co.ceiba.parking.model.CarroModel"/>
+<fullyQualifiedTypeName name="co.ceiba.parking.entities.VehiculoEntity"/>
+<fullyQualifiedTypeName name="co.ceiba.parking.entities.FacturaEntity"/>
 </qualifiedTypeNameHistroy>
