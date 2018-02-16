@@ -37,6 +37,6 @@ public class CarroController {
 		LOG.info("METHOD: outCarroController: " + placa) ;
 		JSONObject json = new JSONObject(placa);
 		String jsonPlaca = json.getString("placa");	 
-		vigilante.outVehiculo(jsonPlaca);
+		vigilante.outVehiculoCarro(jsonPlaca);
 	}
 }

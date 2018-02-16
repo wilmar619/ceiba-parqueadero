@@ -59,7 +59,7 @@ public class VigilanteServiceImpl implements VigilanteService {
 			parqueadero.setNumCeldasCarro(parqueadero.getNumCeldasCarro() - 1);
 			if (!verificarPlacaConElDia(carroModel, Calendar.DAY_OF_WEEK)) {
 				vehiculoRepo.save(carroConverter.model2entity(carroModel));
-				comenzarFactura(carroModel, CarroModel.tipo);
+				comenzarFactura(carroModel, CarroModel.tipo , 0);
 			}
 		}
 	}
@@ -72,7 +72,7 @@ public class VigilanteServiceImpl implements VigilanteService {
 			parqueadero.setNumCeldasMoto(parqueadero.getNumCeldasMoto() - 1);
 			if (!verificarPlacaConElDia(motoModel, Calendar.DAY_OF_WEEK)) {
 				vehiculoRepo.save(motoConverter.model2entity(motoModel));
-				comenzarFactura(motoModel, MotoModel.tipo);
+				comenzarFactura(motoModel, MotoModel.tipo , motoModel.getCilindraje());
 			}
 		}
 
@@ -114,6 +114,7 @@ public class VigilanteServiceImpl implements VigilanteService {
 		int tiempoParqueado = factura.getTiempoDeParqueo();
 		int totalHoras = tiempoParqueado % CANTIDAD_HORAS_DIA;
 		int totalDias = tiempoParqueado / CANTIDAD_HORAS_DIA;
+
 		if (totalHoras % CANTIDAD_HORAS_DIA > LIMITE_DE_HORAS_PERMITIDAS) {
 			totalDias++;
 			return totalDias * parqueadero.getPrecioDiaCarro();
@@ -128,15 +129,18 @@ public class VigilanteServiceImpl implements VigilanteService {
 		FacturaEntity factura = facturaRepo.findByPlaca(placa);
 
 		int cilindraje = factura.getCilindraje();
+		LOG.info("METHOD: wilmar____cilindraje  " + cilindraje);
 		int tiempoParqueado = factura.getTiempoDeParqueo();
 		int totalHoras = tiempoParqueado % CANTIDAD_HORAS_DIA;
+		LOG.info("METHOD: wilmar____horas  " + totalHoras);
 		int totalDias = tiempoParqueado / CANTIDAD_HORAS_DIA;
+		LOG.info("METHOD: wilmar____dias  " + totalDias);
 		if (totalHoras % CANTIDAD_HORAS_DIA > LIMITE_DE_HORAS_PERMITIDAS) {
 			totalDias++;
-			return totalDias * parqueadero.getPrecioDiaCarro() + valorAdicionalCilindraje(cilindraje);
+			return totalDias * parqueadero.getPrecioDiaMoto() + valorAdicionalCilindraje(cilindraje);
 		}
 
-		return totalHoras * parqueadero.getPrecioHoraCarro() + totalDias * parqueadero.getPrecioDiaCarro()
+		return totalHoras * parqueadero.getPrecioHoraMoto() + totalDias * parqueadero.getPrecioDiaMoto()
 				+ valorAdicionalCilindraje(cilindraje);
 	}
 
@@ -174,13 +178,14 @@ public class VigilanteServiceImpl implements VigilanteService {
 	}
 
 	@Override
-	public void comenzarFactura(VehiculoModel vehiculoModel, String tipoVehiculo) {
+	public void comenzarFactura(VehiculoModel vehiculoModel, String tipoVehiculo , int cilindraje) {
 		Date fechaInicio = new Date();
 		FacturaEntity factura = new FacturaEntity();
 		factura.setEstado(true);
 		factura.setPlaca(vehiculoModel.getPlaca());
 		factura.setTipoVehiculo(tipoVehiculo);
 		factura.setHoraIngreso(fechaInicio);
+		factura.setCilindraje(cilindraje);
 		facturaRepo.save(factura);
 	}
 
