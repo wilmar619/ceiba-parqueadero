@@ -118,7 +118,7 @@ public class FacturaEntity {
 	public void setTiempoDeParqueo(int tiempoDeParqueo) {
 		this.tiempoDeParqueo = tiempoDeParqueo;
 	}
-
+	
 	public int getPagoTotal() {
 		return pagoTotal;
 	}

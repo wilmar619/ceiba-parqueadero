@@ -32,11 +32,11 @@ public class CarroController {
 		vigilante.addVehiculo(carroModel, 1);
 	}
 	
-	@PostMapping("/outVehiculo")
-	public void addVehiculo(@RequestBody String placa) throws JSONException  {
-		LOG.info("METHOD: outCarroController: " + placa) ;
-		JSONObject json = new JSONObject(placa);
-		String jsonPlaca = json.getString("placa");	 
-		vigilante.outVehiculoCarro(jsonPlaca);
-	}
+//	@PostMapping("/outVehiculo")
+//	public void addVehiculo(@RequestBody String placa) throws JSONException  {
+//		LOG.info("METHOD: outCarroController: " + placa) ;
+//		JSONObject json = new JSONObject(placa);
+//		String jsonPlaca = json.getString("placa");	 
+//		vigilante.outVehiculoCarro(jsonPlaca);
+//	}
 }
