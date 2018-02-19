@@ -150,7 +150,6 @@ public class VigilanteServiceImpl implements VigilanteService {
 		return 0;
 
 	}
-
 	@Override
 	public boolean verificarDisponibilidad(String tipoVehiculo) {
 		return (celdasParqueadero(1, tipoVehiculo) != 0);
@@ -185,8 +184,8 @@ public class VigilanteServiceImpl implements VigilanteService {
 		factura.setHoraIngreso(fechaInicio);
 		factura.setCilindraje(cilindraje);
 		facturaRepo.save(factura);
+		
 	}
-
 	@Override
 	public long calcularTimpoEnHoras(Date fechaEntrada, Date fechaSalida) {
 		long tiempoEnHoras = ((fechaSalida.getTime() - fechaEntrada.getTime()) / MILISEGUNDOS_EN_HORAS);

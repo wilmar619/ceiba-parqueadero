@@ -16,7 +16,7 @@ public interface VigilanteService {
 
 	boolean verificarDisponibilidad(String tipoVehiculo);
 
-	void comenzarFactura(VehiculoModel vehiculoModel, String tipoVehiculo, int cilindraje);
+	void comenzarFactura(VehiculoModel vehiculoModel, String tipoVehiculo , int cilindraje);
 
 	void outVehiculoCarro(String placa);
 	

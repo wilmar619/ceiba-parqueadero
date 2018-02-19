@@ -69,3 +69,5 @@ l
 <src/test/java/co/ceiba/parking/ValorAdicionalCilindraje.java,e\b\eb7d39474de9e4d98f31ca4bd84646c8b9fe9382
 k
 ;src/test/java/co/ceiba/parking/CalcularTotalApagarMoto.java,4\7\47f7c128c145d7453659d8ff2193ec520e9f8ef1
+r
+Bsrc/main/java/co/ceiba/parking/controller/VigilanteController.java,7\e\7eaf20052fefa7025efc7855073e67bd18a41c81

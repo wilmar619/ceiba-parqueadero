@@ -1,7 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <qualifiedTypeNameHistroy>
-<fullyQualifiedTypeName name="co.ceiba.parking.model.Vehiculo"/>
-<fullyQualifiedTypeName name="javax.persistence.Entity"/>
 <fullyQualifiedTypeName name="javax.persistence.Table"/>
 <fullyQualifiedTypeName name="javax.persistence.Id"/>
 <fullyQualifiedTypeName name="javax.persistence.GeneratedValue"/>
@@ -40,24 +38,26 @@
 <fullyQualifiedTypeName name="com.sun.mail.handlers.image_gif"/>
 <fullyQualifiedTypeName name="org.springframework.data.jpa.repository.JpaRepository"/>
 <fullyQualifiedTypeName name="java.io.Serializable"/>
-<fullyQualifiedTypeName name="co.ceiba.parking.repository.VehiculoRepository"/>
 <fullyQualifiedTypeName name="org.springframework.stereotype.Repository"/>
-<fullyQualifiedTypeName name="org.json.JSONObject"/>
 <fullyQualifiedTypeName name="java.lang.Iterable"/>
 <fullyQualifiedTypeName name="java.util.Iterator"/>
 <fullyQualifiedTypeName name="java.text.SimpleDateFormat"/>
 <fullyQualifiedTypeName name="org.springframework.beans.factory.annotation.Autowired"/>
 <fullyQualifiedTypeName name="org.springframework.beans.factory.annotation.Qualifier"/>
-<fullyQualifiedTypeName name="java.util.Date"/>
 <fullyQualifiedTypeName name="java.util.GregorianCalendar"/>
-<fullyQualifiedTypeName name="co.ceiba.parking.service.impl.VigilanteServiceImpl"/>
 <fullyQualifiedTypeName name="co.ceiba.parking.service.VigilanteService"/>
-<fullyQualifiedTypeName name="java.lang.String"/>
 <fullyQualifiedTypeName name="co.ceiba.parking.model.VehiculoModel"/>
-<fullyQualifiedTypeName name="co.ceiba.parking.model.CarroModel"/>
-<fullyQualifiedTypeName name="co.ceiba.parking.entities.VehiculoEntity"/>
 <fullyQualifiedTypeName name="co.ceiba.parking.entities.FacturaEntity"/>
 <fullyQualifiedTypeName name="co.ceiba.parking.entities.ParkingEntity"/>
 <fullyQualifiedTypeName name="java.util.Calendar"/>
 <fullyQualifiedTypeName name="co.ceiba.parking.model.MotoModel"/>
+<fullyQualifiedTypeName name="org.json.JSONException"/>
+<fullyQualifiedTypeName name="org.json.JSONObject"/>
+<fullyQualifiedTypeName name="java.lang.String"/>
+<fullyQualifiedTypeName name="co.ceiba.parking.repository.FacturaRepository"/>
+<fullyQualifiedTypeName name="co.ceiba.parking.repository.VehiculoRepository"/>
+<fullyQualifiedTypeName name="co.ceiba.parking.entities.VehiculoEntity"/>
+<fullyQualifiedTypeName name="co.ceiba.parking.service.impl.VigilanteServiceImpl"/>
+<fullyQualifiedTypeName name="java.util.Date"/>
+<fullyQualifiedTypeName name="co.ceiba.parking.model.CarroModel"/>
 </qualifiedTypeNameHistroy>
