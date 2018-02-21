@@ -12,7 +12,8 @@ import org.springframework.test.context.junit4.SpringRunner;
 import co.ceiba.parking.service.VigilanteService;
 
 @RunWith(SpringRunner.class)
-@SpringBootTest(classes = ParkingApplication.class)
+//@SpringBootTest(classes = ParkingApplication.class)
+@SpringBootTest
 public class CalcularTimpoEnHoras {
 
 	@Autowired

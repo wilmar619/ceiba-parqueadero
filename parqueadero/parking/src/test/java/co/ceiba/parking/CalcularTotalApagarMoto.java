@@ -15,7 +15,8 @@ import co.ceiba.parking.repository.VehiculoRepository;
 import co.ceiba.parking.service.VigilanteService;
 
 @RunWith(SpringRunner.class)
-@SpringBootTest(classes = ParkingApplication.class)
+//@SpringBootTest(classes = ParkingApplication.class)
+@SpringBootTest
 public class CalcularTotalApagarMoto {
 
 	@Autowired
