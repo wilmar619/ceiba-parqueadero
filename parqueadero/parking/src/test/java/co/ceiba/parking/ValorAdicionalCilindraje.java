@@ -12,8 +12,8 @@ import org.springframework.test.context.junit4.SpringRunner;
 import co.ceiba.parking.service.VigilanteService;
 
 @RunWith(SpringRunner.class)
-//@SpringBootTest(classes = ParkingApplication.class)
-@SpringBootTest
+@SpringBootTest(classes = ParkingApplication.class)
+
 public class ValorAdicionalCilindraje {
 	
 	private static final Object VALOR_ADICIONAL_MOTO = 2000;

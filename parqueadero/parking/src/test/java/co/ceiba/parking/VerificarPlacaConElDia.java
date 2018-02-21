@@ -15,8 +15,8 @@ import co.ceiba.parking.model.VehiculoModel;
 import co.ceiba.parking.service.VigilanteService;
 
 @RunWith(SpringRunner.class)
-//@SpringBootTest(classes = ParkingApplication.class)
-@SpringBootTest
+@SpringBootTest(classes = ParkingApplication.class)
+
 public class VerificarPlacaConElDia {
 
 
