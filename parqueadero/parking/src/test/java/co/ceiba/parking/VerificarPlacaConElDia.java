@@ -9,6 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
+import org.springframework.transaction.annotation.Transactional;
 
 import co.ceiba.parking.model.CarroModel;
 import co.ceiba.parking.model.VehiculoModel;
@@ -16,7 +17,7 @@ import co.ceiba.parking.service.VigilanteService;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest(classes = ParkingApplication.class)
-
+@Transactional
 public class VerificarPlacaConElDia {
 
 

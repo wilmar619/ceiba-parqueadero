@@ -2,13 +2,14 @@ package co.ceiba.parking;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotEquals;
-
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
+import org.springframework.transaction.annotation.Transactional;
+
 import co.ceiba.parking.entities.FacturaEntity;
 import co.ceiba.parking.entities.VehiculoEntity;
 import co.ceiba.parking.repository.FacturaRepository;
@@ -17,7 +18,7 @@ import co.ceiba.parking.service.VigilanteService;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest(classes = ParkingApplication.class)
-
+@Transactional
 public class CalcularTotalApagarCarro {
 
 	@Autowired
@@ -49,14 +50,14 @@ public class CalcularTotalApagarCarro {
 		
 		vehiculoRepo.delete(carro);
 		facturaRepo.delete(fac);
-
+		
 	}
 	@Test
 	public void CalcularTotalApagarCarroValorMalotest() {
 		VehiculoEntity carro = new VehiculoEntity();
 		FacturaEntity fac = new FacturaEntity();
 		
-		carro.setPlaca("TWB413");
+		carro.setPlaca("TWB414");
 		vehiculoRepo.save(carro);	
 		
 		fac.setPlaca(carro.getPlaca());
@@ -64,17 +65,18 @@ public class CalcularTotalApagarCarro {
 		fac.setTipoVehiculo("carro");
 		facturaRepo.save(fac);
 
-		assertNotEquals(15000, vigilante.calcularTotalApagarCarro("TWB413"));
+		assertNotEquals(5500, vigilante.calcularTotalApagarCarro("TWB414"));
 		
 		vehiculoRepo.delete(carro);
 		facturaRepo.delete(fac);
 
-	}@Test
+	}
+	@Test
 	public void CalcularTotalApagarCarroHorasYMinutos() {
 		VehiculoEntity carro = new VehiculoEntity();
 		FacturaEntity fac = new FacturaEntity();
 		
-		carro.setPlaca("TWB413");
+		carro.setPlaca("TWB418");
 		vehiculoRepo.save(carro);	
 		
 		fac.setPlaca(carro.getPlaca());
@@ -82,7 +84,7 @@ public class CalcularTotalApagarCarro {
 		fac.setTipoVehiculo("carro");
 		facturaRepo.save(fac);
 
-		assertEquals(17000, vigilante.calcularTotalApagarCarro("TWB413"));
+		assertEquals(17000, vigilante.calcularTotalApagarCarro("TWB418"));
 		
 		vehiculoRepo.delete(carro);
 		facturaRepo.delete(fac);

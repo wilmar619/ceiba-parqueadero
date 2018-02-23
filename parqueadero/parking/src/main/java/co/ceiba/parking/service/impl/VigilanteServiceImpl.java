@@ -1,7 +1,10 @@
 package co.ceiba.parking.service.impl;
 
+import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
+import java.util.List;
+
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -14,6 +17,7 @@ import co.ceiba.parking.entities.ParkingEntity;
 import co.ceiba.parking.model.CarroModel;
 import co.ceiba.parking.model.MotoModel;
 import co.ceiba.parking.model.VehiculoModel;
+import co.ceiba.parking.model.VehiculosActivos;
 import co.ceiba.parking.repository.FacturaRepository;
 import co.ceiba.parking.repository.ParkingRepository;
 import co.ceiba.parking.repository.VehiculoRepository;
@@ -150,6 +154,7 @@ public class VigilanteServiceImpl implements VigilanteService {
 		return 0;
 
 	}
+
 	@Override
 	public boolean verificarDisponibilidad(String tipoVehiculo) {
 		return (celdasParqueadero(1, tipoVehiculo) != 0);
@@ -184,8 +189,9 @@ public class VigilanteServiceImpl implements VigilanteService {
 		factura.setHoraIngreso(fechaInicio);
 		factura.setCilindraje(cilindraje);
 		facturaRepo.save(factura);
-		
+
 	}
+
 	@Override
 	public long calcularTimpoEnHoras(Date fechaEntrada, Date fechaSalida) {
 		long tiempoEnHoras = ((fechaSalida.getTime() - fechaEntrada.getTime()) / MILISEGUNDOS_EN_HORAS);
@@ -195,6 +201,19 @@ public class VigilanteServiceImpl implements VigilanteService {
 		}
 
 		return tiempoEnHoras;
+	}
+
+	@Override
+	public List<VehiculosActivos> listaVehiculosActivos() {
+		List<FacturaEntity> facturas = facturaRepo.findByEstado(true);
+		List<VehiculosActivos> vehiculosActivos = new ArrayList<>();
+		for (FacturaEntity factura : facturas) {
+			VehiculosActivos activos = new VehiculosActivos(factura.getPlaca(), factura.getHoraIngreso(),
+					factura.getTipoVehiculo());
+			vehiculosActivos.add(activos);
+		}
+
+		return vehiculosActivos;
 	}
 
 }

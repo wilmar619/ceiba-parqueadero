@@ -1,8 +1,9 @@
 package co.ceiba.parking.service;
 
 import java.util.Date;
-
+import java.util.List;
 import co.ceiba.parking.model.CarroModel;
+import co.ceiba.parking.model.VehiculosActivos;
 import co.ceiba.parking.model.MotoModel;
 import co.ceiba.parking.model.VehiculoModel;
 
@@ -29,4 +30,8 @@ public interface VigilanteService {
 	int calcularTotalApagarMoto(String placa);
 	
 	int valorAdicionalCilindraje(int cilindraje);
+	
+	List<VehiculosActivos> listaVehiculosActivos ();
+	
+	
 }

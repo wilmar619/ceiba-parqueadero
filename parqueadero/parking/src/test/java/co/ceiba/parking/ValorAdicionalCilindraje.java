@@ -2,18 +2,19 @@ package co.ceiba.parking;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotEquals;
-
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
+import org.springframework.transaction.annotation.Transactional;
+
 import co.ceiba.parking.service.VigilanteService;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest(classes = ParkingApplication.class)
-
+@Transactional
 public class ValorAdicionalCilindraje {
 	
 	private static final Object VALOR_ADICIONAL_MOTO = 2000;
