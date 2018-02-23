@@ -189,8 +189,8 @@ public class VigilanteServiceImpl implements VigilanteService {
 	@Override
 	public long calcularTimpoEnHoras(Date fechaEntrada, Date fechaSalida) {
 		long tiempoEnHoras = ((fechaSalida.getTime() - fechaEntrada.getTime()) / MILISEGUNDOS_EN_HORAS);
-		long timpoEnSegundos = ((fechaSalida.getTime() - fechaEntrada.getTime()) % (MILISEGUNDOS_EN_HORAS));
-		if ((timpoEnSegundos) != 0) {
+		long moduloEnHoras = ((fechaSalida.getTime() - fechaEntrada.getTime()) % (MILISEGUNDOS_EN_HORAS));
+		if ((moduloEnHoras) != 0) {
 			tiempoEnHoras++;
 		}
 
