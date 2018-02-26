@@ -82,71 +82,51 @@ public class VigilanteServiceImpl implements VigilanteService {
 
 	}
 
-	@Override
-	public void outVehiculoCarro(String placa) {
+	public void outVehiculo(String placa) {
 		Date fechaSalida = new Date();
 		FacturaEntity factura = facturaRepo.findByPlaca(placa);
 		factura.setEstado(false);
 		factura.setHoraSalida(fechaSalida);
 		long tiempoDeParqueo = calcularTimpoEnHoras(factura.getHoraIngreso(), fechaSalida);
 		factura.setTiempoDeParqueo((int) tiempoDeParqueo);
-		int totalAPagar = calcularTotalApagarCarro(placa);
+		int totalAPagar = calcularTotalApagarVehiculo(placa);
 		factura.setPagoTotal(totalAPagar);
 		facturaRepo.save(factura);
 
 	}
 
-	@Override
-	public void outVehiculoMoto(String placa) {
-		Date fechaSalida = new Date();
-		FacturaEntity factura = facturaRepo.findByPlaca(placa);
-		factura.setEstado(false);
-		factura.setHoraSalida(fechaSalida);
-		long tiempoDeParqueo = calcularTimpoEnHoras(factura.getHoraIngreso(), fechaSalida);
-		factura.setTiempoDeParqueo((int) tiempoDeParqueo);
-		int totalAPagar = calcularTotalApagarMoto(placa);
-		factura.setPagoTotal(totalAPagar);
-		facturaRepo.save(factura);
-
-	}
-
-	@Override
-	public int calcularTotalApagarCarro(String placa) {
-		ParkingEntity parqueadero = parkingRepo.findByIdParking(1);
-		FacturaEntity factura = facturaRepo.findByPlaca(placa);
-
-		int tiempoParqueado = factura.getTiempoDeParqueo();
-		int totalHoras = tiempoParqueado % CANTIDAD_HORAS_DIA;
-		int totalDias = tiempoParqueado / CANTIDAD_HORAS_DIA;
-
-		if (totalHoras % CANTIDAD_HORAS_DIA > LIMITE_DE_HORAS_PERMITIDAS) {
-			totalDias++;
-			return totalDias * parqueadero.getPrecioDiaCarro();
-		}
-
-		return totalHoras * parqueadero.getPrecioHoraCarro() + totalDias * parqueadero.getPrecioDiaCarro();
-	}
-
-	@Override
-	public int calcularTotalApagarMoto(String placa) {
-		LOG.info("METHOD: calcularTotalMoto  ");
+	public int calcularTotalApagarVehiculo(String placa) {
+		LOG.info("METHOD: calcularTotalVehiculo ");
 		ParkingEntity parqueadero = parkingRepo.findByIdParking(1);
 		FacturaEntity factura = facturaRepo.findByPlaca(placa);
 
 		int cilindraje = factura.getCilindraje();
+		String tipoVehiculo = factura.getTipoVehiculo();
 		int tiempoParqueado = factura.getTiempoDeParqueo();
 		int totalHoras = tiempoParqueado % CANTIDAD_HORAS_DIA;
 		int totalDias = tiempoParqueado / CANTIDAD_HORAS_DIA;
 		if (totalHoras % CANTIDAD_HORAS_DIA > LIMITE_DE_HORAS_PERMITIDAS) {
 			totalDias++;
-			return totalDias * parqueadero.getPrecioDiaMoto() + valorAdicionalCilindraje(cilindraje);
+			if (tipoVehiculo.equals("carro")) {
+				return totalDias * parqueadero.getPrecioDiaCarro();
+			}
+			if (tipoVehiculo.equals("moto")) {
+				return totalDias * parqueadero.getPrecioDiaMoto() + valorAdicionalCilindraje(cilindraje);
+			}
 		}
+		if (tipoVehiculo.equals("moto")) {
+			return totalHoras * parqueadero.getPrecioHoraMoto() + totalDias * parqueadero.getPrecioDiaMoto()
+					+ valorAdicionalCilindraje(cilindraje);
 
-		return totalHoras * parqueadero.getPrecioHoraMoto() + totalDias * parqueadero.getPrecioDiaMoto()
-				+ valorAdicionalCilindraje(cilindraje);
+		}
+		
+		if (tipoVehiculo.equals("carro")) {
+			return totalHoras * parqueadero.getPrecioHoraCarro() + totalDias * parqueadero.getPrecioDiaCarro();
+		}
+		return 0;
+		
 	}
 
-	@Override
 	public int valorAdicionalCilindraje(int cilindraje) {
 		if (cilindraje > LIMITE_CILINDRAJE) {
 			return VALOR_ADICIONAL_MOTO;
@@ -155,7 +135,6 @@ public class VigilanteServiceImpl implements VigilanteService {
 
 	}
 
-	@Override
 	public boolean verificarDisponibilidad(String tipoVehiculo) {
 		return (celdasParqueadero(1, tipoVehiculo) != 0);
 	}
@@ -169,7 +148,6 @@ public class VigilanteServiceImpl implements VigilanteService {
 		}
 	}
 
-	@Override
 	public boolean verificarPlacaConElDia(VehiculoModel vehiculoModel, int diaIngreso) {
 		String placa = vehiculoModel.getPlaca();
 		char primeraLetra = placa.charAt(0);
@@ -179,12 +157,11 @@ public class VigilanteServiceImpl implements VigilanteService {
 		return false;
 	}
 
-	@Override
 	public void comenzarFactura(VehiculoModel vehiculoModel, String tipoVehiculo, int cilindraje) {
 		Date fechaInicio = new Date();
 		FacturaEntity factura = new FacturaEntity();
 		factura.setEstado(true);
-		factura.setPlaca(vehiculoModel.getPlaca());
+		factura.setPlaca(vehiculoModel.getPlaca().toUpperCase());
 		factura.setTipoVehiculo(tipoVehiculo);
 		factura.setHoraIngreso(fechaInicio);
 		factura.setCilindraje(cilindraje);
@@ -192,7 +169,6 @@ public class VigilanteServiceImpl implements VigilanteService {
 
 	}
 
-	@Override
 	public long calcularTimpoEnHoras(Date fechaEntrada, Date fechaSalida) {
 		long tiempoEnHoras = ((fechaSalida.getTime() - fechaEntrada.getTime()) / MILISEGUNDOS_EN_HORAS);
 		long moduloEnHoras = ((fechaSalida.getTime() - fechaEntrada.getTime()) % (MILISEGUNDOS_EN_HORAS));

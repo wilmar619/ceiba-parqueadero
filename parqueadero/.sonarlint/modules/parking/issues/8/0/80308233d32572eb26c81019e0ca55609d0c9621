@@ -1,11 +1,11 @@
 
-nsquid:S11611":Add the "@Override" annotation above this method signature(àµï³8úËãö™,HÔ3RMAJORZ
+ssquid:S1161":Add the "@Override" annotation above this method signature(Åáşüÿÿÿÿ8úËãö™,Hş3RMAJORZ
 CODE_SMELL
-nsquid:S1161":Add the "@Override" annotation above this method signature(‹ıõô8èªËÛ—,HÕ3RMAJORZ
+ssquid:S1161,":Add the "@Override" annotation above this method signature(º·í”şÿÿÿÿ8èªËÛ—,Hü3RMAJORZ
 CODE_SMELL
-ssquid:S1161":Add the "@Override" annotation above this method signature(Åáşüÿÿÿÿ8úËãö™,HÖ3RMAJORZ
+—squid:S00115"ZRename this constant name to match the regular expression '^[A-Z][A-Z0-9]*(_[A-Z0-9]+)*$'.(¹—Ñ–üÿÿÿÿ8èªËÛ—,Hı3RCRITICALZ
 CODE_SMELL
-—squid:S00115"ZRename this constant name to match the regular expression '^[A-Z][A-Z0-9]*(_[A-Z0-9]+)*$'.(¹—Ñ–üÿÿÿÿ8èªËÛ—,H×3RCRITICALZ
+nsquid:S11611":Add the "@Override" annotation above this method signature(àµï³8úËãö™,Hÿ3RMAJORZ
 CODE_SMELL
-ssquid:S1161,":Add the "@Override" annotation above this method signature(º·í”şÿÿÿÿ8èªËÛ—,HØ3RMAJORZ
+nsquid:S1161":Add the "@Override" annotation above this method signature(‹ıõô8èªËÛ—,H€4RMAJORZ
 CODE_SMELL

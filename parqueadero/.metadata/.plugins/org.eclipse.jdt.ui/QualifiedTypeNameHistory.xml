@@ -1,10 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <qualifiedTypeNameHistroy>
-<fullyQualifiedTypeName name="javax.persistence.Column"/>
-<fullyQualifiedTypeName name="java.sql.Date"/>
-<fullyQualifiedTypeName name="co.ceiba.parking.entities.RegistroEntity"/>
-<fullyQualifiedTypeName name="java.lang.Integer"/>
-<fullyQualifiedTypeName name="co.ceiba.parking.service.impl.EntradaVehiculo"/>
 <fullyQualifiedTypeName name="org.springframework.boot.autoconfigure.domain.EntityScan"/>
 <fullyQualifiedTypeName name="org.springframework.http.HttpStatus"/>
 <fullyQualifiedTypeName name="org.springframework.data.jpa.repository.config.EnableJpaRepositories"/>
@@ -44,7 +39,6 @@
 <fullyQualifiedTypeName name="java.util.GregorianCalendar"/>
 <fullyQualifiedTypeName name="co.ceiba.parking.service.VigilanteService"/>
 <fullyQualifiedTypeName name="co.ceiba.parking.model.VehiculoModel"/>
-<fullyQualifiedTypeName name="co.ceiba.parking.entities.FacturaEntity"/>
 <fullyQualifiedTypeName name="co.ceiba.parking.entities.ParkingEntity"/>
 <fullyQualifiedTypeName name="java.util.Calendar"/>
 <fullyQualifiedTypeName name="co.ceiba.parking.model.MotoModel"/>
@@ -60,4 +54,10 @@
 <fullyQualifiedTypeName name="org.springframework.web.bind.annotation.CrossOrigin"/>
 <fullyQualifiedTypeName name="javax.transaction.Transactional"/>
 <fullyQualifiedTypeName name="org.springframework.transaction.annotation.Transactional"/>
+<fullyQualifiedTypeName name="co.ceiba.parking.model.FacturaModel"/>
+<fullyQualifiedTypeName name="co.ceiba.parking.entities.FacturaEntity"/>
+<fullyQualifiedTypeName name="java.util.ArrayList"/>
+<fullyQualifiedTypeName name="org.springframework.web.bind.annotation.GetMapping"/>
+<fullyQualifiedTypeName name="co.ceiba.parking.model.VehiculosActivos"/>
+<fullyQualifiedTypeName name="java.util.List"/>
 </qualifiedTypeNameHistroy>

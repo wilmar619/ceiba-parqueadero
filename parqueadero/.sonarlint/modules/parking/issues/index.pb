@@ -71,5 +71,3 @@ k
 ;src/test/java/co/ceiba/parking/CalcularTotalApagarMoto.java,4\7\47f7c128c145d7453659d8ff2193ec520e9f8ef1
 r
 Bsrc/main/java/co/ceiba/parking/controller/VigilanteController.java,7\e\7eaf20052fefa7025efc7855073e67bd18a41c81
-f
-6src/main/java/co/ceiba/parking/model/FacturaModel.java,3\2\32fceaf61d7ff30c57e41fc3147187fe6fedba70
