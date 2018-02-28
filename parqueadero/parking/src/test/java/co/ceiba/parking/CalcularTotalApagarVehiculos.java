@@ -1,6 +1,7 @@
 package co.ceiba.parking;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNotEquals;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -8,21 +9,17 @@ import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
 import org.springframework.transaction.annotation.Transactional;
-
 import co.ceiba.parking.entities.FacturaEntity;
 import co.ceiba.parking.entities.VehiculoEntity;
 import co.ceiba.parking.repository.FacturaRepository;
 import co.ceiba.parking.repository.VehiculoRepository;
-import co.ceiba.parking.service.VigilanteService;
+import co.ceiba.parking.service.impl.VigilanteServiceImpl;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest(classes = ParkingApplication.class)
 @Transactional
-public class CalcularTotalApagarMoto {
+public class CalcularTotalApagarVehiculos {
 
-	@Autowired
-	@Qualifier("VigilanteService")
-	VigilanteService vigilante;
 
 	@Autowired
 	@Qualifier("facturaRepository")
@@ -31,7 +28,67 @@ public class CalcularTotalApagarMoto {
 	@Autowired
 	@Qualifier("vehiculoRepository")
 	private VehiculoRepository vehiculoRepo;
+	
+	VigilanteServiceImpl vigi = new VigilanteServiceImpl();
 
+	@Test
+	public void CalcularTotalApagarCarroHorastest() {
+		VehiculoEntity carro = new VehiculoEntity();
+		FacturaEntity fac = new FacturaEntity();
+		
+		carro.setPlaca("TWB413");
+		vehiculoRepo.save(carro);	
+		
+		fac.setPlaca(carro.getPlaca());
+		fac.setTiempoDeParqueo(40);
+		fac.setTipoVehiculo("carro");
+		facturaRepo.save(fac);
+
+		assertEquals(16000, vigi.calcularTotalApagarVehiculo("TWB413"));
+		
+		vehiculoRepo.delete(carro);
+		facturaRepo.delete(fac);
+		
+	}
+	@Test
+	public void CalcularTotalApagarCarroValorMalotest() {
+		VehiculoEntity carro = new VehiculoEntity();
+		FacturaEntity fac = new FacturaEntity();
+		
+		carro.setPlaca("TWB414");
+		vehiculoRepo.save(carro);	
+		
+		fac.setPlaca(carro.getPlaca());
+		fac.setTiempoDeParqueo(20);
+		fac.setTipoVehiculo("carro");
+		facturaRepo.save(fac);
+
+		assertNotEquals(5500, vigi.calcularTotalApagarVehiculo("TWB414"));
+		
+		vehiculoRepo.delete(carro);
+		facturaRepo.delete(fac);
+
+	}
+	@Test
+	public void CalcularTotalApagarCarroHorasYMinutos() {
+		VehiculoEntity carro = new VehiculoEntity();
+		FacturaEntity fac = new FacturaEntity();
+		
+		carro.setPlaca("TWB418");
+		vehiculoRepo.save(carro);	
+		
+		fac.setPlaca(carro.getPlaca());
+		fac.setTiempoDeParqueo(49);
+		fac.setTipoVehiculo("carro");
+		facturaRepo.save(fac);
+
+		assertEquals(17000, vigi.calcularTotalApagarVehiculo("TWB418"));
+		
+		vehiculoRepo.delete(carro);
+		facturaRepo.delete(fac);
+
+	}
+	
 	@Test
 	public void CalcularTotalApagarMotoHorastest() {
 		VehiculoEntity moto = new VehiculoEntity();
@@ -48,7 +105,7 @@ public class CalcularTotalApagarMoto {
 
 		facturaRepo.save(fac);
 
-		assertEquals(500, vigilante.calcularTotalApagarMoto("ETR456"));
+		assertEquals(500, vigi.calcularTotalApagarVehiculo("ETR456"));
 
 	}
 
@@ -68,7 +125,7 @@ public class CalcularTotalApagarMoto {
 		
 		facturaRepo.save(fac);
 
-		assertEquals(2500, vigilante.calcularTotalApagarMoto("ETR458"));
+		assertEquals(2500, vigi.calcularTotalApagarVehiculo("ETR458"));
 
 		vehiculoRepo.delete(moto);
 		 facturaRepo.delete(fac);
@@ -91,7 +148,7 @@ public class CalcularTotalApagarMoto {
 
 		facturaRepo.save(fac);
 
-		assertEquals(4500, vigilante.calcularTotalApagarMoto("ETR457"));
+		assertEquals(4500, vigi.calcularTotalApagarVehiculo("ETR457"));
 
 	}
 
@@ -111,7 +168,7 @@ public class CalcularTotalApagarMoto {
 
 		facturaRepo.save(fac);
 
-		assertEquals(6500, vigilante.calcularTotalApagarMoto("ETR450"));
+		assertEquals(6500, vigi.calcularTotalApagarVehiculo("ETR450"));
 
 	}
 

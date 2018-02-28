@@ -5,25 +5,20 @@ import static org.junit.Assert.assertTrue;
 import java.util.Calendar;
 import org.junit.Test;
 import org.junit.runner.RunWith;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
 import org.springframework.transaction.annotation.Transactional;
-
 import co.ceiba.parking.model.CarroModel;
 import co.ceiba.parking.model.VehiculoModel;
-import co.ceiba.parking.service.VigilanteService;
+import co.ceiba.parking.service.impl.VigilanteServiceImpl;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest(classes = ParkingApplication.class)
 @Transactional
 public class VerificarPlacaConElDia {
 
-
-	@Autowired
-	@Qualifier("VigilanteService")
-	VigilanteService vigilante;
+	
+	VigilanteServiceImpl vigi = new VigilanteServiceImpl();
 
 	@Test
 	public void testVerificarPlacaTieneLetraAyDiaLunes() {
@@ -32,7 +27,7 @@ public class VerificarPlacaConElDia {
 
 		vehiculoModel.setPlaca("AAA123");
 
-		boolean placaIniciaPorA = vigilante.verificarPlacaConElDia(vehiculoModel, Calendar.MONDAY);
+		boolean placaIniciaPorA = vigi.verificarPlacaConElDia(vehiculoModel, Calendar.MONDAY);
 
 		assertTrue(placaIniciaPorA);
 	}
@@ -42,7 +37,7 @@ public class VerificarPlacaConElDia {
 		VehiculoModel vehiculoModel = new CarroModel();
 		vehiculoModel.setPlaca("AAA123");
 
-		boolean placaIniciaPorA = vigilante.verificarPlacaConElDia(vehiculoModel, Calendar.SUNDAY);
+		boolean placaIniciaPorA = vigi.verificarPlacaConElDia(vehiculoModel, Calendar.SUNDAY);
 
 		assertTrue(placaIniciaPorA);
 	}
@@ -52,7 +47,7 @@ public class VerificarPlacaConElDia {
 		VehiculoModel vehiculoModel = new CarroModel();
 		vehiculoModel.setPlaca("BAA123");
 
-		boolean placaNoIniciaPorA = vigilante.verificarPlacaConElDia(vehiculoModel, Calendar.MONDAY);
+		boolean placaNoIniciaPorA = vigi.verificarPlacaConElDia(vehiculoModel, Calendar.MONDAY);
 
 		assertFalse(placaNoIniciaPorA);
 
@@ -63,7 +58,7 @@ public class VerificarPlacaConElDia {
 		VehiculoModel vehiculoModel = new CarroModel();
 		vehiculoModel.setPlaca("BAA123");
 
-		boolean placaNoIniciaPorA = vigilante.verificarPlacaConElDia(vehiculoModel, Calendar.SUNDAY);
+		boolean placaNoIniciaPorA = vigi.verificarPlacaConElDia(vehiculoModel, Calendar.SUNDAY);
 
 		assertFalse(placaNoIniciaPorA);
 	}
