@@ -8,15 +8,9 @@ public class MotoModel extends VehiculoModel {
 	private int cilindraje;
 	boolean estado;
 	
-	public MotoModel() {
-		
-	}
-
 	public MotoModel(String placa, int cilindraje, boolean estado) {
-		super();
-		this.placa = placa;
+		super(placa,estado);
 		this.cilindraje = cilindraje;
-		this.estado = estado;
 	}
 
 

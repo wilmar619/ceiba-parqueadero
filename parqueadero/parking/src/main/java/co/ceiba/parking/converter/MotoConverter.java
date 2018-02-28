@@ -8,18 +8,12 @@ import co.ceiba.parking.model.MotoModel;
 public class MotoConverter {
 
 	public MotoModel entity2model(VehiculoEntity vehiculoEntity) {
-		MotoModel motoModel = new MotoModel();
-		motoModel.setPlaca(vehiculoEntity.getPlaca());
-		motoModel.setCilindraje(vehiculoEntity.getCilindraje());
-		motoModel.setEstado(vehiculoEntity.isEstado());
-		return motoModel;
+		return new MotoModel(vehiculoEntity.getPlaca(),vehiculoEntity.getCilindraje(),vehiculoEntity.isEstado());
+
 	}
 
 	public VehiculoEntity model2entity(MotoModel motoModel) {
-		VehiculoEntity vehiculo = new VehiculoEntity();
-		vehiculo.setPlaca(motoModel.getPlaca());
-		vehiculo.setCilindraje(motoModel.getCilindraje());
-		vehiculo.setEstado(true);
-		return vehiculo;
+	return new VehiculoEntity(motoModel.getPlaca(),true,motoModel.getCilindraje());
+
 	}
 }

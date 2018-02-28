@@ -24,12 +24,15 @@ public class VehiculoEntity {
 	public VehiculoEntity() {
 	}
 
-	public VehiculoEntity(int idVehiculo, String placa, boolean estado, int cilindraje) {
-		super();
-		this.idVehiculo = idVehiculo;
+	public VehiculoEntity( String placa, boolean estado, int cilindraje) {
 		this.placa = placa;
 		this.estado = estado;
 		this.cilindraje = cilindraje;
+	}
+	
+	public VehiculoEntity( String placa, boolean estado) {
+		this.placa = placa;
+		this.estado = estado;
 	}
 
 	public int getIdVehiculo() {

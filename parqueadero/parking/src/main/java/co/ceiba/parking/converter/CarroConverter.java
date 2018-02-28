@@ -8,17 +8,11 @@ import co.ceiba.parking.model.CarroModel;
 public class CarroConverter {
 
 	public CarroModel entity2model(VehiculoEntity vehiculoEntity) {
-		CarroModel carroModel = new CarroModel();
-		carroModel.setPlaca(vehiculoEntity.getPlaca());
-		carroModel.setEstado(vehiculoEntity.isEstado());
-		return carroModel;
+		return new CarroModel(vehiculoEntity.getPlaca(), vehiculoEntity.isEstado());
 	}
 
 	public VehiculoEntity model2entity(CarroModel carroModel) {
-		VehiculoEntity vehiculoModel = new VehiculoEntity();
-		vehiculoModel.setPlaca(carroModel.getPlaca());
-		vehiculoModel.setEstado(true);
-		return vehiculoModel;
+		return new VehiculoEntity(carroModel.getPlaca(),carroModel.isEstado());
 	}
 
 }

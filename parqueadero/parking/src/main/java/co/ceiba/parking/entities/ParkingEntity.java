@@ -33,7 +33,7 @@ public class ParkingEntity {
 
 	public ParkingEntity(int idParking, int numCeldasCarro, int numCeldasMoto, int precioHoraCarro, int precioHoraMoto,
 			int precioDiaCarro, int precioDiaMoto) {
-		super();
+
 		this.idParking = idParking;
 		this.numCeldasCarro = numCeldasCarro;
 		this.numCeldasMoto = numCeldasMoto;

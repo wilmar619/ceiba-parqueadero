@@ -43,7 +43,7 @@ public class FacturaEntity {
 
 	public FacturaEntity(int idFactura, String tipoVehiculo, String placa, int cilindraje, Date horaIngreso,
 			Date horaSalida, boolean estado, int tiempoDeParqueo, int pagoTotal) {
-		super();
+
 		this.idFactura = idFactura;
 		this.tipoVehiculo = tipoVehiculo;
 		this.placa = placa;

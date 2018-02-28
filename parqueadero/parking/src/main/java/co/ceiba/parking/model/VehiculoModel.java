@@ -5,9 +5,6 @@ public abstract class VehiculoModel {
 	private String placa;
 	private boolean estado;
 
-	public VehiculoModel() {
-	}
-
 	public VehiculoModel(String placa, boolean estado) {
 		this.placa = placa;
 		this.estado = estado;

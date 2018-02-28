@@ -8,11 +8,8 @@ public class VehiculosActivos {
 	private Date horaIngreso;
 	private String tipoVehiculo;
 	
-	public VehiculosActivos() {
-	
-	}
+
 	public VehiculosActivos(String placa, Date horaIngreso, String tipoVehiculo) {
-		super();
 		this.placa = placa;
 		this.horaIngreso = horaIngreso;
 		this.tipoVehiculo = tipoVehiculo;
