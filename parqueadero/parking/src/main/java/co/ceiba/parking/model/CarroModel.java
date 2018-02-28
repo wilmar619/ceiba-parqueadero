@@ -7,6 +7,8 @@ public class CarroModel extends VehiculoModel{
 	boolean estado;
 
 	
+	public CarroModel() {
+	}
 
 	public CarroModel(String placa, boolean estado) {
 		super(placa, estado);

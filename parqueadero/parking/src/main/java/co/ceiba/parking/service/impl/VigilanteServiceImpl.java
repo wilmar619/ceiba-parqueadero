@@ -15,6 +15,7 @@ import co.ceiba.parking.converter.MotoConverter;
 import co.ceiba.parking.entities.FacturaEntity;
 import co.ceiba.parking.entities.ParkingEntity;
 import co.ceiba.parking.model.CarroModel;
+import co.ceiba.parking.model.FacturaModel;
 import co.ceiba.parking.model.MotoModel;
 import co.ceiba.parking.model.VehiculoModel;
 import co.ceiba.parking.model.VehiculosActivos;
@@ -57,7 +58,7 @@ public class VigilanteServiceImpl implements VigilanteService {
 
 	@Override
 	public void addVehiculo(CarroModel carroModel, int idParking) {
-		LOG.info("METHOD: addCarroServicio");
+		LOG.info("METHOD: addCarroServicio" + carroModel);
 		ParkingEntity parqueadero = parkingRepo.findByIdParking(idParking);
 		if (verificarDisponibilidad(CarroModel.tipo)) {
 			parqueadero.setNumCeldasCarro(parqueadero.getNumCeldasCarro() - 1);
@@ -82,16 +83,26 @@ public class VigilanteServiceImpl implements VigilanteService {
 
 	}
 
-	public void outVehiculo(String placa) {
+	@Override
+	public FacturaModel outVehiculo(String placa) {
 		Date fechaSalida = new Date();
 		FacturaEntity factura = facturaRepo.findByPlaca(placa);
+		ParkingEntity parqueadero = parkingRepo.findByIdParking(1);
 		factura.setEstado(false);
 		factura.setHoraSalida(fechaSalida);
 		long tiempoDeParqueo = calcularTimpoEnHoras(factura.getHoraIngreso(), fechaSalida);
 		factura.setTiempoDeParqueo((int) tiempoDeParqueo);
 		int totalAPagar = calcularTotalApagarVehiculo(placa);
 		factura.setPagoTotal(totalAPagar);
+		
+		if (factura.getTipoVehiculo().equals("carro")) {
+			parqueadero.setNumCeldasCarro(parqueadero.getNumCeldasCarro() + 1);
+			
+		} else {
+			parqueadero.setNumCeldasMoto(parqueadero.getNumCeldasMoto() + 1);
+		}
 		facturaRepo.save(factura);
+		return facturaRepo.entity2model(factura);
 
 	}
 

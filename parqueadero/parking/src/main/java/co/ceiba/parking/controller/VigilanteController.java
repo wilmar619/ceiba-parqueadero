@@ -3,8 +3,6 @@ package co.ceiba.parking.controller;
 import java.util.List;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
-import org.json.JSONException;
-import org.json.JSONObject;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.web.bind.annotation.CrossOrigin;
@@ -15,6 +13,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import co.ceiba.parking.model.Calendario;
 import co.ceiba.parking.model.CarroModel;
+import co.ceiba.parking.model.FacturaModel;
 import co.ceiba.parking.model.MotoModel;
 import co.ceiba.parking.service.VigilanteService;
 import co.ceiba.parking.model.VehiculosActivos;
@@ -47,11 +46,9 @@ public class VigilanteController {
 	}
 	
 	@PostMapping("/outVehiculo")
-	public void sacarVehiculo(@RequestBody String placa) throws JSONException  {
+	public FacturaModel sacarVehiculo(@RequestBody String placa) {
 		LOG.info("METHOD: outCarroController: " + placa) ;
-		JSONObject json = new JSONObject(placa);
-		String jsonPlaca = json.getString("placa");	 
-		vigilante.outVehiculo(jsonPlaca);
+		return vigilante.outVehiculo(placa);
 	}
 
 	

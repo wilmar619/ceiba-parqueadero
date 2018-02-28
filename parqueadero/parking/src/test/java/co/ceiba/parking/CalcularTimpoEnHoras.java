@@ -12,6 +12,7 @@ import org.springframework.test.context.junit4.SpringRunner;
 import org.springframework.transaction.annotation.Transactional;
 
 import co.ceiba.parking.service.VigilanteService;
+import co.ceiba.parking.service.impl.VigilanteServiceImpl;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest(classes = ParkingApplication.class)
@@ -21,13 +22,15 @@ public class CalcularTimpoEnHoras {
 	@Autowired
 	@Qualifier("VigilanteService")
 	VigilanteService vigilante;
+	
+	VigilanteServiceImpl vigi = new VigilanteServiceImpl();
 
 	@Test
 	public void CalcularTimpoEnHorastest() {
 		Date entrada = new GregorianCalendar(2018, 1, 14, 7, 0, 0).getTime();
 		Date salida = new GregorianCalendar(2018, 1, 14, 10, 0, 0).getTime();
 
-		assertEquals(3, vigilante.calcularTimpoEnHoras(entrada, salida));
+		assertEquals(3, vigi.calcularTimpoEnHoras(entrada, salida));
 	}
 
 	@Test
@@ -35,7 +38,7 @@ public class CalcularTimpoEnHoras {
 		Date entrada = new GregorianCalendar(2018, 1, 14, 7, 0, 0).getTime();
 		Date salida = new GregorianCalendar(2018, 1, 14, 10, 2, 0).getTime();
 
-		assertEquals(4, vigilante.calcularTimpoEnHoras(entrada, salida));
+		assertEquals(4, vigi.calcularTimpoEnHoras(entrada, salida));
 	}
 
 	@Test
@@ -43,7 +46,7 @@ public class CalcularTimpoEnHoras {
 		Date entrada = new GregorianCalendar(2018, 1, 14, 7, 0, 0).getTime();
 		Date salida = new GregorianCalendar(2018, 1, 14, 10, 0, 3).getTime();
 
-		assertEquals(4, vigilante.calcularTimpoEnHoras(entrada, salida));
+		assertEquals(4, vigi.calcularTimpoEnHoras(entrada, salida));
 	}
 
 	@Test
@@ -51,7 +54,7 @@ public class CalcularTimpoEnHoras {
 		Date entrada = new GregorianCalendar(2018, 1, 14, 7, 0, 0).getTime();
 		Date salida = new GregorianCalendar(2018, 1, 15, 7, 0, 0).getTime();
 
-		assertEquals(24, vigilante.calcularTimpoEnHoras(entrada, salida));
+		assertEquals(24, vigi.calcularTimpoEnHoras(entrada, salida));
 
 	}
 	@Test
@@ -59,7 +62,7 @@ public class CalcularTimpoEnHoras {
 		Date entrada = new GregorianCalendar(2018, 1, 14, 7, 0, 0).getTime();
 		Date salida = new GregorianCalendar(2018, 1, 15, 10, 0, 0).getTime();
 
-		assertNotEquals(24, vigilante.calcularTimpoEnHoras(entrada, salida));
+		assertNotEquals(24, vigi.calcularTimpoEnHoras(entrada, salida));
 	
 		
 
