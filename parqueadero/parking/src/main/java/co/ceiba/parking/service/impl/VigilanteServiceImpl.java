@@ -4,7 +4,6 @@ import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
-
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -14,6 +13,7 @@ import co.ceiba.parking.converter.CarroConverter;
 import co.ceiba.parking.converter.MotoConverter;
 import co.ceiba.parking.entities.FacturaEntity;
 import co.ceiba.parking.entities.ParkingEntity;
+import co.ceiba.parking.exception.ParkingException;
 import co.ceiba.parking.model.CarroModel;
 import co.ceiba.parking.model.FacturaModel;
 import co.ceiba.parking.model.MotoModel;
@@ -32,8 +32,6 @@ public class VigilanteServiceImpl implements VigilanteService {
 	private static final int VALOR_ADICIONAL_MOTO = 2000;
 	private static final int LIMITE_DE_HORAS_PERMITIDAS = 9;
 	private static final int CANTIDAD_HORAS_DIA = 24;
-	private static final int LUNES = Calendar.MONDAY;
-	private static final int DOMINGO = Calendar.SUNDAY;
 	private static final int MILISEGUNDOS_EN_HORAS = 3600000;
 
 	@Autowired
@@ -62,11 +60,13 @@ public class VigilanteServiceImpl implements VigilanteService {
 		ParkingEntity parqueadero = parkingRepo.findByIdParking(idParking);
 		if (verificarDisponibilidad(CarroModel.tipo)) {
 			parqueadero.setNumCeldasCarro(parqueadero.getNumCeldasCarro() - 1);
-			if (!verificarPlacaConElDia(carroModel, Calendar.DAY_OF_WEEK)) {
+			if (verificarPlacaConElDia(carroModel, Calendar.DAY_OF_WEEK)) {
 				vehiculoRepo.save(carroConverter.model2entity(carroModel));
 				comenzarFactura(carroModel, CarroModel.tipo, 0);
 			}
+			throw new ParkingException("El dia de hoy no puede ingresar vehiculos iniciados con A");
 		}
+		throw new ParkingException("NO celdas disponibles para CARRO");
 	}
 
 	@Override
@@ -75,35 +75,58 @@ public class VigilanteServiceImpl implements VigilanteService {
 		ParkingEntity parqueadero = parkingRepo.findByIdParking(idParking);
 		if (verificarDisponibilidad(MotoModel.tipo)) {
 			parqueadero.setNumCeldasMoto(parqueadero.getNumCeldasMoto() - 1);
-			if (!verificarPlacaConElDia(motoModel, Calendar.DAY_OF_WEEK)) {
+			if (verificarPlacaConElDia(motoModel, Calendar.DAY_OF_WEEK)) {
 				vehiculoRepo.save(motoConverter.model2entity(motoModel));
 				comenzarFactura(motoModel, MotoModel.tipo, motoModel.getCilindraje());
 			}
+			throw new ParkingException("El dia de hoy no puede ingresar vehiculos iniciados con A");
 		}
+		throw new ParkingException("NO celdas disponibles para MOTO");
 
 	}
 
 	@Override
 	public FacturaModel outVehiculo(String placa) {
 		Date fechaSalida = new Date();
-		FacturaEntity factura = facturaRepo.findByPlaca(placa);
-		ParkingEntity parqueadero = parkingRepo.findByIdParking(1);
-		factura.setEstado(false);
-		factura.setHoraSalida(fechaSalida);
-		long tiempoDeParqueo = calcularTimpoEnHoras(factura.getHoraIngreso(), fechaSalida);
-		factura.setTiempoDeParqueo((int) tiempoDeParqueo);
-		int totalAPagar = calcularTotalApagarVehiculo(placa);
-		factura.setPagoTotal(totalAPagar);
-		
-		if (factura.getTipoVehiculo().equals("carro")) {
-			parqueadero.setNumCeldasCarro(parqueadero.getNumCeldasCarro() + 1);
-			
-		} else {
-			parqueadero.setNumCeldasMoto(parqueadero.getNumCeldasMoto() + 1);
-		}
-		facturaRepo.save(factura);
-		return facturaRepo.entity2model(factura);
+		if (verificarSiEstaActivoYExisteLaPlaca(placa)) {
 
+			FacturaEntity factura = facturaRepo.findByPlaca(placa);
+			ParkingEntity parqueadero = parkingRepo.findByIdParking(1);
+			factura.setEstado(false);
+			factura.setHoraSalida(fechaSalida);
+			long tiempoDeParqueo = calcularTimpoEnHoras(factura.getHoraIngreso(), fechaSalida);
+			factura.setTiempoDeParqueo((int) tiempoDeParqueo);
+			int totalAPagar = calcularTotalApagarVehiculo(placa);
+			factura.setPagoTotal(totalAPagar);
+
+			if (factura.getTipoVehiculo().equals("carro")) {
+				parqueadero.setNumCeldasCarro(parqueadero.getNumCeldasCarro() + 1);
+
+			} else {
+				parqueadero.setNumCeldasMoto(parqueadero.getNumCeldasMoto() + 1);
+			}
+
+			facturaRepo.save(factura);
+
+			return facturaRepo.entity2model(factura);
+
+		} else {
+			throw new ParkingException("No existe esa placa en el parqueadero");
+		}
+
+	}
+
+	@Override
+	public List<VehiculosActivos> listaVehiculosActivos() {
+		List<FacturaEntity> facturas = facturaRepo.findByEstado(true);
+		List<VehiculosActivos> vehiculosActivos = new ArrayList<>();
+		for (FacturaEntity factura : facturas) {
+			VehiculosActivos activos = new VehiculosActivos(factura.getPlaca(), factura.getHoraIngreso(),
+					factura.getTipoVehiculo());
+			vehiculosActivos.add(activos);
+		}
+
+		return vehiculosActivos;
 	}
 
 	public int calcularTotalApagarVehiculo(String placa) {
@@ -130,12 +153,12 @@ public class VigilanteServiceImpl implements VigilanteService {
 					+ valorAdicionalCilindraje(cilindraje);
 
 		}
-		
+
 		if (tipoVehiculo.equals("carro")) {
 			return totalHoras * parqueadero.getPrecioHoraCarro() + totalDias * parqueadero.getPrecioDiaCarro();
 		}
 		return 0;
-		
+
 	}
 
 	public int valorAdicionalCilindraje(int cilindraje) {
@@ -160,12 +183,13 @@ public class VigilanteServiceImpl implements VigilanteService {
 	}
 
 	public boolean verificarPlacaConElDia(VehiculoModel vehiculoModel, int diaIngreso) {
-		String placa = vehiculoModel.getPlaca();
+		String placa = vehiculoModel.getPlaca().toUpperCase();
 		char primeraLetra = placa.charAt(0);
-		if ((primeraLetra == 'A') && ((LUNES == diaIngreso) || (DOMINGO == diaIngreso))) {
-			return true;
+		if (primeraLetra == 'A') {
+			return (Calendar.MONDAY == diaIngreso) || (Calendar.SUNDAY == diaIngreso);
 		}
-		return false;
+
+		return true;
 	}
 
 	public void comenzarFactura(VehiculoModel vehiculoModel, String tipoVehiculo, int cilindraje) {
@@ -190,17 +214,8 @@ public class VigilanteServiceImpl implements VigilanteService {
 		return tiempoEnHoras;
 	}
 
-	@Override
-	public List<VehiculosActivos> listaVehiculosActivos() {
-		List<FacturaEntity> facturas = facturaRepo.findByEstado(true);
-		List<VehiculosActivos> vehiculosActivos = new ArrayList<>();
-		for (FacturaEntity factura : facturas) {
-			VehiculosActivos activos = new VehiculosActivos(factura.getPlaca(), factura.getHoraIngreso(),
-					factura.getTipoVehiculo());
-			vehiculosActivos.add(activos);
-		}
+	public boolean verificarSiEstaActivoYExisteLaPlaca(String placa) {
 
-		return vehiculosActivos;
+		return facturaRepo.findByPlacaAndEstado(placa, true) != null;
 	}
-
 }

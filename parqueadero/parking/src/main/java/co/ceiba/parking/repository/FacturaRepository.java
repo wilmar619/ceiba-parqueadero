@@ -13,6 +13,8 @@ public interface FacturaRepository extends JpaRepository<FacturaEntity, Serializ
 
 	public abstract FacturaEntity findByPlaca(String placa);
 
+	public FacturaEntity findByPlacaAndEstado(String placa, boolean estado);
+
 	public List<FacturaEntity> findByEstado(boolean estado);
 
 	public default FacturaModel entity2model(FacturaEntity facturaEntity) {

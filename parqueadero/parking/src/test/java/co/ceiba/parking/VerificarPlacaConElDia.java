@@ -49,7 +49,7 @@ public class VerificarPlacaConElDia {
 
 		boolean placaNoIniciaPorA = vigi.verificarPlacaConElDia(vehiculoModel, Calendar.MONDAY);
 
-		assertFalse(placaNoIniciaPorA);
+		assertTrue(placaNoIniciaPorA);
 
 	}
 
@@ -59,6 +59,15 @@ public class VerificarPlacaConElDia {
 		vehiculoModel.setPlaca("BAA123");
 
 		boolean placaNoIniciaPorA = vigi.verificarPlacaConElDia(vehiculoModel, Calendar.SUNDAY);
+
+		assertTrue(placaNoIniciaPorA);
+	}
+	@Test
+	public void testVerificarPlacaTieneLetraAyNoDiaDomingo() {
+		VehiculoModel vehiculoModel = new CarroModel();
+		vehiculoModel.setPlaca("AAA123");
+
+		boolean placaNoIniciaPorA = vigi.verificarPlacaConElDia(vehiculoModel, Calendar.SATURDAY);
 
 		assertFalse(placaNoIniciaPorA);
 	}
