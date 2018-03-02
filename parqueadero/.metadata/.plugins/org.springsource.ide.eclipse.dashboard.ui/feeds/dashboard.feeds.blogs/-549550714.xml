@@ -336,7 +336,7 @@ dependencies {
   &lt;li&gt;Auto-configuration and starter POMs for reactive Spring Data Cassandra, MongoDB, Couchbase and Redis.&lt;/li&gt;
   &lt;li&gt;Support for embedded Netty.&lt;/li&gt;
   &lt;li&gt;HTTP/2 for Tomcat, Undertow and Jetty.&lt;/li&gt;
-  &lt;li&gt;Dedicated Kotlin support.&lt;/li&gt;
+  &lt;li&gt;Kotlin support.&lt;/li&gt;
   &lt;li&gt;A brand new actuator architecture, with support for Spring MVC, WebFlux and Jersey.&lt;/li&gt;
   &lt;li&gt;&lt;a href="http://micrometer.io/"&gt;Micrometer&lt;/a&gt; based metrics with exporters for Atlas, Datadog, Ganglia, Graphite, Influx, JMX, New Relic, Prometheus, SignalFx, StatsD and Wavefront.&lt;/li&gt;
   &lt;li&gt;Quartz scheduler support.&lt;/li&gt;

@@ -20,11 +20,12 @@ public class VehiculoEntity {
 	private boolean estado;
 	@Column(name = "cilindrajes")
 	private int cilindraje;
-
+	
 	public VehiculoEntity() {
 	}
+	
 
-	public VehiculoEntity( String placa, boolean estado, int cilindraje) {
+	public VehiculoEntity(String placa, boolean estado, int cilindraje) {
 		this.placa = placa;
 		this.estado = estado;
 		this.cilindraje = cilindraje;

@@ -40,7 +40,7 @@ public class VigilanteController {
 	
 	@PostMapping("/addMoto")
 	public void addVehiculo(@RequestBody MotoModel motoModel) {	
-		LOG.info("METHOD: addCarroController: " + motoModel.toString());
+		LOG.info("METHOD: addMotoController: " + motoModel.toString());
 		vigilante.addVehiculo(motoModel, 1);
 
 	}
