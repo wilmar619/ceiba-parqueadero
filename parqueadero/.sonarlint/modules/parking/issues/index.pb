@@ -31,8 +31,6 @@ Xjacoco/test-results/TEST-co.ceiba.test.vehiculo.VehiculoValorAdicionalCilindraj
 gradlew.bat,2\a\2a45a911a8f1836b0b6c5b758962572012d8f8c3
 l
 <src/main/java/co/ceiba/parking/service/VigilanteService.java,a\0\a07dfba959fe9895d2b6359049479d84b97602de
-n
->src/main/java/co/ceiba/parking/controller/CarroController.java,6\6\6682d7bbb25df6b47327ecd04e87920723d92980
 j
 :src/main/java/co/ceiba/parking/entities/ParkingEntity.java,4\4\44ba9aaa0336c0162fd71f5eda28fa53df8cf0a3
 j
@@ -49,8 +47,6 @@ l
 <src/main/java/co/ceiba/parking/converter/CarroConverter.java,b\7\b738f0faf4e492c71f3a66784f395becae4e7c83
 u
 Esrc/main/java/co/ceiba/parking/service/impl/VigilanteServiceImpl.java,2\3\2361a66afea77aa0614f68235b6806bef022ebca
-m
-=src/main/java/co/ceiba/parking/controller/MotoController.java,f\9\f941611ad441dc82ed5cca03aba7ff35f4a38664
 c
 3src/main/java/co/ceiba/parking/model/MotoModel.java,8\0\80308233d32572eb26c81019e0ca55609d0c9621
 k
@@ -61,13 +57,17 @@ q
 Asrc/main/java/co/ceiba/parking/repository/VehiculoRepository.java,4\6\462aaa02dad0da37c316e5eac93efb4141e6f3be
 j
 :src/test/java/co/ceiba/parking/VerificarPlacaConElDia.java,3\7\377b8414b291193dd16679082078721e1a13e432
-l
-<src/test/java/co/ceiba/parking/CalcularTotalApagarCarro.java,6\f\6fc921fb5ca41f1fc9541e19d09168db42096be7
 h
 8src/test/java/co/ceiba/parking/CalcularTimpoEnHoras.java,0\5\054fbdb3cd675d550f08ea97bf919a1d755f064c
 l
 <src/test/java/co/ceiba/parking/ValorAdicionalCilindraje.java,e\b\eb7d39474de9e4d98f31ca4bd84646c8b9fe9382
-k
-;src/test/java/co/ceiba/parking/CalcularTotalApagarMoto.java,4\7\47f7c128c145d7453659d8ff2193ec520e9f8ef1
 r
 Bsrc/main/java/co/ceiba/parking/controller/VigilanteController.java,7\e\7eaf20052fefa7025efc7855073e67bd18a41c81
+j
+:src/main/java/co/ceiba/parking/model/VehiculosActivos.java,d\4\d4bd2df96de4c6c50c0f033bb5b5d4735ddae4a6
+f
+6src/main/java/co/ceiba/parking/model/FacturaModel.java,3\2\32fceaf61d7ff30c57e41fc3147187fe6fedba70
+n
+>src/main/java/co/ceiba/parking/exception/ParkingException.java,8\2\82f4c21e8b7540779d1f9f7455c0592da214357a
+p
+@src/test/java/co/ceiba/parking/CalcularTotalApagarVehiculos.java,1\4\14b098988a1e737b166967b9a521759bab29b166

@@ -1,12 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <qualifiedTypeNameHistroy>
-<fullyQualifiedTypeName name="org.springframework.boot.autoconfigure.domain.EntityScan"/>
-<fullyQualifiedTypeName name="org.springframework.http.HttpStatus"/>
-<fullyQualifiedTypeName name="org.springframework.data.jpa.repository.config.EnableJpaRepositories"/>
-<fullyQualifiedTypeName name="org.springframework.context.annotation.Import"/>
-<fullyQualifiedTypeName name="org.springframework.context.annotation.ComponentScan"/>
-<fullyQualifiedTypeName name="org.modelmapper.ModelMapper"/>
-<fullyQualifiedTypeName name="co.ceiba.parking.repository.CarroRepository"/>
 <fullyQualifiedTypeName name="scala.annotation.meta.setter"/>
 <fullyQualifiedTypeName name="co.ceiba.parking.entities.CarroEntity"/>
 <fullyQualifiedTypeName name="org.springframework.stereotype.Component"/>
@@ -38,26 +31,33 @@
 <fullyQualifiedTypeName name="org.springframework.beans.factory.annotation.Qualifier"/>
 <fullyQualifiedTypeName name="java.util.GregorianCalendar"/>
 <fullyQualifiedTypeName name="co.ceiba.parking.service.VigilanteService"/>
-<fullyQualifiedTypeName name="co.ceiba.parking.model.VehiculoModel"/>
-<fullyQualifiedTypeName name="co.ceiba.parking.entities.ParkingEntity"/>
 <fullyQualifiedTypeName name="java.util.Calendar"/>
 <fullyQualifiedTypeName name="co.ceiba.parking.model.MotoModel"/>
 <fullyQualifiedTypeName name="org.json.JSONException"/>
 <fullyQualifiedTypeName name="org.json.JSONObject"/>
-<fullyQualifiedTypeName name="java.lang.String"/>
 <fullyQualifiedTypeName name="co.ceiba.parking.repository.FacturaRepository"/>
 <fullyQualifiedTypeName name="co.ceiba.parking.repository.VehiculoRepository"/>
 <fullyQualifiedTypeName name="co.ceiba.parking.entities.VehiculoEntity"/>
-<fullyQualifiedTypeName name="co.ceiba.parking.service.impl.VigilanteServiceImpl"/>
 <fullyQualifiedTypeName name="java.util.Date"/>
-<fullyQualifiedTypeName name="co.ceiba.parking.model.CarroModel"/>
 <fullyQualifiedTypeName name="org.springframework.web.bind.annotation.CrossOrigin"/>
-<fullyQualifiedTypeName name="javax.transaction.Transactional"/>
 <fullyQualifiedTypeName name="org.springframework.transaction.annotation.Transactional"/>
-<fullyQualifiedTypeName name="co.ceiba.parking.model.FacturaModel"/>
 <fullyQualifiedTypeName name="co.ceiba.parking.entities.FacturaEntity"/>
 <fullyQualifiedTypeName name="java.util.ArrayList"/>
 <fullyQualifiedTypeName name="org.springframework.web.bind.annotation.GetMapping"/>
 <fullyQualifiedTypeName name="co.ceiba.parking.model.VehiculosActivos"/>
 <fullyQualifiedTypeName name="java.util.List"/>
+<fullyQualifiedTypeName name="co.ceiba.parking.model.VehiculoModel"/>
+<fullyQualifiedTypeName name="org.apache.hadoop.io.VIntWritable"/>
+<fullyQualifiedTypeName name="co.ceiba.parking.model.CarroModel"/>
+<fullyQualifiedTypeName name="co.ceiba.parking.CalcularTimpoEnHoras"/>
+<fullyQualifiedTypeName name="co.ceiba.parking.model.FacturaModel"/>
+<fullyQualifiedTypeName name="co.ceiba.parking.service.impl.VigilanteServiceImpl"/>
+<fullyQualifiedTypeName name="java.lang.RuntimeException"/>
+<fullyQualifiedTypeName name="org.springframework.web.bind.annotation.ResponseStatus"/>
+<fullyQualifiedTypeName name="org.springframework.http.HttpStatus"/>
+<fullyQualifiedTypeName name="com.sun.mail.handlers.message_rfc822"/>
+<fullyQualifiedTypeName name="co.ceiba.parking.exception.ParkingException"/>
+<fullyQualifiedTypeName name="java.lang.String"/>
+<fullyQualifiedTypeName name="javax.transaction.Transactional"/>
+<fullyQualifiedTypeName name="co.ceiba.parking.entities.ParkingEntity"/>
 </qualifiedTypeNameHistroy>

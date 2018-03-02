@@ -10,6 +10,9 @@
 		<item value="false" key="updateTextualMatches"/>
 		<item value="1" key="updateSimilarElementsMatchStrategy"/>
 	</section>
+	<section name="SelfEncapsulateFieldWizard">
+		<item value="false" key="GenerateJavadoc"/>
+	</section>
 	<section name="GenerateConstructorUsingFieldsSelectionDialog">
 		<item value="false" key="OmitCallToSuper"/>
 	</section>
@@ -26,6 +29,11 @@
 		<item value="678" key="DIALOG_HEIGHT"/>
 		<item value="540" key="DIALOG_X_ORIGIN"/>
 		<item value="10" key="DIALOG_Y_ORIGIN"/>
+	</section>
+	<section name="ExtractMethodWizard">
+		<item value="false" key="GenerateJavadoc"/>
+		<item value="2" key="AccessModifier"/>
+		<item value="false" key="ThrowRuntimeExceptions"/>
 	</section>
 	<section name="NewClassWizardPage">
 		<item value="false" key="create_constructor"/>

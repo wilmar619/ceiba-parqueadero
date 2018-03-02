@@ -58,31 +58,42 @@ public class VigilanteServiceImpl implements VigilanteService {
 	public void addVehiculo(CarroModel carroModel, int idParking) {
 		LOG.info("METHOD: addCarroServicio" + carroModel);
 		ParkingEntity parqueadero = parkingRepo.findByIdParking(idParking);
-		if (verificarDisponibilidad(CarroModel.tipo)) {
-			parqueadero.setNumCeldasCarro(parqueadero.getNumCeldasCarro() - 1);
-			if (verificarPlacaConElDia(carroModel, Calendar.DAY_OF_WEEK)) {
-				vehiculoRepo.save(carroConverter.model2entity(carroModel));
-				comenzarFactura(carroModel, CarroModel.tipo, 0);
+		if (!verificarSiEstaActivoYExisteLaPlaca(carroModel.getPlaca().toUpperCase())) {
+			if (verificarDisponibilidad(CarroModel.tipo)) {
+				parqueadero.setNumCeldasCarro(parqueadero.getNumCeldasCarro() - 1);
+				if (verificarPlacaConElDia(carroModel, Calendar.DAY_OF_WEEK)) {
+					vehiculoRepo.save(carroConverter.model2entity(carroModel));
+					comenzarFactura(carroModel, CarroModel.tipo, 0);
+				} else {
+					throw new ParkingException("El dia de hoy no puede ingresar vehiculos iniciados con A");
+				}
+			} else {
+				throw new ParkingException("NO celdas disponibles para CARRO");
 			}
-			throw new ParkingException("El dia de hoy no puede ingresar vehiculos iniciados con A");
+		} else {
+			throw new ParkingException("La placa ingresada ya existe en el parqueadero");
 		}
-		throw new ParkingException("NO celdas disponibles para CARRO");
 	}
 
 	@Override
 	public void addVehiculo(MotoModel motoModel, int idParking) {
 		LOG.info("METHOD: addMoto");
 		ParkingEntity parqueadero = parkingRepo.findByIdParking(idParking);
-		if (verificarDisponibilidad(MotoModel.tipo)) {
-			parqueadero.setNumCeldasMoto(parqueadero.getNumCeldasMoto() - 1);
-			if (verificarPlacaConElDia(motoModel, Calendar.DAY_OF_WEEK)) {
-				vehiculoRepo.save(motoConverter.model2entity(motoModel));
-				comenzarFactura(motoModel, MotoModel.tipo, motoModel.getCilindraje());
+		if (!verificarSiEstaActivoYExisteLaPlaca(motoModel.getPlaca().toUpperCase())) {
+			if (verificarDisponibilidad(MotoModel.tipo)) {
+				parqueadero.setNumCeldasMoto(parqueadero.getNumCeldasMoto() - 1);
+				if (verificarPlacaConElDia(motoModel, Calendar.DAY_OF_WEEK)) {
+					vehiculoRepo.save(motoConverter.model2entity(motoModel));
+					comenzarFactura(motoModel, MotoModel.tipo, motoModel.getCilindraje());
+				} else {
+					throw new ParkingException("El dia de hoy no puede ingresar vehiculos iniciados con A");
+				}
+			} else {
+				throw new ParkingException("NO celdas disponibles para MOTO");
 			}
-			throw new ParkingException("El dia de hoy no puede ingresar vehiculos iniciados con A");
+		} else {
+			throw new ParkingException("La placa ingresada ya existe en el parqueadero");
 		}
-		throw new ParkingException("NO celdas disponibles para MOTO");
-
 	}
 
 	@Override
@@ -131,9 +142,11 @@ public class VigilanteServiceImpl implements VigilanteService {
 
 	public int calcularTotalApagarVehiculo(String placa) {
 		LOG.info("METHOD: calcularTotalVehiculo ");
+		LOG.info("AQUÍ NO MORIIII");
 		ParkingEntity parqueadero = parkingRepo.findByIdParking(1);
+		LOG.info("AQUÍ NO MORIIII");
 		FacturaEntity factura = facturaRepo.findByPlaca(placa);
-
+		LOG.info("AQUÍ MORIIII");
 		int cilindraje = factura.getCilindraje();
 		String tipoVehiculo = factura.getTipoVehiculo();
 		int tiempoParqueado = factura.getTiempoDeParqueo();
@@ -215,7 +228,6 @@ public class VigilanteServiceImpl implements VigilanteService {
 	}
 
 	public boolean verificarSiEstaActivoYExisteLaPlaca(String placa) {
-
 		return facturaRepo.findByPlacaAndEstado(placa, true) != null;
 	}
 }
