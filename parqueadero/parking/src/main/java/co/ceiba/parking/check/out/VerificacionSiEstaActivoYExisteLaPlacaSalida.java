@@ -19,7 +19,7 @@ public class VerificacionSiEstaActivoYExisteLaPlacaSalida implements Verificacio
 
 	@Override
 	public void verificacion(String placa) {
-		if (verificarSiEstaActivoYExisteLaPlaca(placa)) {
+		if (!verificarSiEstaActivoYExisteLaPlaca(placa)) {
 			throw new ParkingException("La placa ingresada no existe parqueadero");
 		}
 	}

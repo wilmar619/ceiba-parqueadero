@@ -59,10 +59,11 @@ public class VigilanteServiceImpl implements VigilanteService {
 	List<VerificacionSalida> validacionesDeSalida;
 
 	@Autowired
-	public VigilanteServiceImpl(List<VerificacionEntrada> validacionesDeIngreso) {
+	public VigilanteServiceImpl(List<VerificacionEntrada> validacionesDeIngreso,
+			List<VerificacionSalida> validacionesDeSalida) {
 		this.validacionesDeIngreso = validacionesDeIngreso;
+		this.validacionesDeSalida = validacionesDeSalida;
 	}
-	
 
 	@Override
 	public void addVehiculo(CarroModel carroModel, int idParking) {
@@ -87,23 +88,9 @@ public class VigilanteServiceImpl implements VigilanteService {
 	@Override
 	public FacturaModel outVehiculo(String placa) {
 		LOG.info("METHOD: outVehiculo");
-		validacionesDeSalida.stream().forEach(validacion ->validacion.verificacion(placa));
-		LOG.info("METHOD: outVehiculooooooooooooooooo");
-		Date fechaSalida = new Date();
-		FacturaEntity factura = facturaRepo.findByPlaca(placa);
-		factura.setEstado(false);
-		factura.setHoraSalida(fechaSalida);
-		long tiempoDeParqueo = calcularTimpoEnHoras(factura.getHoraIngreso(), fechaSalida);
-		factura.setTiempoDeParqueo((int) tiempoDeParqueo);
-		int totalAPagar = calcularTotalApagarVehiculo(placa);
-		factura.setPagoTotal(totalAPagar);
-		
-		// ParkingEntity parqueadero = parkingRepo.findByIdParking(1);
-		// if (factura.getTipoVehiculo().equals("carro")) {
-		// parqueadero.setNumCeldasCarro(parqueadero.getNumCeldasCarro() + 1);
-		// } else {
-		// parqueadero.setNumCeldasMoto(parqueadero.getNumCeldasMoto() + 1);
-		// }
+		validacionesDeSalida.stream().forEach(validacion -> validacion.verificacion(placa));
+		FacturaEntity factura = finalizarFactura(placa);
+		disminuirCeldasParking(factura);
 		facturaRepo.save(factura);
 		return facturaRepo.entity2model(factura);
 
@@ -123,37 +110,43 @@ public class VigilanteServiceImpl implements VigilanteService {
 	}
 
 	public int calcularTotalApagarVehiculo(String placa) {
+		return parametrosParaCalcularPagoXTipo(placa);
+
+	}
+
+	private int parametrosParaCalcularPagoXTipo(String placa) {
 		LOG.info("METHOD: calcularTotalVehiculo ");
-		LOG.info("AQUÍ NO MORIIII");
 		ParkingEntity parqueadero = parkingRepo.findByIdParking(1);
-		LOG.info("AQUÍ NO MORIIII");
 		FacturaEntity factura = facturaRepo.findByPlaca(placa);
-		LOG.info("AQUÍ MORIIII");
 		int cilindraje = factura.getCilindraje();
 		String tipoVehiculo = factura.getTipoVehiculo();
 		int tiempoParqueado = factura.getTiempoDeParqueo();
 		int totalHoras = tiempoParqueado % CANTIDAD_HORAS_DIA;
 		int totalDias = tiempoParqueado / CANTIDAD_HORAS_DIA;
+		return validacionCalculoPagoXTipo(parqueadero, cilindraje, tipoVehiculo, totalHoras, totalDias);
+	}
+
+	private int validacionCalculoPagoXTipo(ParkingEntity parqueadero, int cilindraje, String tipoVehiculo, int totalHoras,
+			int totalDias) {
 		if (totalHoras % CANTIDAD_HORAS_DIA > LIMITE_DE_HORAS_PERMITIDAS) {
 			totalDias++;
-			if (tipoVehiculo.equals("carro")) {
+			if (tipoVehiculo.equals(CarroModel.tipo)) {
 				return totalDias * parqueadero.getPrecioDiaCarro();
 			}
-			if (tipoVehiculo.equals("moto")) {
+			if (tipoVehiculo.equals(MotoModel.tipo)) {
 				return totalDias * parqueadero.getPrecioDiaMoto() + valorAdicionalCilindraje(cilindraje);
 			}
 		}
-		if (tipoVehiculo.equals("moto")) {
+		if (tipoVehiculo.equals(MotoModel.tipo)) {
 			return totalHoras * parqueadero.getPrecioHoraMoto() + totalDias * parqueadero.getPrecioDiaMoto()
 					+ valorAdicionalCilindraje(cilindraje);
 
 		}
 
-		if (tipoVehiculo.equals("carro")) {
+		if (tipoVehiculo.equals(CarroModel.tipo)) {
 			return totalHoras * parqueadero.getPrecioHoraCarro() + totalDias * parqueadero.getPrecioDiaCarro();
 		}
 		return 0;
-
 	}
 
 	public int valorAdicionalCilindraje(int cilindraje) {
@@ -172,6 +165,27 @@ public class VigilanteServiceImpl implements VigilanteService {
 		}
 
 		return tiempoEnHoras;
+	}
+
+	private void disminuirCeldasParking(FacturaEntity factura) {
+		ParkingEntity parqueadero = parkingRepo.findByIdParking(1);
+		if (factura.getTipoVehiculo().equals(CarroModel.tipo)) {
+			parqueadero.setNumCeldasCarro(parqueadero.getNumCeldasCarro() + 1);
+		} else {
+			parqueadero.setNumCeldasMoto(parqueadero.getNumCeldasMoto() + 1);
+		}
+	}
+
+	private FacturaEntity finalizarFactura(String placa) {
+		Date fechaSalida = new Date();
+		FacturaEntity factura = facturaRepo.findByPlaca(placa);
+		factura.setEstado(false);
+		factura.setHoraSalida(fechaSalida);
+		long tiempoDeParqueo = calcularTimpoEnHoras(factura.getHoraIngreso(), fechaSalida);
+		factura.setTiempoDeParqueo((int) tiempoDeParqueo);
+		int totalAPagar = calcularTotalApagarVehiculo(placa);
+		factura.setPagoTotal(totalAPagar);
+		return factura;
 	}
 
 	public void comenzarFactura(VehiculoModel vehiculoModel, String tipoVehiculo, int cilindraje) {
