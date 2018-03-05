@@ -30,12 +30,12 @@ public class MotoModel extends VehiculoModel {
 	public static void setTipo(String tipo) {
 		MotoModel.tipo = tipo;
 	}
-
+	@Override
 	public String getPlaca() {
 		return placa;
 	}
 
-
+	@Override
 	public void setPlaca(String placa) {
 		this.placa = placa;
 	}
@@ -50,12 +50,12 @@ public class MotoModel extends VehiculoModel {
 		this.cilindraje = cilindraje;
 	}
 
-
+	@Override
 	public boolean isEstado() {
 		return estado;
 	}
 
-
+	@Override
 	public void setEstado(boolean estado) {
 		this.estado = estado;
 	}

@@ -18,7 +18,7 @@ public class CarroModel extends VehiculoModel{
 		super(placa, estado);
 		
 	}
-
+	
 	public static String getTipo() {
 		return tipo;
 	}
@@ -27,18 +27,19 @@ public class CarroModel extends VehiculoModel{
 		CarroModel.tipo = tipo;
 	}
 
+	@Override
 	public String getPlaca() {
 		return placa;
 	}
-
+	@Override
 	public void setPlaca(String placa) {
 		this.placa = placa;
 	}
-
+	@Override
 	public boolean isEstado() {
 		return estado;
 	}
-
+	@Override
 	public void setEstado(boolean estado) {
 		this.estado = estado;
 	}
