@@ -1,6 +1,7 @@
 package co.ceiba.parking;
 
 import static org.junit.Assert.assertEquals;
+
 import javax.transaction.Transactional;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -17,48 +18,51 @@ import co.ceiba.parking.service.impl.VigilanteServiceImpl;
 @RunWith(SpringRunner.class)
 @SpringBootTest(classes = ParkingApplication.class)
 @Transactional
-public class IngresarVehiculoTest {
-	
+public class SacarVehiculosTest {
+
 	@Autowired
 	@Qualifier("VigilanteService")
 	private VigilanteServiceImpl vigi;
-	
+
 	@Autowired
 	@Qualifier("facturaRepository")
 	private FacturaRepository facturaRepo;
 
-
 	@Test
-	public void addVehiculoCarrotest() {
-		
+	public void outVehiculoCarroTest() {
+
 		CarroModel carro = new CarroModel();
-		carro.setPlaca("YAO83C");
-		carro.setTipoVehiculo(CarroModel.tipo);	
+		carro.setPlaca("ERF83C");
+		carro.setTipoVehiculo(CarroModel.tipo);
 		vigi.addVehiculo(carro, 1);
+
+		vigi.outVehiculo("ERF83C");
+
+		FacturaEntity fact = facturaRepo.findByPlacaAndEstado("ERF83C", false);
+
+		assertEquals(carro.isEstado(), fact.isEstado());
 		
-		FacturaEntity fac = facturaRepo.findByPlacaAndEstado("YAO83C", true);
-		
-		assertEquals(carro.getPlaca(), fac.getPlaca() );	
-		
-		facturaRepo.delete(fac);
-	
+		facturaRepo.delete(fact);
+
 	}
 	
 	@Test
-	public void addVehiculoMotoTest() {
-		
+	public void outVehiculoMotoTest() {
+
 		MotoModel moto = new MotoModel();
-		moto.setPlaca("KAO83C");
+		moto.setPlaca("UUO83C");
 		moto.setTipoVehiculo(MotoModel.tipo);	
 		moto.setCilindraje(100);
 		vigi.addVehiculo(moto, 1);
+
+		vigi.outVehiculo("UUO83C");
+
+		FacturaEntity fact = facturaRepo.findByPlacaAndEstado("UUO83C", false);
+
+		assertEquals(moto.isEstado(), fact.isEstado());
 		
-		FacturaEntity fac = facturaRepo.findByPlacaAndEstado("KAO83C", true);
-		
-		assertEquals(moto.getPlaca(), fac.getPlaca() );
-		
-		facturaRepo.delete(fac);
-		
+		facturaRepo.delete(fact);
+
 	}
 
 }

@@ -1,18 +1,15 @@
 package co.ceiba.parking;
 
-import static org.junit.Assert.assertEquals;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
-import co.ceiba.parking.entities.FacturaEntity;
-import co.ceiba.parking.entities.VehiculoEntity;
 import co.ceiba.parking.repository.FacturaRepository;
 import co.ceiba.parking.repository.ParkingRepository;
 import co.ceiba.parking.repository.VehiculoRepository;
-import co.ceiba.parking.service.impl.VigilanteServiceImpl;
+
 
 @RunWith(SpringRunner.class)
 //@RunWith(MockitoJUnitRunner.class)
