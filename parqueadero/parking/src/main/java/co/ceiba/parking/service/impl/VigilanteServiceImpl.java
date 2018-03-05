@@ -115,7 +115,7 @@ public class VigilanteServiceImpl implements VigilanteService {
 	}
 
 	private int parametrosParaCalcularPagoXTipo(String placa) {
-		LOG.info("METHOD: calcularTotalVehiculo ");
+	//	LOG.info("METHOD: calcularTotalVehiculo ");
 		ParkingEntity parqueadero = parkingRepo.findByIdParking(1);
 		FacturaEntity factura = facturaRepo.findByPlaca(placa);
 		int cilindraje = factura.getCilindraje();

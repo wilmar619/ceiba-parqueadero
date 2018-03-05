@@ -12,11 +12,11 @@ import co.ceiba.parking.service.impl.VigilanteServiceImpl;
 @RunWith(SpringRunner.class)
 @SpringBootTest(classes = ParkingApplication.class)
 @Transactional
-public class ValorAdicionalCilindraje {
+public class ValorAdicionalCilindrajeTest {
 	
 	private static final Object VALOR_ADICIONAL_MOTO = 2000;
 
-	VigilanteServiceImpl vigi = new VigilanteServiceImpl();
+	VigilanteServiceImpl vigi = new VigilanteServiceImpl(null, null);
 
 	
 	@Test

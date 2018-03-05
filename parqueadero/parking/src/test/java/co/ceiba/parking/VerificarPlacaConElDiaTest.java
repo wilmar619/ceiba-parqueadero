@@ -8,17 +8,18 @@ import org.junit.runner.RunWith;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
 import org.springframework.transaction.annotation.Transactional;
+import co.ceiba.parking.check.entry.VerificacionDiaYPlacaHabil;
 import co.ceiba.parking.model.CarroModel;
 import co.ceiba.parking.model.VehiculoModel;
-import co.ceiba.parking.service.impl.VigilanteServiceImpl;
+
 
 @RunWith(SpringRunner.class)
 @SpringBootTest(classes = ParkingApplication.class)
 @Transactional
-public class VerificarPlacaConElDia {
+public class VerificarPlacaConElDiaTest {
 
-	
-	VigilanteServiceImpl vigi = new VigilanteServiceImpl();
+
+	VerificacionDiaYPlacaHabil veri = new VerificacionDiaYPlacaHabil();
 
 	@Test
 	public void testVerificarPlacaTieneLetraAyDiaLunes() {
@@ -27,7 +28,7 @@ public class VerificarPlacaConElDia {
 
 		vehiculoModel.setPlaca("AAA123");
 
-		boolean placaIniciaPorA = vigi.verificarPlacaConElDia(vehiculoModel, Calendar.MONDAY);
+		boolean placaIniciaPorA = veri.verificarPlacaConElDia(vehiculoModel, Calendar.MONDAY);
 
 		assertTrue(placaIniciaPorA);
 	}
@@ -37,7 +38,7 @@ public class VerificarPlacaConElDia {
 		VehiculoModel vehiculoModel = new CarroModel();
 		vehiculoModel.setPlaca("AAA123");
 
-		boolean placaIniciaPorA = vigi.verificarPlacaConElDia(vehiculoModel, Calendar.SUNDAY);
+		boolean placaIniciaPorA = veri.verificarPlacaConElDia(vehiculoModel, Calendar.SUNDAY);
 
 		assertTrue(placaIniciaPorA);
 	}
@@ -47,7 +48,7 @@ public class VerificarPlacaConElDia {
 		VehiculoModel vehiculoModel = new CarroModel();
 		vehiculoModel.setPlaca("BAA123");
 
-		boolean placaNoIniciaPorA = vigi.verificarPlacaConElDia(vehiculoModel, Calendar.MONDAY);
+		boolean placaNoIniciaPorA = veri.verificarPlacaConElDia(vehiculoModel, Calendar.MONDAY);
 
 		assertTrue(placaNoIniciaPorA);
 
@@ -58,7 +59,7 @@ public class VerificarPlacaConElDia {
 		VehiculoModel vehiculoModel = new CarroModel();
 		vehiculoModel.setPlaca("BAA123");
 
-		boolean placaNoIniciaPorA = vigi.verificarPlacaConElDia(vehiculoModel, Calendar.SUNDAY);
+		boolean placaNoIniciaPorA = veri.verificarPlacaConElDia(vehiculoModel, Calendar.SUNDAY);
 
 		assertTrue(placaNoIniciaPorA);
 	}
@@ -67,7 +68,7 @@ public class VerificarPlacaConElDia {
 		VehiculoModel vehiculoModel = new CarroModel();
 		vehiculoModel.setPlaca("AAA123");
 
-		boolean placaNoIniciaPorA = vigi.verificarPlacaConElDia(vehiculoModel, Calendar.SATURDAY);
+		boolean placaNoIniciaPorA = veri.verificarPlacaConElDia(vehiculoModel, Calendar.SATURDAY);
 
 		assertFalse(placaNoIniciaPorA);
 	}

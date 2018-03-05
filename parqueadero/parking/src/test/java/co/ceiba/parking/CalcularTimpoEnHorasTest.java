@@ -13,9 +13,9 @@ import co.ceiba.parking.service.impl.VigilanteServiceImpl;
 @RunWith(SpringRunner.class)
 @SpringBootTest(classes = ParkingApplication.class)
 @Transactional
-public class CalcularTimpoEnHoras {
+public class CalcularTimpoEnHorasTest {
 
-	VigilanteServiceImpl vigi = new VigilanteServiceImpl();
+	VigilanteServiceImpl vigi = new VigilanteServiceImpl(null, null);
 
 	@Test
 	public void CalcularTimpoEnHorastest() {
